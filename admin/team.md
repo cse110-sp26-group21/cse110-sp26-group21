@@ -15,6 +15,7 @@
     - [Aaran Patel - Team Lead](#aaran-patel---team-lead)
     - [Kathy Charry](#kathy-charry)
     - [Haolong Chen](#haolong-chen)
+    - [Matthew Gunawan](#matthew-gunawan)
 - [Brand Guide](#brand-guide)
   - [Team Identity](#team-identity)
   - [Logo](#logo)
@@ -61,6 +62,10 @@ Hello! My name is Kathy and I am an aspiring software engineer majoring in Compu
 ### Haolong Chen
 [Github Page](https://github.com/hac098-cloud/lab1/tree/new-read-me) \
 I am a Computer Science student interested in programming, problem solving, and learning new technologies.
+
+### Matthew Gunawan
+[Github Page](https://matthewgunawann.github.io/CSE110_intro/) \
+Hi my name is Matthew Gunawan. I am a Junior studying Computer Science in UCSD. I am orginally from Indonesia and I am enrolled in UCSD as a International Student. I enjoy playing video games, golf, basketball, table tennis, padel, any sports in general.
 
 ---
 
