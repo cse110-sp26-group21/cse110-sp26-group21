@@ -181,4 +181,4 @@ By contributing to this repository, each member agrees to follow the guidelines 
 
 **Team Commitment:**  
 We commit to working together effectively and being a strong **team** 💪
-Signature: 
+Signature: Kathy Charry
