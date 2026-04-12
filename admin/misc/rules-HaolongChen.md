@@ -79,32 +79,10 @@ This ensures:
 
 ---
 
-## Team Assignments
+## My Assignments
 
-Each member should mark an **X** in at least 2 teams (more if desired).
-
-| Member            | FE1 | FE2 | BE1 | BE2 | D1  | D2  | UX/UI | Sys Design |
-|-------------------|:---:|:---:|:---:|:---:|:---:|:---:|:-----:|:----------:|
-| Andy Nilson       |   X  |     |   X  |     |  X   |     |       |     X       |
-| Aaran Patel       |     |   X  |     |  X   |     |  X   |    X   |            |
-| Arish Sunkireddy  |     |     |     |     |     |     |       |            |
-| Eliot Yu          |     |     |     |     |     |     |       |            |
-| Emily Nguyen      |     |     |     |     |     |     |       |            |
-| Haolong Chen      |   x  |     |   x  |     |     |     |       |            |
-| Hector Gonzalez   |     |     |     |     |     |     |       |            |
-| Kathy Charry      |     |     |     |     |     |     |       |            |
-| Lucia Lena        |     |     |     |     |     |     |       |            |
-| Matthew Gunawan   |     |     |     |     |     |     |       |            |
-| Paris Aguilar-Ulloa |   |     |     |     |     |     |       |            |
-| William Wang      |     |     |     |     |     |     |       |            |
-
-**Legend:**
-- FE = Frontend  
-- BE = Backend  
-- D = Design  
-- UX/UI = User Experience / Interface  
-- Sys Design = System Architecture  
-
+My Responsibilities
+I will contribute mainly to Frontend Team 1 and Backend Team 1. I will complete assigned tasks on time, communicate in Slack, and support my teammates through collaboration and code review.
 ---
 
 ## Task Management
