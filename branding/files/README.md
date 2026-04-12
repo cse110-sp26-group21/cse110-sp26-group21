@@ -6,14 +6,19 @@
 ---
 
 ## Table of Contents
-1. [Team Identity](#team-identity)
-2. [Logo](#logo)
-3. [Color Palette](#color-palette)
-4. [Typography](#typography)
-5. [Mascot](#mascot)
-6. [Taglines](#taglines)
-7. [Usage Guidelines](#usage-guidelines)
-8. [Presentation Templates](#presentation-templates)
+- [Team 9+10 — Brand Guide](#team-910--brand-guide)
+    - [CSE 110 Software Engineering · Group 21](#cse-110-software-engineering--group-21)
+  - [Table of Contents](#table-of-contents)
+  - [Team Identity](#team-identity)
+  - [Logo](#logo)
+    - [Primary Logo](#primary-logo)
+  - [Color Palette](#color-palette)
+    - [Accent Text Style](#accent-text-style)
+    - [Suit Symbols as Decorative Elements](#suit-symbols-as-decorative-elements)
+  - [Mascot](#mascot)
+    - [The Dealer 🃏](#the-dealer-)
+  - [Taglines](#taglines)
+  - [Usage](#usage)
 
 ---
 
@@ -32,9 +37,11 @@ The name **9+10** is a direct reference to our group number (21) dressed up as a
 ---
 
 ## Logo
+![(/Users/aaravpatel/cse110-sp26-group21-1/branding/files/logo-badge.png)](logo-primary.png)
+
 
 ### Primary Logo
-![Team 9+10 Primary Logo](/Users/aaravpatel/cse110-sp26-group21-1/branding/files/logo-badge.png)
+![Badge Logo](logo-badge.svg)
 
 The primary logo features overlapping playing cards (an ace of spades in front) alongside the team wordmark. Use this on slide covers, documents, and anywhere you need the full brand presence.
 
@@ -46,7 +53,7 @@ The badge variant centers the number **21** in Casino Gold inside a circular rin
 
 ## Color Palette
 
-![Team Color Palette](/Users/aaravpatel/cse110-sp26-group21-1/branding/files/color-palette.png)
+![Color Palette](color-palette.png)
 
 | Name | Hex | Usage |
 |---|---|---|
@@ -109,27 +116,6 @@ The team mascot is **The Dealer** — a cool, composed card dealer who always kn
 - Use Georgia serif for all display/heading text in presentations
 - Include the suit symbols (♠ ♥ ♦ ♣) as decorative accents or bullet replacements
 - Keep slide backgrounds Felt Night (`#1A1A1A`) for a consistent look
-
-
-#### Title Slide
-```
-Background: #1A1A1A (Felt Night)
-Logo: Top-left or centered
-Title: Georgia Bold, 44pt, #FFFFFF
-Subtitle: Sans-serif, 18pt, #D4AF37 (Casino Gold), letter-spaced
-Footer: "CSE 110 · Group 21 · Team 9+10" in Smoke (#4A4A4A), 10pt
-Decorative: Suit symbols ♠ ♥ ♦ ♣ in corners at low opacity
-```
-
-#### Content Slide
-```
-Background: #FFFFFF (Card White) or #1A1A1A (Felt Night)
-Heading: Georgia Bold, 28pt
-Body: Sans-serif Regular, 16pt
-Accent line: 2px #D4AF37 rule under heading
-Slide number: Bottom-right, Badge logo + number
-```
-
 
 
 *Team 9+10 · CSE 110 · Group 21 · Always bet on 21. ♠*
