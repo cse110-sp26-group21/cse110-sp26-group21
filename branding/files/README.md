@@ -34,28 +34,19 @@ The name **9+10** is a direct reference to our group number (21) dressed up as a
 ## Logo
 
 ### Primary Logo
-![Team 9+10 Primary Logo](assets/logo-primary.png)
+![Team 9+10 Primary Logo](/Users/aaravpatel/cse110-sp26-group21-1/branding/files/logo-badge.png)
 
 The primary logo features overlapping playing cards (an ace of spades in front) alongside the team wordmark. Use this on slide covers, documents, and anywhere you need the full brand presence.
 
-### Badge Logo
-![Team 9+10 Badge](assets/logo-badge.png)
+
 
 The badge variant centers the number **21** in Casino Gold inside a circular ring with the four card suits at cardinal points. Use this as a compact icon — GitHub profile, document headers, footers, or anywhere space is tight.
-
-### Logo Files
-| File | Format | Use Case |
-|---|---|---|
-| `assets/logo-primary.svg` | SVG (vector) | Presentations, print, scaling |
-| `assets/logo-primary.png` | PNG (2x) | Docs, GitHub, web |
-| `assets/logo-badge.svg` | SVG (vector) | Icon use, compact spaces |
-| `assets/logo-badge.png` | PNG (2x) | Profile pics, badges |
 
 ---
 
 ## Color Palette
 
-![Team Color Palette](assets/color-palette.png)
+![Team Color Palette](/Users/aaravpatel/cse110-sp26-group21-1/branding/files/color-palette.png)
 
 | Name | Hex | Usage |
 |---|---|---|
@@ -65,24 +56,10 @@ The badge variant centers the number **21** in Casino Gold inside a circular rin
 | **Card White** | `#FFFFFF` | Body text on dark, light backgrounds |
 | **Smoke** | `#4A4A4A` | Secondary text, muted elements, borders |
 
-### Color Usage Rules
-- **Dark theme** (preferred for presentations): Felt Night bg + Casino Gold headings + Card White body
-- **Light theme** (for documents/reports): Card White bg + Felt Night headings + Smoke body text
-- Never place Ace Red text on a Felt Night background — low contrast
-- Casino Gold should be used sparingly as an *accent*, not a primary background
 
----
 
-## Typography
 
-### Font Pairings
 
-| Role | Font | Weight | Usage |
-|---|---|---|---|
-| **Display** | Georgia (serif) | Bold 700 | Slide titles, cover pages, team name |
-| **Heading** | Georgia (serif) | Bold 700 | Section headers, doc titles |
-| **Body** | System sans-serif | Regular 400 | Paragraphs, bullet points, captions |
-| **Accent / Label** | System sans-serif | Medium 500 | Uppercase labels, tags, small caps |
 
 ### Accent Text Style
 For callout labels and accent elements, use **uppercase + letter-spacing**:
@@ -113,11 +90,6 @@ The team mascot is **The Dealer** — a cool, composed card dealer who always kn
 - Confident but not arrogant — knows when to stand
 - Always two sprints ahead — thinking about the next hand
 
-**Mascot usage:**
-- Slide cover pages as a decorative element
-- Team bios / about section
-- Sticker or pin design if the class does physical deliverables
-
 ---
 
 ## Taglines
@@ -131,27 +103,13 @@ The team mascot is **The Dealer** — a cool, composed card dealer who always kn
 
 ---
 
-## Usage Guidelines
-
-### Do ✅
+## Usage
 - Use the logo on every slide cover and major document header
 - Apply Casino Gold sparingly as an accent color
 - Use Georgia serif for all display/heading text in presentations
 - Include the suit symbols (♠ ♥ ♦ ♣) as decorative accents or bullet replacements
 - Keep slide backgrounds Felt Night (`#1A1A1A`) for a consistent look
 
-### Don't ❌
-- Don't stretch or distort the logo
-- Don't use the logo on a background that makes it hard to read (check contrast)
-- Don't use more than 2–3 colors on a single slide
-- Don't use a different primary font for headings — keep Georgia for consistency
-- Don't go overboard with the casino theme in technical content — keep it subtle
-
----
-
-## Presentation Templates
-
-### Slide Types
 
 #### Title Slide
 ```
@@ -172,41 +130,6 @@ Accent line: 2px #D4AF37 rule under heading
 Slide number: Bottom-right, Badge logo + number
 ```
 
-#### Section Divider
-```
-Background: #1A1A1A
-Large suit symbol: centered, #D4AF37, 80pt, low opacity (watermark)
-Section title: Georgia Bold, 36pt, #FFFFFF, centered
-```
 
-### PowerPoint Color Codes (for Theme Editor)
-When setting up a custom PowerPoint theme, use these exact values:
-
-- **Dark 1:** `#1A1A1A`
-- **Light 1:** `#FFFFFF`
-- **Dark 2:** `#4A4A4A`
-- **Light 2:** `#F5F5F5`
-- **Accent 1:** `#D4AF37` ← Casino Gold (primary accent)
-- **Accent 2:** `#C0392B` ← Ace Red
-- **Accent 3:** `#2C2C2C`
-- **Accent 4:** `#888888`
-- **Hyperlink:** `#D4AF37`
-
----
-
-## File Structure
-
-```
-team21-brand/
-├── README.md              ← This file
-├── assets/
-│   ├── logo-primary.svg   ← Primary logo (vector)
-│   ├── logo-primary.png   ← Primary logo (2x PNG)
-│   ├── logo-badge.svg     ← Badge/icon logo (vector)
-│   ├── logo-badge.png     ← Badge/icon logo (2x PNG)
-│   └── color-palette.png  ← Color palette reference
-```
-
----
 
 *Team 9+10 · CSE 110 · Group 21 · Always bet on 21. ♠*
