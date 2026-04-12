@@ -90,7 +90,7 @@ Each member should mark an **X** in at least 2 teams (more if desired).
 | Arish Sunkireddy  |     |     |     |     |     |     |       |            |
 | Eliot Yu          |     |     |     |     |     |     |       |            |
 | Emily Nguyen      |     |     |     |     |     |     |       |            |
-| Haolong Chen      |     |     |     |     |     |     |       |            |
+| Haolong Chen      |  X   |     |  X   |     |     |     |       |            |
 | Hector Gonzalez   |     |     |     |     |     |     |       |            |
 | Kathy Charry      |  X   |     |  X   |     |  X   |     |       |            |
 | Lucia Lena        |     |     |     |     |     |     |       |            |
