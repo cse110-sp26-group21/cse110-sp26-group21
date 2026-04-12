@@ -81,8 +81,8 @@ This ensures:
 
 ## My Assignments
 
-My Responsibilities
 I will contribute mainly to Frontend Team 1 and Backend Team 1. I will complete assigned tasks on time, communicate in Slack, and support my teammates through collaboration and code review.
+
 ---
 
 ## Task Management
