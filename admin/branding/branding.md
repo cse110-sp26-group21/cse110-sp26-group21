@@ -37,11 +37,11 @@ The name **9+10** is a direct reference to our group number (21) dressed up as a
 ---
 
 ## Logo
-![(/Users/aaravpatel/cse110-sp26-group21-1/branding/files/logo-badge.png)](logo-primary.png)
+![(Primary Logo)](files/logo-primary.png)
 
 
 ### Primary Logo
-![Badge Logo](logo-badge.svg)
+![Badge Logo](files/logo-badge.svg)
 
 The primary logo features overlapping playing cards (an ace of spades in front) alongside the team wordmark. Use this on slide covers, documents, and anywhere you need the full brand presence.
 
@@ -53,7 +53,7 @@ The badge variant centers the number **21** in Casino Gold inside a circular rin
 
 ## Color Palette
 
-![Color Palette](color-palette.png)
+![Color Palette](files/color-palette.png)
 
 | Name | Hex | Usage |
 |---|---|---|
