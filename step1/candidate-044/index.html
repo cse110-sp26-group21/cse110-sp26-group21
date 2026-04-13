@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Roulette | High-Inference Gambling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>AI TOKEN ROULETTE</h1>
+            <p class="tagline">Convert your VC capital into hallucinations in real-time.</p>
+        </header>
+
+        <section class="stats-bar">
+            <div class="stat-box">
+                <span class="label">Balance</span>
+                <span id="token-balance" class="value">100</span>
+                <span class="unit">tokens</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Inference Cost</span>
+                <span class="value">10</span>
+                <span class="unit">per spin</span>
+            </div>
+        </section>
+
+        <main class="slot-machine">
+            <div class="reels-container">
+                <div class="reel" id="reel-1">🤖</div>
+                <div class="reel" id="reel-2">🤖</div>
+                <div class="reel" id="reel-3">🤖</div>
+            </div>
+            <button id="spin-btn">RUN INFERENCE</button>
+        </main>
+
+        <section class="terminal">
+            <div class="terminal-header">Model Output / System Logs</div>
+            <div id="status-log" class="log-content">
+                <div class="log-entry">Initializing weights... Done.</div>
+                <div class="log-entry">Awaiting token injection...</div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Disclaimer: Our model is 99% confident in these random results. Tokens are non-refundable and have no value, just like our marketing claims.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
