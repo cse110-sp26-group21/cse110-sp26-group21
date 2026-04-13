@@ -94,7 +94,7 @@ Each member should mark an **X** in at least 2 teams (more if desired).
 | Hector Gonzalez   |     |     |     |     |     |     |       |            |
 | Kathy Charry      |  X   |     |  X   |     |  X   |     |       |            |
 | Lucia Lena        |     |     |     |     |     |     |       |            |
-| Matthew Gunawan   |  X   |     |  X   |     |     |     |       |            |
+| Matthew Gunawan   |   X  |     |   X  |     |     |     |       |            |
 | Paris Aguilar-Ulloa |   |     |     |     |     |     |       |            |
 | William Wang      |     |     |     |     |     |     |       |            |
 
@@ -181,4 +181,4 @@ By contributing to this repository, each member agrees to follow the guidelines 
 
 **Team Commitment:**  
 We commit to working together effectively and being a strong **team** 💪
-Signature: 
+Signature: Matthew Gunawan
