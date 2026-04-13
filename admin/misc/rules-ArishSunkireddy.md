@@ -79,6 +79,12 @@ This ensures:
 
 ---
 
+## My Assignments
+
+I will contribute mainly to Frontend Team 1 and Backend Team 1. I will complete assigned tasks on time, communicate in Slack, and support my teammates through collaboration and code review.
+
+---
+
 ## Task Management
 
 ### Definition of Done
@@ -153,4 +159,4 @@ By contributing to this repository, each member agrees to follow the guidelines 
 
 **Team Commitment:**  
 We commit to working together effectively and being a strong **team** 💪
-Signature: Kathy Charry
+Signature: Arish Sunkireddy
