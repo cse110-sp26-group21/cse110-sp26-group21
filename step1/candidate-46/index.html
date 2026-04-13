@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Roulette - Enterprise Edition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>AI Token Roulette <span class="badge">v4.0-beta</span></h1>
+            <p class="tagline">"Where inference costs meet economic reality."</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat-box">
+                <span class="label">Available Tokens</span>
+                <span id="token-balance" class="value">100</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Total Burn Rate</span>
+                <span id="total-spent" class="value">0</span>
+            </div>
+        </div>
+
+        <main class="slot-machine">
+            <div class="reels">
+                <div class="reel" id="reel-1">🤖</div>
+                <div class="reel" id="reel-2">🤖</div>
+                <div class="reel" id="reel-3">🤖</div>
+            </div>
+            <button id="spin-button">RUN INFERENCE (10 Tokens)</button>
+        </main>
+
+        <section class="console-output">
+            <div id="status-message">Ready for deployment...</div>
+            <div id="log-container"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

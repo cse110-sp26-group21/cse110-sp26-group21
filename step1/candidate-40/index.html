@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inference Roulette | AGI Slot Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Inference Roulette<sup>™</sup></h1>
+            <p class="tagline">"Move fast and hallucinate things."</p>
+        </header>
+
+        <section class="stats-bar">
+            <div class="stat-box">
+                <span class="label">Available Tokens</span>
+                <span id="token-balance" class="value">100</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Inference Cost</span>
+                <span class="value">10</span>
+            </div>
+        </section>
+
+        <main class="slot-machine">
+            <div class="reels">
+                <div class="reel" id="reel-1">
+                    <div class="symbol-strip"></div>
+                </div>
+                <div class="reel" id="reel-2">
+                    <div class="symbol-strip"></div>
+                </div>
+                <div class="reel" id="reel-3">
+                    <div class="symbol-strip"></div>
+                </div>
+                <div class="payline"></div>
+            </div>
+
+            <div class="display-panel">
+                <p id="status-text">Ready to disrupt the industry?</p>
+                <p id="sub-status-text">Insert tokens to run inference.</p>
+            </div>
+
+            <button id="spin-button">Run Inference (Spin)</button>
+        </main>
+
+        <section class="paytable">
+            <h3>Model Alignment Guide (Paytable)</h3>
+            <div class="grid">
+                <span>🤖 🤖 🤖</span> <span>AGI Achieved (500x)</span>
+                <span>💰 💰 💰</span> <span>VC Seed Round (100x)</span>
+                <span>📈 📈 📈</span> <span>Hype Cycle (50x)</span>
+                <span>Any 2 Match</span> <span>Partial Alignment (15x)</span>
+                <span>🎰 (Any)</span> <span>Hallucination (0x)</span>
+            </div>
+        </section>
+
+        <footer>
+            <div class="disclaimer">
+                <p>⚠️ Warning: Results are non-deterministic and may contain hallucinations.</p>
+                <p>Tokens have no real-world value, much like our 2026 roadmap.</p>
+            </div>
+            <div class="controls">
+                <button id="pivot-button" class="secondary">Pivot (Reset Game)</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Simple template for symbols used by JS -->
+    <template id="symbol-template">
+        <div class="symbol"></div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Roulette - Inference Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>AI Token Roulette</h1>
+            <p class="tagline">"Scaling parameters, shrinking wallets."</p>
+        </header>
+
+        <section class="stats-panel">
+            <div class="stat-box">
+                <span class="stat-label">Compute Credits:</span>
+                <span id="token-balance" class="stat-value">100</span>
+                <span class="stat-unit">tokens</span>
+            </div>
+        </section>
+
+        <main class="slot-machine">
+            <div class="reels-container">
+                <div class="reel" id="reel-1">🤖</div>
+                <div class="reel" id="reel-2">🤖</div>
+                <div class="reel" id="reel-3">🤖</div>
+            </div>
+
+            <div class="controls">
+                <button id="spin-button">Run Inference (5 Tokens)</button>
+                <button id="reset-button" class="secondary">Reset Seed Funding</button>
+            </div>
+        </main>
+
+        <section class="terminal">
+            <div id="status-log" class="log-content">> System initialized. Waiting for prompt...</div>
+            <div id="payout-msg" class="payout-content"></div>
+        </section>
+
+        <footer>
+            <p>* Disclaimer: Payouts are high-variance. Model may hallucinate winnings. No refunds on GPU heat.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

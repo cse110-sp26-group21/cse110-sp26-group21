@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Roulette - Venture Burn Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>AI Token Roulette 🎰</h1>
+            <p class="tagline">"Where your venture capital goes to hallucinate."</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat">Credits: <span id="token-count">100</span></div>
+            <div class="stat">Inference: <span id="spin-cost">5</span>/req</div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reels" id="reels">
+                <div class="reel" id="reel1">💸</div>
+                <div class="reel" id="reel2">🎰</div>
+                <div class="reel" id="reel3">📈</div>
+            </div>
+            <button id="spin-btn">Execute Inference Pipeline</button>
+        </div>
+
+        <div class="console">
+            <h3>Model Logs</h3>
+            <div id="log-content">
+                <p>> Initializing AGI... [FAILED]</p>
+                <p>> Loading token billing module... [OK]</p>
+                <p>> Ready to consume hardware resources.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
