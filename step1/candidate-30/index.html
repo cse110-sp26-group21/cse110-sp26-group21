@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Roulette - Venture Capital Edition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mainframe">
+        <header>
+            <h1>LLM TOKEN <span class="highlight">ROULETTE</span></h1>
+            <p class="subtitle">Where your seed funding goes to hallucinate.</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat-box">
+                <span class="label">Compute Credits</span>
+                <span id="token-balance" class="value">100</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Burn Rate</span>
+                <span id="burn-rate" class="value">0.0</span>
+            </div>
+        </div>
+
+        <main class="slot-machine">
+            <div class="reels">
+                <div class="reel" id="reel-1">🤖</div>
+                <div class="reel" id="reel-2">🤖</div>
+                <div class="reel" id="reel-3">🤖</div>
+            </div>
+
+            <div class="controls">
+                <button id="spin-btn">RUN INFERENCE (5 Tokens)</button>
+                <button id="reset-btn" class="secondary">Pivoting (Reset)</button>
+            </div>
+        </main>
+
+        <section class="log-panel">
+            <div class="log-header">System Output</div>
+            <div id="status-msg" class="log-content">Awaiting prompt input...</div>
+        </section>
+
+        <footer>
+            <p>Disclaimer: Our model is 99% confident this result is accurate. (Margin of error: 100%)</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
