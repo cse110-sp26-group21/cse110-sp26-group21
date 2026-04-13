@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Casino - Where Your Money Disappears Into the Cloud</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🤖 AI Token Casino 🎰</h1>
+            <p class="tagline">"Your tokens were always just probabilities anyway"</p>
+        </header>
+
+        <main class="game-area">
+            <!-- Token Display -->
+            <div class="token-display">
+                <div class="token-stat">
+                    <span class="label">Current Tokens</span>
+                    <span class="value" id="tokenCount">1000</span>
+                </div>
+                <div class="token-stat warning" id="warningZone" style="display: none;">
+                    <span class="label">Status</span>
+                    <span class="value">⚠️ LOW BALANCE</span>
+                </div>
+            </div>
+
+            <!-- Slot Machine -->
+            <div class="slot-machine">
+                <div class="reels-container">
+                    <div class="reel" id="reel1">
+                        <div class="reel-item">Hallucination</div>
+                        <div class="reel-item">Inference Cost</div>
+                        <div class="reel-item">Model Collapse</div>
+                        <div class="reel-item">Token Drain™</div>
+                        <div class="reel-item">API Timeout</div>
+                        <div class="reel-item">Prompt Injection</div>
+                        <div class="reel-item">Hallucination</div>
+                        <div class="reel-item">Inference Cost</div>
+                    </div>
+                    <div class="reel" id="reel2">
+                        <div class="reel-item">Context Limit</div>
+                        <div class="reel-item">Compute Burn</div>
+                        <div class="reel-item">Latency Spike</div>
+                        <div class="reel-item">Batch Processing</div>
+                        <div class="reel-item">Temperature Chaos</div>
+                        <div class="reel-item">Jailbreak Attempt</div>
+                        <div class="reel-item">Context Limit</div>
+                        <div class="reel-item">Compute Burn</div>
+                    </div>
+                    <div class="reel" id="reel3">
+                        <div class="reel-item">Overfitting</div>
+                        <div class="reel-item">Training Collapse</div>
+                        <div class="reel-item">Bias Detector</div>
+                        <div class="reel-item">Rugged Returns™</div>
+                        <div class="reel-item">Tokenomics</div>
+                        <div class="reel-item">Rug Pull</div>
+                        <div class="reel-item">Overfitting</div>
+                        <div class="reel-item">Training Collapse</div>
+                    </div>
+                </div>
+
+                <div class="win-indicator" id="winIndicator">
+                    <span id="winMessage"></span>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <div class="bet-info">
+                    <span class="label">Cost per Spin:</span>
+                    <span class="value" id="betAmount">50</span>
+                    <span class="label">tokens</span>
+                </div>
+                <button class="spin-button" id="spinBtn">SPIN THE VORTEX</button>
+                <div class="hint-text" id="hintText">
+                    Click to embrace the chaos
+                </div>
+            </div>
+
+            <!-- Results Display -->
+            <div class="results-panel">
+                <div class="result-row">
+                    <span class="result-label">Last Result:</span>
+                    <span class="result-value" id="lastResult">—</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Tokens Won/Lost:</span>
+                    <span class="result-value" id="lastPayout">—</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Spin Count:</span>
+                    <span class="result-value" id="spinCount">0</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Total Spent:</span>
+                    <span class="result-value" id="totalSpent">0</span>
+                </div>
+            </div>
+
+            <!-- Info Footer -->
+            <div class="footer-info">
+                <p><strong>Game Mechanics:</strong></p>
+                <ul>
+                    <li>Match 3 symbols to win multiplied tokens</li>
+                    <li>Match 2 symbols to nearly break even (with vibes)</li>
+                    <li>Mismatch to "invest in the future"</li>
+                    <li>Go broke instantly with style 👌</li>
+                </ul>
+                <p class="disclaimer">
+                    ⚠️ <em>Past token performance</not> indicative of future returns. Tokens are not real currency. The house always wins. Your hallucinations are your own.</em>
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

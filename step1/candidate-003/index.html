@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Slot Machine - Spin Your Profits Away™</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Token Slot Machine</h1>
+            <p class="tagline">Spin Your Profits Away™ - Where Your Money Goes to Fund Next-Gen Hallucinations</p>
+        </header>
+
+        <div class="game-area">
+            <!-- Player Stats -->
+            <div class="stats-panel">
+                <div class="stat">
+                    <span class="stat-label">Your Tokens:</span>
+                    <span class="stat-value" id="tokenDisplay">1000</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Session Earnings:</span>
+                    <span class="stat-value" id="earningsDisplay">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Hallucination Rate:</span>
+                    <span class="stat-value" id="hallucinationRate">0%</span>
+                </div>
+            </div>
+
+            <!-- The Slot Machine -->
+            <div class="machine">
+                <!-- Reels Container -->
+                <div class="reels-container">
+                    <div class="reel" id="reel1">
+                        <span class="reel-symbol">💰</span>
+                        <span class="reel-symbol">🚀</span>
+                        <span class="reel-symbol">🤖</span>
+                        <span class="reel-symbol">💾</span>
+                        <span class="reel-symbol">📈</span>
+                        <span class="reel-symbol">⚠️</span>
+                        <span class="reel-symbol">🔋</span>
+                        <span class="reel-symbol">🎰</span>
+                    </div>
+                    <div class="reel" id="reel2">
+                        <span class="reel-symbol">💰</span>
+                        <span class="reel-symbol">🚀</span>
+                        <span class="reel-symbol">🤖</span>
+                        <span class="reel-symbol">💾</span>
+                        <span class="reel-symbol">📈</span>
+                        <span class="reel-symbol">⚠️</span>
+                        <span class="reel-symbol">🔋</span>
+                        <span class="reel-symbol">🎰</span>
+                    </div>
+                    <div class="reel" id="reel3">
+                        <span class="reel-symbol">💰</span>
+                        <span class="reel-symbol">🚀</span>
+                        <span class="reel-symbol">🤖</span>
+                        <span class="reel-symbol">💾</span>
+                        <span class="reel-symbol">📈</span>
+                        <span class="reel-symbol">⚠️</span>
+                        <span class="reel-symbol">🔋</span>
+                        <span class="reel-symbol">🎰</span>
+                    </div>
+                </div>
+
+                <!-- Payline -->
+                <div class="payline"></div>
+
+                <!-- Spin Button Area -->
+                <div class="controls">
+                    <button id="spinButton" class="spin-button">SPIN FOR PROFIT</button>
+                    <div class="spin-cost">Costs 10 tokens per spin</div>
+                </div>
+
+                <!-- Results Display -->
+                <div class="results-panel">
+                    <div id="resultMessage" class="result-message"></div>
+                    <div id="payoutMessage" class="payout-message"></div>
+                </div>
+            </div>
+
+            <!-- AI Flavor Text -->
+            <div class="flavor-text-panel">
+                <h3>AI Market Insights™</h3>
+                <div id="flavorText" class="flavor-text">
+                    "The future is now! Each spin funds revolutionary AI research that will definitely solve everything. Probably. Maybe. Our models have only hallucinated 87% of responses lately!"
+                </div>
+            </div>
+        </div>
+
+        <!-- Game History -->
+        <div class="history-panel">
+            <h3>Recent Spins</h3>
+            <ul id="historyList" class="history-list"></ul>
+            <button id="resetButton" class="reset-button">💥 Reset Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
