@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Slots™ - Spin Your Way to Expected Value</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🤖 AI TOKEN SLOTS™</h1>
+            <p class="tagline">"Now With 47% More Hallucinations!"</p>
+        </header>
+
+        <div class="game-board">
+            <div class="stats-panel">
+                <div class="stat-item">
+                    <span class="stat-label">Your Tokens</span>
+                    <span class="stat-value" id="tokenDisplay">100</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Inference Cost</span>
+                    <span class="stat-value" id="costDisplay">10</span> 🎫
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Session Losses</span>
+                    <span class="stat-value" id="lossDisplay">0</span>
+                </div>
+            </div>
+
+            <div class="reel-container">
+                <div class="reel" id="reel1">
+                    <div class="reel-symbol">💰</div>
+                    <div class="reel-symbol">🚀</div>
+                    <div class="reel-symbol">📊</div>
+                    <div class="reel-symbol">🎱</div>
+                    <div class="reel-symbol">💭</div>
+                    <div class="reel-symbol">🤷</div>
+                </div>
+                <div class="reel" id="reel2">
+                    <div class="reel-symbol">💰</div>
+                    <div class="reel-symbol">🚀</div>
+                    <div class="reel-symbol">📊</div>
+                    <div class="reel-symbol">🎱</div>
+                    <div class="reel-symbol">💭</div>
+                    <div class="reel-symbol">🤷</div>
+                </div>
+                <div class="reel" id="reel3">
+                    <div class="reel-symbol">💰</div>
+                    <div class="reel-symbol">🚀</div>
+                    <div class="reel-symbol">📊</div>
+                    <div class="reel-symbol">🎱</div>
+                    <div class="reel-symbol">💭</div>
+                    <div class="reel-symbol">🤷</div>
+                </div>
+            </div>
+
+            <div class="result-display" id="resultDisplay">
+                Ready to lose... I mean, WIN big! 🎰
+            </div>
+
+            <div class="button-container">
+                <button id="spinButton" class="spin-button" onclick="spin()">
+                    SPIN FOR GLORY
+                </button>
+                <button id="resetButton" class="reset-button" onclick="resetGame()">
+                    Reset Tokens
+                </button>
+            </div>
+
+            <div class="info-panel">
+                <h3>SYMBOL GUIDE</h3>
+                <ul>
+                    <li>💰 = Profit? (unlikely)</li>
+                    <li>🚀 = Moon (never touched)</li>
+                    <li>📊 = Definitely Not Fake Data</li>
+                    <li>🎱 = Magic 8-Ball (90% accuracy, trust us)</li>
+                    <li>💭 = Hallucination Alert!</li>
+                    <li>🤷 = "We don't know either"</li>
+                </ul>
+                <div class="disclaimer">
+                    ⚠️ <strong>DISCLAIMER:</strong> Past performance does not guarantee future hallucinations. 
+                    This game is entirely rigged—we mean, "algorithmically optimized." 
+                    For entertainment purposes only. Please spin responsibly.
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>© 2026 VaporAI Corp. | "We'll take your tokens, even if they're worth nothing."</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Casino™ - Where Your Money Goes To Think</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Token Casino™</h1>
+            <p class="tagline">"For the cost of a small GPU, you could've had a Tesla"</p>
+        </header>
+
+        <div class="game-wrapper">
+            <!-- Token Display -->
+            <div class="token-display">
+                <div class="token-counter">
+                    <span class="label">Tokens Remaining:</span>
+                    <span class="value" id="tokenCount">100</span>
+                </div>
+                <div class="session-stats">
+                    <div>Spent: <span id="totalSpent">0</span></div>
+                    <div>Won: <span id="totalWon">0</span></div>
+                </div>
+            </div>
+
+            <!-- Slot Machine -->
+            <div class="slot-machine">
+                <!-- Reel Container -->
+                <div class="reel-container">
+                    <div class="reel-wrapper">
+                        <div class="reel" id="reel1">
+                            <div class="reel-item">💰 Token</div>
+                            <div class="reel-item">🌀 Hallucination</div>
+                            <div class="reel-item">📈 Model v2.5</div>
+                            <div class="reel-item">⚡ Inference</div>
+                            <div class="reel-item">🎲 Context Limit</div>
+                            <div class="reel-item">🚨 API Error</div>
+                            <div class="reel-item">✨ Just Works™</div>
+                            <div class="reel-item">🦆 Rubber Duck</div>
+                        </div>
+                    </div>
+
+                    <div class="reel-wrapper">
+                        <div class="reel" id="reel2">
+                            <div class="reel-item">💰 Token</div>
+                            <div class="reel-item">🌀 Hallucination</div>
+                            <div class="reel-item">📈 Model v2.5</div>
+                            <div class="reel-item">⚡ Inference</div>
+                            <div class="reel-item">🎲 Context Limit</div>
+                            <div class="reel-item">🚨 API Error</div>
+                            <div class="reel-item">✨ Just Works™</div>
+                            <div class="reel-item">🦆 Rubber Duck</div>
+                        </div>
+                    </div>
+
+                    <div class="reel-wrapper">
+                        <div class="reel" id="reel3">
+                            <div class="reel-item">💰 Token</div>
+                            <div class="reel-item">🌀 Hallucination</div>
+                            <div class="reel-item">📈 Model v2.5</div>
+                            <div class="reel-item">⚡ Inference</div>
+                            <div class="reel-item">🎲 Context Limit</div>
+                            <div class="reel-item">🚨 API Error</div>
+                            <div class="reel-item">✨ Just Works™</div>
+                            <div class="reel-item">🦆 Rubber Duck</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Win Line Indicator -->
+                <div class="win-line"></div>
+
+                <!-- Result Message -->
+                <div class="result-message" id="resultMessage"></div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="bet-selection">
+                    <label for="betAmount">Bet Amount:</label>
+                    <select id="betAmount">
+                        <option value="1">1 Token</option>
+                        <option value="5">5 Tokens</option>
+                        <option value="10" selected>10 Tokens</option>
+                        <option value="25">25 Tokens</option>
+                    </select>
+                </div>
+
+                <button id="spinButton" class="spin-button">SPIN FOR YOUR FUTURE 🎰</button>
+
+                <button id="resetButton" class="reset-button">Reset Game</button>
+            </div>
+
+            <!-- Info Section -->
+            <div class="info-section">
+                <div class="paytable">
+                    <h3>💸 Payout Table (ROI Not Guaranteed)</h3>
+                    <div class="payout-grid">
+                        <div class="payout-row">
+                            <span>3x Tokens</span>
+                            <span class="payout-multiplier">10x Bet</span>
+                        </div>
+                        <div class="payout-row">
+                            <span>3x Model v2.5</span>
+                            <span class="payout-multiplier">8x Bet</span>
+                        </div>
+                        <div class="payout-row">
+                            <span>3x Any Symbol</span>
+                            <span class="payout-multiplier">2x Bet</span>
+                        </div>
+                        <div class="payout-row highlight">
+                            <span>3x API Error</span>
+                            <span class="payout-multiplier">0x (Refund)</span>
+                        </div>
+                        <div class="payout-row highlight">
+                            <span>3x Hallucination</span>
+                            <span class="payout-multiplier">-1x (Pay More)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="disclaimer">
+                    <p><strong>⚠️ Disclaimer:</strong> Past performance does not indicate future results. Not suitable for those allergic to irony, tokenomics, or machine learning. May cause existential dread about AI scalability. Each spin is independent and has no memory, unlike the models we're making fun of.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

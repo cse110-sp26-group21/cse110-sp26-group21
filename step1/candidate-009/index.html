@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Slots - Where Your Money Disappears Into Inference</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🤖 AI Token Slots</h1>
+            <p class="subtitle">Gamify Your AI Spending™</p>
+        </header>
+
+        <div class="stats-panel">
+            <div class="stat-item">
+                <span class="stat-label">Current Tokens:</span>
+                <span class="stat-value" id="tokenDisplay">1000</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Total Spent:</span>
+                <span class="stat-value" id="totalSpentDisplay">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Win Rate (Vibes):</span>
+                <span class="stat-value" id="winRateDisplay">0%</span>
+            </div>
+        </div>
+
+        <div class="machine">
+            <div class="reel-container">
+                <div class="reel" id="reel1">
+                    <div class="reel-item">HALLUCINATION</div>
+                    <div class="reel-item">INFERENCE</div>
+                    <div class="reel-item">TOKENS</div>
+                    <div class="reel-item">BIAS</div>
+                    <div class="reel-item">HYPE</div>
+                    <div class="reel-item">PROMPT</div>
+                </div>
+            </div>
+
+            <div class="reel-container">
+                <div class="reel" id="reel2">
+                    <div class="reel-item">HALLUCINATION</div>
+                    <div class="reel-item">INFERENCE</div>
+                    <div class="reel-item">TOKENS</div>
+                    <div class="reel-item">BIAS</div>
+                    <div class="reel-item">HYPE</div>
+                    <div class="reel-item">PROMPT</div>
+                </div>
+            </div>
+
+            <div class="reel-container">
+                <div class="reel" id="reel3">
+                    <div class="reel-item">HALLUCINATION</div>
+                    <div class="reel-item">INFERENCE</div>
+                    <div class="reel-item">TOKENS</div>
+                    <div class="reel-item">BIAS</div>
+                    <div class="reel-item">HYPE</div>
+                    <div class="reel-item">PROMPT</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="spinButton" class="spin-button">SPIN (Costs 50 tokens)</button>
+            <button id="resetButton" class="reset-button">Reset Game</button>
+        </div>
+
+        <div class="result-panel" id="resultPanel">
+            <div class="result-message" id="resultMessage"></div>
+            <div class="result-payout" id="resultPayout"></div>
+        </div>
+
+        <div class="info-panel">
+            <h3>How This Predatory Game Works</h3>
+            <ul>
+                <li><strong>Spin Cost:</strong> 50 tokens per spin</li>
+                <li><strong>Three TOKENS:</strong> +500 tokens (the house special!)</li>
+                <li><strong>Three PROMPTS:</strong> +200 tokens (honest work)</li>
+                <li><strong>Three HYPES:</strong> +150 tokens (marketing works!)</li>
+                <li><strong>Three INFERENCES:</strong> +100 tokens (efficient loss)</li>
+                <li><strong>Two Matching Symbols:</strong> +25 tokens (pity reward)</li>
+                <li><strong>Empty Spin:</strong> Better luck next quarter!</li>
+                <li><strong>Zero Tokens:</strong> The game is over. You've been disrupted.</li>
+            </ul>
+            <p class="disclaimer">⚠️ This game is purely satirical. Any resemblance to actual token billing practices is <em>entirely intentional</em>.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
