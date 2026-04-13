@@ -16,6 +16,7 @@
     - [Kathy Charry](#kathy-charry)
     - [Haolong Chen](#haolong-chen)
     - [Matthew Gunawan](#matthew-gunawan)
+    - [Lucia Lena](#lucia-lena)
 - [Brand Guide](#brand-guide)
   - [Team Identity](#team-identity)
   - [Logo](#logo)
@@ -66,6 +67,12 @@ I am a Computer Science student interested in programming, problem solving, and 
 ### Matthew Gunawan
 [Github Page](https://matthewgunawann.github.io/CSE110_intro/) \
 Hi my name is Matthew Gunawan. I am a Junior studying Computer Science in UCSD. I am orginally from Indonesia and I am enrolled in UCSD as a International Student. I enjoy playing video games, golf, basketball, table tennis, padel, any sports in general.
+
+### Lucia Lena
+[Github Page](https://github.com/llena-collab) \
+Hi! My name is Lucia and I’m a third year Computer Science major. I am an exchange student from Bologna, Italy. I’ve been at UCSD since the winter quarter.
+I've never done a software project, this is going to be my first time.
+My other interests are playing tennis, going to the beach and surfing, playing pickleball, reading and taking care of my plants.
 
 ---
 
