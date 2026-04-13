@@ -93,7 +93,7 @@ Each member should mark an **X** in at least 2 teams (more if desired).
 | Haolong Chen      |  X   |     |  X   |     |     |     |       |            |
 | Hector Gonzalez   |     |     |     |     |     |     |       |            |
 | Kathy Charry      |  X   |     |  X   |     |  X   |     |       |            |
-| Lucia Lena        |     |     |     |     |     |     |       |            |
+| Lucia Lena        |     |     |     |   X  |  X   |     |       |            |
 | Matthew Gunawan   |  X   |     |  X   |     |     |     |       |            |
 | Paris Aguilar-Ulloa |   |     |     |     |     |     |       |            |
 | William Wang      |     |     |     |     |     |     |       |            |
