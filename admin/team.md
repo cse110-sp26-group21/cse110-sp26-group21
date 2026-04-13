@@ -79,6 +79,10 @@ Hi! My name is Lucia and I’m a third year Computer Science major. I am an exch
 I've never done a software project, this is going to be my first time.
 My other interests are playing tennis, going to the beach and surfing, playing pickleball, reading and taking care of my plants.
 
+### Arish Sunkireddy
+[Github Page](https://arishsunkireddy.github.io/Lab1/) \
+I am a second year Computer Science student. I am from Orange County, California. My professional interests include Software Engineering.
+
 ---
 
 # Brand Guide
