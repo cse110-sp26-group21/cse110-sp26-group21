@@ -1,0 +1,114 @@
+:root {
+    --bg-color: #0a0a0c;
+    --card-bg: #16161a;
+    --primary: #00ff9d;
+    --secondary: #ff0055;
+    --accent: #00d4ff;
+    --text: #e0e0e0;
+    --terminal-bg: #000;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(0, 255, 157, 0.1);
+    border: 1px solid #333;
+}
+
+header { text-align: center; margin-bottom: 2rem; }
+h1 { color: var(--primary); margin: 0; font-size: 1.5rem; text-transform: uppercase; }
+.tagline { font-size: 0.75rem; opacity: 0.7; }
+
+.balance-card {
+    background: #222;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary);
+}
+
+.value { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+
+.reels {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.reel {
+    width: 70px;
+    height: 70px;
+    background: #000;
+    border: 2px solid #444;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.reel.spinning {
+    animation: blur-spin 0.1s infinite alternate;
+}
+
+@keyframes blur-spin {
+    from { filter: blur(0px); transform: translateY(-2px); }
+    to { filter: blur(4px); transform: translateY(2px); }
+}
+
+.controls { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.5rem;}
+
+button {
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#spin-button { background: var(--primary); color: #000; }
+#spin-button:hover:not(:disabled) { background: #00cc7e; transform: scale(1.02); }
+#spin-button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.secondary { background: transparent; border: 1px solid #444; color: #888; }
+.secondary:hover { color: #fff; border-color: #666; }
+
+.terminal {
+    background: var(--terminal-bg);
+    border-radius: 6px;
+    padding: 0.8rem;
+    font-size: 0.8rem;
+    color: var(--accent);
+    height: 80px;
+    overflow-y: hidden;
+    border: 1px solid #222;
+}
+
+.terminal-header { font-size: 0.6rem; color: #666; margin-bottom: 4px; text-transform: uppercase; }
+
+footer { margin-top: 1rem; font-size: 0.75rem; text-align: center; }
+summary { cursor: pointer; color: var(--secondary); margin-bottom: 5px;}
+
+.log-content div { margin-bottom: 2px; }
+.win-text { color: var(--primary); }
+.loss-text { color: var(--secondary); }

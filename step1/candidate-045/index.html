@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Roulette - Inference Burner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>AI TOKEN ROULETTE</h1>
+            <p class="subtitle">"Your tokens are our training data."</p>
+        </header>
+
+        <div class="stats-header">
+            <div class="stat-box">TOKENS: <span id="token-count">100</span></div>
+            <div class="stat-box">SPIN COST: 10</div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reel-container">
+                <div class="reel" id="reel1">🤖</div>
+                <div class="reel" id="reel2">🤖</div>
+                <div class="reel" id="reel3">🤖</div>
+            </div>
+            <button id="spin-button">RUN INFERENCE</button>
+        </div>
+
+        <div class="terminal">
+            <div id="status-text">> Initializing weights... System ready.</div>
+        </div>
+
+        <div class="metrics-footer">
+            <div>Inference Count: <span id="inference-count">0</span></div>
+            <div>Total Burned: <span id="total-burned">0</span></div>
+            <div>Hallucination Rate: <span id="hallucination-rate">0%</span></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

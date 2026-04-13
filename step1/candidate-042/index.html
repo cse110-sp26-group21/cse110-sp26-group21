@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Roulette | Satirical Inference Engine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal-container">
+        <header>
+            <h1>AI_TOKEN_ROULETTE_v1.0</h1>
+            <p class="subtitle">"Where your tokens go to hallucinate."</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="label">CREDITS:</span>
+                <span id="token-count" class="value">100</span>
+            </div>
+            <div class="stat-item">
+                <span class="label">SPIN_COST:</span>
+                <span class="value">5</span>
+            </div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reels">
+                <div class="reel" id="reel-1">💸</div>
+                <div class="reel" id="reel-2">🎰</div>
+                <div class="reel" id="reel-3">📈</div>
+            </div>
+            
+            <button id="spin-button">RUN INFERENCE</button>
+        </div>
+
+        <div class="log-window">
+            <div class="log-header">SESSION_LOG</div>
+            <div id="message-log" class="log-content">
+                <div class="log-entry system">> Welcome, User_0821.</div>
+                <div class="log-entry system">> Initializing 175B parameters...</div>
+                <div class="log-entry system">> Ready for token extraction.</div>
+            </div>
+        </div>
+
+        <footer>
+            <button id="reset-button" class="text-btn">Clear Local Cache (Reset)</button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
