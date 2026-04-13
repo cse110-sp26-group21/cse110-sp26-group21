@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 AI Token Roulette - Spin Your Coins Away!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Token Roulette</h1>
+            <p class="tagline">"Powered by our state-of-the-art proprietary algorithm™"</p>
+        </header>
+
+        <main>
+            <!-- Token Display -->
+            <div class="token-display">
+                <div class="token-info">
+                    <span class="label">Your Tokens</span>
+                    <span class="amount" id="tokenCount">1000</span>
+                    <span class="token-icon">💰</span>
+                </div>
+            </div>
+
+            <!-- Slot Machine -->
+            <div class="slot-machine">
+                <div class="reels-container">
+                    <div class="reel" id="reel1">
+                        <div class="reel-symbol">🎰</div>
+                    </div>
+                    <div class="reel" id="reel2">
+                        <div class="reel-symbol">🎰</div>
+                    </div>
+                    <div class="reel" id="reel3">
+                        <div class="reel-symbol">🎰</div>
+                    </div>
+                </div>
+
+                <!-- Bet and Spin Controls -->
+                <div class="controls">
+                    <div class="bet-selector">
+                        <label for="betAmount">Bet per spin:</label>
+                        <select id="betAmount" class="bet-input">
+                            <option value="10">10 tokens</option>
+                            <option value="25">25 tokens</option>
+                            <option value="50" selected>50 tokens (recommended)</option>
+                            <option value="100">100 tokens</option>
+                            <option value="250">250 tokens (whale mode)</option>
+                        </select>
+                    </div>
+                    <button id="spinBtn" class="spin-button">
+                        SPIN NOW →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Message -->
+            <div class="result-message" id="resultMessage">
+                <p>Click SPIN to consult the algorithm!</p>
+            </div>
+
+            <!-- Game Info & Commentary -->
+            <div class="footer-commentary">
+                <p id="commentary">Ready to invest in your AI future 🚀</p>
+                <div class="game-stats">
+                    <span>Spins: <span id="spinCount">0</span></span>
+                    <span>Total Wagered: <span id="totalWagered">0</span> tokens</span>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <div class="info-section">
+                <h2>💡 How to Play</h2>
+                <ul>
+                    <li>Select your bet amount (more tokens = more risk, more reward!)</li>
+                    <li>Click SPIN to engage our cutting-edge neural network 🧠</li>
+                    <li>Match symbols to win tokens!</li>
+                    <li>Watch your <strong>inference costs</strong> go down... or your tokens disappear 📉</li>
+                </ul>
+
+                <h2>🎯 Symbol Meanings</h2>
+                <div class="symbols-grid">
+                    <div class="symbol-info">
+                        <span class="symbol">💯</span>
+                        <span class="symbol-name">Perfect Response</span>
+                        <span class="symbol-desc">×50 payout</span>
+                    </div>
+                    <div class="symbol-info">
+                        <span class="symbol">🎯</span>
+                        <span class="symbol-name">Accurate Output</span>
+                        <span class="symbol-desc">×15 payout</span>
+                    </div>
+                    <div class="symbol-info">
+                        <span class="symbol">🌀</span>
+                        <span class="symbol-name">Hallucination</span>
+                        <span class="symbol-desc">Lose tokens</span>
+                    </div>
+                    <div class="symbol-info">
+                        <span class="symbol">⚠️</span>
+                        <span class="symbol-name">API Down</span>
+                        <span class="symbol-desc">No payout</span>
+                    </div>
+                    <div class="symbol-info">
+                        <span class="symbol">🚀</span>
+                        <span class="symbol-name">Go Viral</span>
+                        <span class="symbol-desc">×30 payout</span>
+                    </div>
+                    <div class="symbol-info">
+                        <span class="symbol">💾</span>
+                        <span class="symbol-name">Context</span>
+                        <span class="symbol-desc">×5 payout</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>⚠️ This game is satirical. Not investment advice. No real tokens are being traded on a blockchain (thank goodness).</p>
+            <p>© 2026 AI Token Roulette™ - "Building the future, one spin at a time"</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
