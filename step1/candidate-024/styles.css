@@ -1,0 +1,455 @@
+/* AI Token Slot Machine - Styles */
+
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #ec4899;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --dark-bg: #0f172a;
+    --light-text: #f1f5f9;
+    --gold: #fbbf24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+    color: var(--light-text);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: glow 3s ease-in-out infinite;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+    letter-spacing: 2px;
+}
+
+header .tagline {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+.game-wrapper {
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    border: 3px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.5), inset 0 0 30px rgba(99, 102, 241, 0.1);
+}
+
+.disclaimer {
+    background: rgba(245, 158, 11, 0.1);
+    border: 2px dashed var(--warning-color);
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--warning-color);
+}
+
+.stats-panel {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.stat {
+    flex: 1;
+    background: rgba(99, 102, 241, 0.1);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9em;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.6);
+}
+
+.slot-machine {
+    background: linear-gradient(145deg, #334155, #0f172a);
+    border: 4px solid var(--gold);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(251, 191, 36, 0.2), inset 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.reels-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    position: relative;
+}
+
+.reel {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border: 3px solid var(--secondary-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 0 15px rgba(236, 72, 153, 0.3);
+}
+
+.reel-item {
+    text-align: center;
+    line-height: 100px;
+    height: 100px;
+    width: 100%;
+    display: none;
+}
+
+.reel-item.active {
+    display: block;
+}
+
+.reel.spinning {
+    animation: reel-spin 0.5s ease-out;
+}
+
+@keyframes reel-spin {
+    0% {
+        transform: rotateY(0deg) scale(0.95);
+        opacity: 0.7;
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.payline {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gold);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.message-container {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.result-message {
+    font-size: 1.2em;
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.result-message.hidden {
+    display: none;
+}
+
+.result-message.win {
+    background: rgba(16, 185, 129, 0.2);
+    border: 2px solid var(--success-color);
+    color: var(--success-color);
+    animation: pulse-win 0.6s ease-in-out;
+}
+
+.result-message.loss {
+    background: rgba(239, 68, 68, 0.2);
+    border: 2px solid var(--danger-color);
+    color: var(--danger-color);
+}
+
+.result-message.jackpot {
+    background: rgba(251, 191, 36, 0.2);
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    animation: pulse-jackpot 0.4s ease-in-out infinite;
+}
+
+@keyframes pulse-win {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes pulse-jackpot {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(251, 191, 36, 0.8);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(99, 102, 241, 1);
+    }
+}
+
+.controls {
+    background: rgba(51, 65, 85, 0.5);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bet-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.bet-controls label {
+    font-weight: bold;
+    color: var(--primary-color);
+    min-width: 140px;
+}
+
+.bet-slider {
+    flex: 1;
+    min-width: 150px;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right, var(--danger-color), var(--warning-color), var(--success-color));
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.bet-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gold);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.8);
+}
+
+.bet-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gold);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.8);
+}
+
+.bet-display {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--gold);
+    min-width: 40px;
+    text-align: right;
+}
+
+.spin-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--secondary-color), #d946ef);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4);
+}
+
+.spin-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.6);
+}
+
+.spin-button:active:not(:disabled) {
+    transform: translateY(0px);
+}
+
+.spin-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.payout-table {
+    background: rgba(15, 23, 42, 0.8);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.payout-table h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.payout-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.payout-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.3);
+    text-align: left;
+    font-size: 0.95em;
+}
+
+.payout-table td:first-child {
+    font-weight: bold;
+    color: var(--light-text);
+    min-width: 150px;
+}
+
+.payout-table td.payout {
+    color: var(--gold);
+    font-weight: bold;
+    text-align: center;
+}
+
+.payout-table td.joke {
+    color: var(--primary-color);
+    font-size: 0.85em;
+    font-style: italic;
+    text-align: right;
+}
+
+.footer-note {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px dashed var(--success-color);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--success-color);
+}
+
+.footer-note p {
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .stats-panel {
+        flex-direction: column;
+    }
+
+    .reels-container {
+        min-height: 100px;
+    }
+
+    .reel {
+        width: 80px;
+        height: 80px;
+        font-size: 2em;
+    }
+
+    .reel-item {
+        line-height: 80px;
+        height: 80px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .bet-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .bet-controls label {
+        min-width: auto;
+    }
+
+    .bet-slider {
+        min-width: 100%;
+    }
+
+    .payout-table {
+        overflow-x: auto;
+    }
+
+    .payout-table table {
+        font-size: 0.85em;
+    }
+
+    .payout-table td {
+        padding: 8px;
+    }
+}

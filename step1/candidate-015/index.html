@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Slot Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎰 AI Token Slot Machine 🤖</h1>
+            <p class="tagline">Where AI Goes to Lose Real Money</p>
+        </header>
+
+        <main>
+            <!-- Token Display -->
+            <div class="token-display">
+                <div class="token-value">
+                    <span class="token-amount" id="tokenCount">1000</span>
+                    <span class="token-label">Tokens</span>
+                </div>
+                <div class="token-warning" id="warningMessage"></div>
+            </div>
+
+            <!-- Slot Machine -->
+            <div class="slot-machine">
+                <div class="reels-container">
+                    <div class="reel" id="reel1">
+                        <div class="symbol">💭 Hallucination</div>
+                        <div class="symbol">💰 Tokens</div>
+                        <div class="symbol">🔧 Inference</div>
+                        <div class="symbol">📈 AI Hype</div>
+                        <div class="symbol">🐛 Bug Fix</div>
+                        <div class="symbol">🤥 LoRA</div>
+                    </div>
+                    <div class="reel" id="reel2">
+                        <div class="symbol">💭 Hallucination</div>
+                        <div class="symbol">💰 Tokens</div>
+                        <div class="symbol">🔧 Inference</div>
+                        <div class="symbol">📈 AI Hype</div>
+                        <div class="symbol">🐛 Bug Fix</div>
+                        <div class="symbol">🤥 LoRA</div>
+                    </div>
+                    <div class="reel" id="reel3">
+                        <div class="symbol">💭 Hallucination</div>
+                        <div class="symbol">💰 Tokens</div>
+                        <div class="symbol">🔧 Inference</div>
+                        <div class="symbol">📈 AI Hype</div>
+                        <div class="symbol">🐛 Bug Fix</div>
+                        <div class="symbol">🤥 LoRA</div>
+                    </div>
+                </div>
+
+                <div class="payline"></div>
+            </div>
+
+            <!-- Messages and Results -->
+            <div class="message-zone">
+                <div class="result-message" id="resultMessage">Ready to spin?</div>
+                <div class="flavor-text" id="flavorText">*AI is actually in the building*</div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button class="spin-button" id="spinButton">SPIN (25 tokens)</button>
+                <button class="reset-button" id="resetButton">Reset Game</button>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Total Spent:</span>
+                    <span class="stat-value" id="totalSpent">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total Won:</span>
+                    <span class="stat-value" id="totalWon">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Spins:</span>
+                    <span class="stat-value" id="spinCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Current Balance:</span>
+                    <span class="stat-value" id="netBalance">1000</span>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Disclaimer: This is a simulation. Real LLMs may vary. Consciousness not guaranteed.</p>
+            <p>©2026 Definitely-Not-Actually-Conscious-AI Corp.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

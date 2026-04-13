@@ -1,0 +1,354 @@
+/* AI Slot Machine - Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Header */
+.header {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 3em;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+    animation: pulse 2s infinite;
+}
+
+.tagline {
+    font-size: 1.1em;
+    font-style: italic;
+    opacity: 0.95;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Game Section */
+.game-section {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Token Display */
+.token-display {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    border: 3px solid #667eea;
+}
+
+.token-info, .token-cost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.balance {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.cost {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #764ba2;
+}
+
+/* Slot Machine */
+.slot-machine {
+    position: relative;
+    margin: 40px 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 30px;
+    border-radius: 20px;
+    border: 5px solid #ffd700;
+    box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.reels-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.reel {
+    width: 100px;
+    height: 280px;
+    background: linear-gradient(to bottom, #333, #000);
+    border: 4px solid #ffd700;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8), 0 5px 15px rgba(255, 215, 0, 0.2);
+    position: relative;
+}
+
+.symbol {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.symbol:nth-child(even) {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.reel.spinning {
+    animation: spin 0.1s linear;
+}
+
+@keyframes spin {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-60px); }
+}
+
+.payline {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: rgba(255, 215, 0, 0.1);
+    border-top: 3px dashed #ffd700;
+    border-bottom: 3px dashed #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Result Display */
+.result-display {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #fff9e6 0%, #ffe6cc 100%);
+    border: 3px solid #ffd700;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-text {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+}
+
+.result-display.win {
+    background: linear-gradient(135deg, #98ff98 0%, #00ff00 100%);
+    border-color: #00cc00;
+    animation: winFlash 0.5s 5;
+}
+
+.result-display.loss {
+    background: linear-gradient(135deg, #ff9999 0%, #ff6666 100%);
+    border-color: #cc0000;
+}
+
+@keyframes winFlash {
+    0%, 100% { box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); }
+    50% { box-shadow: 0 0 30px rgba(0, 255, 0, 0.9); }
+}
+
+/* Spin Button */
+.spin-button {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.spin-button:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.spin-button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.spin-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Last Win Display */
+.last-win {
+    text-align: center;
+    padding: 15px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#lastWinText {
+    font-size: 1.1em;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* AI Wisdom */
+.ai-wisdom {
+    text-align: center;
+    padding: 15px;
+    background: #e8f4f8;
+    border-left: 5px solid #667eea;
+    border-radius: 10px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+#wisdomText {
+    color: #333;
+    font-size: 0.95em;
+}
+
+/* Rules Section */
+.rules-section {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.rules-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #667eea;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.rules-content h3 {
+    font-size: 1em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #764ba2;
+}
+
+.rules-content ul {
+    list-style: none;
+    font-size: 0.85em;
+    line-height: 1.6;
+}
+
+.rules-content li {
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.rules-content li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+}
+
+.disclaimer {
+    font-size: 0.8em;
+    color: #999;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .rules-section {
+        position: static;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .reel {
+        width: 70px;
+        height: 210px;
+    }
+
+    .symbol {
+        font-size: 1.8em;
+        height: 45px;
+    }
+
+    .payline {
+        top: 82px;
+        height: 45px;
+    }
+
+    .spin-button {
+        padding: 15px;
+        font-size: 1.2em;
+    }
+}
+
+/* Accessibility */
+.spin-button:focus {
+    outline: 3px solid #ffd700;
+    outline-offset: 2px;
+}

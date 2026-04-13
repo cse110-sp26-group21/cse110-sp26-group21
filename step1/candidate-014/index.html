@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Roulette - Spin Your Inference Costs Away!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🤖 AI Token Roulette 🎰</h1>
+            <p class="tagline">"Because your LLM API bill needed to be more fun"</p>
+        </header>
+
+        <!-- Info Section -->
+        <section class="info-section">
+            <div class="info-box">
+                <h3>Token Balance</h3>
+                <div class="balance" id="balance">1000</div>
+                <p class="balance-label">tokens remaining</p>
+            </div>
+            <div class="info-box">
+                <h3>Session Earnings</h3>
+                <div class="earnings" id="earnings">0</div>
+                <p class="earnings-label">tokens won</p>
+            </div>
+            <div class="info-box">
+                <h3>Total Spins</h3>
+                <div class="spins" id="spinCount">0</div>
+                <p class="spins-label">hallucinations generated</p>
+            </div>
+        </section>
+
+        <!-- Message Display -->
+        <div class="message-display" id="messageDisplay"></div>
+
+        <!-- Slot Machine -->
+        <div class="slot-machine">
+            <div class="slots-container">
+                <div class="slot" id="slot1">
+                    <div class="reel">
+                        <div class="symbol">🤖</div>
+                        <div class="symbol">💰</div>
+                        <div class="symbol">🐴</div>
+                        <div class="symbol">❌</div>
+                        <div class="symbol">📊</div>
+                        <div class="symbol">💥</div>
+                    </div>
+                </div>
+
+                <div class="slot" id="slot2">
+                    <div class="reel">
+                        <div class="symbol">🤖</div>
+                        <div class="symbol">💰</div>
+                        <div class="symbol">🐴</div>
+                        <div class="symbol">❌</div>
+                        <div class="symbol">📊</div>
+                        <div class="symbol">💥</div>
+                    </div>
+                </div>
+
+                <div class="slot" id="slot3">
+                    <div class="reel">
+                        <div class="symbol">🤖</div>
+                        <div class="symbol">💰</div>
+                        <div class="symbol">🐴</div>
+                        <div class="symbol">❌</div>
+                        <div class="symbol">📊</div>
+                        <div class="symbol">💥</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="spinButton" class="spin-btn">SPIN (-10 tokens)</button>
+            <button id="resetButton" class="reset-btn">Reset Session</button>
+        </div>
+
+        <!-- Legend -->
+        <section class="legend">
+            <h3>Symbol Guide</h3>
+            <div class="legend-grid">
+                <div class="legend-item">
+                    <span class="legend-symbol">🤖</span>
+                    <span>LLM<br><small>Base Model</small></span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-symbol">💰</span>
+                    <span>Token<br><small>sweet $$</small></span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-symbol">🐴</span>
+                    <span>Hallucination<br><small>Confidence 100%</small></span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-symbol">❌</span>
+                    <span>Error<br><small>Rate limit hit</small></span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-symbol">📊</span>
+                    <span>Inference<br><small>No GPU :(</small></span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-symbol">💥</span>
+                    <span>Overfitting<br><small>Scale everything!</small></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paytable -->
+        <section class="paytable">
+            <h3>Paytable (3-Symbol Matches)</h3>
+            <ul class="payouts">
+                <li><span class="pay-symbol">🤖 🤖 🤖</span> = 50 tokens (Mainstream LLM)</li>
+                <li><span class="pay-symbol">💰 💰 💰</span> = 200 tokens (Token Abundance!)</li>
+                <li><span class="pay-symbol">🐴 🐴 🐴</span> = 75 tokens (Creative AI)</li>
+                <li><span class="pay-symbol">❌ ❌ ❌</span> = 10 tokens (Consolation Prize)</li>
+                <li><span class="pay-symbol">📊 📊 📊</span> = 60 tokens (Batch Processing)</li>
+                <li><span class="pay-symbol">💥 💥 💥</span> = 150 tokens (That Overfits!)</li>
+                <li><span class="pay-symbol">Any 3 Same</span> = Base payout</li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>⚠️ AI Token Roulette is not affiliated with any real AI companies (yet). Tokens won cannot be exchanged for real GPU compute. If you're addicted to spinning, please seek help from a prompt engineer.</p>
+            <p class="disclaimer">Disclaimer: This is a satirical game. No LLMs were harmed in the making of this app. © 2026 Absolutely Ironic, LLC</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

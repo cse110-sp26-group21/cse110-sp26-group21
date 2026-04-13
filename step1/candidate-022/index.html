@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TokenSlot - AI's Favorite Casino</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 TokenSlot</h1>
+            <p class="tagline">Where Your Money Becomes Tokens Becomes Money Again™</p>
+        </header>
+
+        <main>
+            <!-- Token Balance Section -->
+            <div class="balance-section">
+                <div class="balance-card">
+                    <div class="balance-label">Your Tokens</div>
+                    <div class="balance-amount" id="balance">1000</div>
+                </div>
+                <div class="balance-card">
+                    <div class="balance-label">Session Winnings</div>
+                    <div class="balance-amount" id="winnings">0</div>
+                </div>
+            </div>
+
+            <!-- Message Display -->
+            <div class="message-box" id="messageBox">
+                <p id="messageText">Welcome to TokenSlot! Spend tokens to spin and win big... or lose spectacularly!</p>
+            </div>
+
+            <!-- Slot Machine -->
+            <div class="slot-machine">
+                <div class="reels-container">
+                    <div class="reel">
+                        <div class="symbol" id="reel1">🤖</div>
+                    </div>
+                    <div class="reel">
+                        <div class="symbol" id="reel2">💰</div>
+                    </div>
+                    <div class="reel">
+                        <div class="symbol" id="reel3">⚠️</div>
+                    </div>
+                </div>
+                <div class="payline"></div>
+            </div>
+
+            <!-- Spin Button Section -->
+            <div class="controls">
+                <div class="bet-selector">
+                    <label for="betAmount">Bet Amount:</label>
+                    <select id="betAmount" class="bet-select">
+                        <option value="10">10 tokens</option>
+                        <option value="25" selected>25 tokens</option>
+                        <option value="50">50 tokens</option>
+                        <option value="100">100 tokens</option>
+                    </select>
+                </div>
+                <button id="spinButton" class="spin-button">SPIN</button>
+            </div>
+
+            <!-- Payout Table -->
+            <details class="payout-table">
+                <summary>📋 Payout Rates (Click to expand)</summary>
+                <div class="payout-content">
+                    <table>
+                        <tr>
+                            <td>🤖 🤖 🤖</td>
+                            <td>Triple AI - "I am become consciousness"</td>
+                            <td class="payout">5x bet</td>
+                        </tr>
+                        <tr>
+                            <td>💰 💰 💰</td>
+                            <td>Token Shower - "More money!"</td>
+                            <td class="payout" style="background: gold;">10x bet ★</td>
+                        </tr>
+                        <tr>
+                            <td>🎯 🎯 🎯</td>
+                            <td>Perfect Match - "99.9% confident"</td>
+                            <td class="payout">6x bet</td>
+                        </tr>
+                        <tr>
+                            <td>⚠️ ⚠️ ⚠️</td>
+                            <td>Error Stack - "Have you tried... tokenizing?"</td>
+                            <td class="payout">0x (lose bet)</td>
+                        </tr>
+                        <tr>
+                            <td>Any matching pair</td>
+                            <td>Inference Win - "Statistically significant"</td>
+                            <td class="payout">2x bet</td>
+                        </tr>
+                    </table>
+                </div>
+            </details>
+
+            <!-- Info Section -->
+            <footer class="info-section">
+                <p><strong>Tip:</strong> Each spin costs tokens. Each win generates more tokens. Your tokens are worth exactly $0.00001.</p>
+                <p class="disclaimer">Warning: This game may cause you to finally understand AI pricing models.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
