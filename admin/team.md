@@ -16,6 +16,7 @@
     - [Kathy Charry](#kathy-charry)
     - [Haolong Chen](#haolong-chen)
     - [Matthew Gunawan](#matthew-gunawan)
+    - [Hector Gonzalez](#hector-gonzalez)
     - [Lucia Lena](#lucia-lena)
 - [Brand Guide](#brand-guide)
   - [Team Identity](#team-identity)
@@ -67,6 +68,10 @@ I am a Computer Science student interested in programming, problem solving, and 
 ### Matthew Gunawan
 [Github Page](https://matthewgunawann.github.io/CSE110_intro/) \
 Hi my name is Matthew Gunawan. I am a Junior studying Computer Science in UCSD. I am orginally from Indonesia and I am enrolled in UCSD as a International Student. I enjoy playing video games, golf, basketball, table tennis, padel, any sports in general.
+
+### Hector Gonzalez
+[Github Page](https://thtt-1kidd.github.io/cse110-lab1-hector-g/)
+Hi my name is Hector Gonzalez, I am a third year Computer Engineering student at UCSD. I enjoy playing music (I play the piano and violin), playing video games, volleyball, and learning new things! Academically speaking, I have only done research specifically on perovskite solar cells in Dr. Fenning's Solar Energy Innovation Lab. 
 
 ### Lucia Lena
 [Github Page](https://github.com/llena-collab) \

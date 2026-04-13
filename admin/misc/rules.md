@@ -91,7 +91,7 @@ Each member should mark an **X** in at least 2 teams (more if desired).
 | Eliot Yu          |     |     |     |     |     |     |       |            |
 | Emily Nguyen      |     |     |     |     |     |     |       |            |
 | Haolong Chen      |  X   |     |  X   |     |     |     |       |            |
-| Hector Gonzalez   |     |     |     |     |     |     |       |            |
+| Hector Gonzalez   |     |     |     |   X  |     |     |    X   |            |
 | Kathy Charry      |  X   |     |  X   |     |  X   |     |       |            |
 | Lucia Lena        |     |     |     |   X  |  X   |     |       |            |
 | Matthew Gunawan   |  X   |     |  X   |     |     |     |       |            |
