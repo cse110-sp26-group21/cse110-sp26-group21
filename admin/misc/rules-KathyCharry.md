@@ -79,34 +79,6 @@ This ensures:
 
 ---
 
-## Team Assignments
-
-Each member should mark an **X** in at least 2 teams (more if desired).
-
-| Member            | FE1 | FE2 | BE1 | BE2 | D1  | D2  | UX/UI | Sys Design |
-|-------------------|:---:|:---:|:---:|:---:|:---:|:---:|:-----:|:----------:|
-| Andy Nilson       |   X  |     |   X  |     |  X   |     |       |     X       |
-| Aaran Patel       |     |   X  |     |  X   |     |  X   |    X   |            |
-| Arish Sunkireddy  |     |     |     |     |     |     |       |            |
-| Eliot Yu          |     |     |     |     |     |     |       |            |
-| Emily Nguyen      |     |     |     |     |     |     |       |            |
-| Haolong Chen      |     |     |     |     |     |     |       |            |
-| Hector Gonzalez   |     |     |     |     |     |     |       |            |
-| Kathy Charry      |  X   |     |  X   |     |  X   |     |       |            |
-| Lucia Lena        |     |     |     |     |     |     |       |            |
-| Matthew Gunawan   |     |     |     |     |     |     |       |            |
-| Paris Aguilar-Ulloa |   |     |     |     |     |     |       |            |
-| William Wang      |     |     |     |     |     |     |       |            |
-
-**Legend:**
-- FE = Frontend  
-- BE = Backend  
-- D = Design  
-- UX/UI = User Experience / Interface  
-- Sys Design = System Architecture  
-
----
-
 ## Task Management
 
 ### Definition of Done
