@@ -18,7 +18,9 @@
     - [Matthew Gunawan](#matthew-gunawan)
     - [Hector Gonzalez](#hector-gonzalez)
     - [Lucia Lena](#lucia-lena)
+    - [Arish Sunkireddy](#arish-sunkireddy)
     - [William Wang](#william-wang)
+    - [Emily Nguyen](#emily-nguyen)
 - [Brand Guide](#brand-guide)
   - [Team Identity](#team-identity)
   - [Logo](#logo)
@@ -87,6 +89,10 @@ I am a second year Computer Science student. I am from Orange County, California
 ### William Wang
 [Github page](https://moonwav.github.io/CSE110/) \
 Hi! My name is William Wang, and I am a third year Computer Science student. It's my first year here at UCSD after transferring from UCSC. I enjoy playing soccer, working out, and of couse programming. I'm excited contribute to this SWE project!
+
+### Emily Nguyen
+[Github page](https://github.com/emilyynguyen/Lab1_EmilyNguyen/blob/new-read-me/index.md) \
+Hi! My name is Emily Nguyen, and I am a third year Math & Computer Science student. I am from the Bay Area, and in my free time I enjoy going to concerts, finding yummy matcha cafes (and making them too!), and yapping with friends!
 
 ---
 
