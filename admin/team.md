@@ -18,6 +18,7 @@
     - [Matthew Gunawan](#matthew-gunawan)
     - [Hector Gonzalez](#hector-gonzalez)
     - [Lucia Lena](#lucia-lena)
+    - [William Wang](#william-wang)
 - [Brand Guide](#brand-guide)
   - [Team Identity](#team-identity)
   - [Logo](#logo)
@@ -82,6 +83,10 @@ My other interests are playing tennis, going to the beach and surfing, playing p
 ### Arish Sunkireddy
 [Github Page](https://arishsunkireddy.github.io/Lab1/) \
 I am a second year Computer Science student. I am from Orange County, California. My professional interests include Software Engineering.
+
+### William Wang
+[Github page](https://moonwav.github.io/CSE110/) \
+Hi! My name is William Wang, and I am a third year Computer Science student. It's my first year here at UCSD after transferring from UCSC. I enjoy playing soccer, working out, and of couse programming. I'm excited contribute to this SWE project!
 
 ---
 
