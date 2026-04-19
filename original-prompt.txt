@@ -1,8 +1,0 @@
-Create a small slot machine web app using only vanilla web technologies: HTML, CSS, JavaScript, and standard browser/platform APIs. The app should have a humorous, satirical AI theme where the player spends tokens to spin and wins tokens as rewards. The tone should gently make fun of AI products, token billing, hallucinations, inference costs, and overhyped model marketing.
-
-Please generate **four files**, not just three:
-
-1. index.html — the app structure and UI
-2. styles.css — all styling and layout
-3. script.js — the slot machine logic and interactions
-4. metrics.md — a short markdown file documenting the app’s game metrics and design assumptions
