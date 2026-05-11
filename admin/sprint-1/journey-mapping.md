@@ -1,7 +1,7 @@
 # User Journey Map
-## Code Meteor — CSE 110 Group 21 (Always Bet on 21)
+## Code Meteor — CSE 110 Group 21 
 **Date:** May 9, 2026  
-**Authors:** Aaran Patel, Lucia Lena, Arish Sunkireddy, Matthew Gunawan
+
 
 ---
 
