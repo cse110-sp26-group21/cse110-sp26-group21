@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # What's 9 + 10?
 ### CSE 110 Software Engineering · Group 21
 
@@ -32,6 +33,7 @@
     - [The Dealer 🃏](#the-dealer-)
   - [Taglines](#taglines)
   - [Usage](#usage)
+- [*Team 9+10 · CSE 110 · Group 21 · Always bet on 21. ♠*](#team-910--cse-110--group-21--always-bet-on-21-)
 
 ---
 
@@ -194,3 +196,6 @@ The team mascot is **The Dealer** — a cool, composed card dealer who always kn
 
 
 *Team 9+10 · CSE 110 · Group 21 · Always bet on 21. ♠*
+=======
+Team Video Link w Sound: https://youtu.be/a235sxp0zQM
+>>>>>>> 4934787 (Got the soundless video as well as the one w sound through YT)
