@@ -33,6 +33,7 @@
     - [The Dealer 🃏](#the-dealer-)
   - [Taglines](#taglines)
   - [Usage](#usage)
+- [*Team 9+10 · CSE 110 · Group 21 · Always bet on 21. ♠*](#team-910--cse-110--group-21--always-bet-on-21-)
 
 ---
 
