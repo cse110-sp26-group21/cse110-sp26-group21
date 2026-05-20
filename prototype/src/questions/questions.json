@@ -1,0 +1,12 @@
+[
+  { "language": "HTML", "fullCode": "<header><nav>Menu</nav></header>", "targetText": "nav" },
+  { "language": "HTML", "fullCode": "<section><h1>Hello</h1></section>", "targetText": "h1" },
+  { "language": "HTML", "fullCode": "<button type=\"button\">Launch</button>", "targetText": "button" },
+  { "language": "CSS", "fullCode": ".card { display: grid; gap: 1rem; }", "targetText": "display" },
+  { "language": "CSS", "fullCode": ".hero { background: linear-gradient(blue, black); }", "targetText": "background" },
+  { "language": "CSS", "fullCode": ".label { font-size: 18px; }", "targetText": "font-size" },
+  { "language": "JavaScript", "fullCode": "console.log('Hello, World!');", "targetText": "console.log" },
+  { "language": "JavaScript", "fullCode": "function helloWorld() { return true; }", "targetText": "function" },
+  { "language": "JavaScript", "fullCode": "const score = streak + 10;", "targetText": "const" },
+  { "language": "JavaScript", "fullCode": "console.error('Oops');", "targetText": "console" }
+]

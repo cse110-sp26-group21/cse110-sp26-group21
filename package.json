@@ -2,9 +2,11 @@
   "name": "cse110-sp26-group21",
   "version": "1.0.0",
   "description": "[Team Page](/admin/team.md)",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "python3 -m http.server 4173",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "lint": "eslint .",
     "docs": "jsdoc source -r -d docs"
   },
@@ -15,7 +17,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/cse110-sp26-group21/cse110-sp26-group21/issues"
   },
@@ -24,6 +26,11 @@
     "@eslint/js": "^10.0.1",
     "eslint": "^10.4.0",
     "globals": "^17.6.0",
-    "jsdoc": "^4.0.5"
+    "jsdoc": "^4.0.5",
+    "jsdom": "^27.0.1",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
   }
 }

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astro-Type Prototype</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <main id="app" class="app">
+        <section id="home-screen" class="screen screen-active" data-screen="home" aria-label="Home screen">
+          <div class="panel hero-panel">
+            <p class="eyebrow">Prototype</p>
+            <h1>Astro-Type</h1>
+            <p class="tagline">Type the highlighted code before the asteroid hits the bottom.</p>
+            <label class="field">
+              <span>Language</span>
+              <select id="language-select" aria-label="Language selection"></select>
+            </label>
+            <button id="start-button" class="button-primary" type="button">Start</button>
+          </div>
+        </section>
+
+        <section
+          id="play-screen"
+          class="screen"
+          data-screen="play"
+          aria-label="Play screen"
+          tabindex="-1"
+        >
+          <div class="hud-row">
+            <div class="hud-card"><span>Language</span><strong id="selected-language-label">HTML</strong></div>
+            <div class="hud-card"><span>Typed Buffer</span><strong id="typed-buffer-label">(empty)</strong></div>
+          </div>
+          <div
+            id="phaser-root"
+            class="phaser-root"
+            aria-label="Game canvas container"
+            tabindex="0"
+          ></div>
+          <div id="debug-panel" class="debug-panel" aria-live="polite"></div>
+        </section>
+
+        <section id="game-over-screen" class="screen" data-screen="gameOver" aria-label="Game over screen">
+          <div class="panel game-over-panel">
+            <p class="eyebrow">Session Complete</p>
+            <h2>Game Over</h2>
+            <div class="stats-grid">
+              <div class="stats-card">
+                <h3>Session Stats</h3>
+                <dl id="session-stats-list" class="stats-list"></dl>
+              </div>
+              <div class="stats-card">
+                <h3>Lifetime Stats</h3>
+                <dl id="lifetime-stats-list" class="stats-list"></dl>
+              </div>
+            </div>
+            <button id="play-again-button" class="button-primary" type="button">Play Again</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../node_modules/phaser/dist/phaser.js"></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
