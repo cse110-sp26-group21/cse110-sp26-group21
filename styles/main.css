@@ -1,0 +1,222 @@
+:root {
+  --bg-top: #120a43;
+  --bg-bottom: #36137c;
+  --panel: rgba(14, 10, 42, 0.72);
+  --panel-border: rgba(190, 210, 255, 0.2);
+  --text: #f7f7ff;
+  --muted: #cdd6ff;
+  --accent: #56a6ff;
+  --accent-strong: #7bc6ff;
+  --danger: #ff8f70;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.2) 0 2px, transparent 2px 100%),
+    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.22) 0 2px, transparent 2px 100%),
+    linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  background-size: 180px 180px, 220px 220px, auto;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.app {
+  width: min(100%, 1040px);
+}
+
+.screen {
+  display: none;
+}
+
+.screen-active {
+  display: block;
+}
+
+.panel {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  background: var(--panel);
+  box-shadow: 0 24px 60px rgba(4, 4, 18, 0.35);
+}
+
+.hero-panel,
+.game-over-panel {
+  text-align: center;
+}
+
+.hero-panel h1,
+.game-over-panel h2 {
+  margin: 0;
+  font-size: clamp(2.8rem, 10vw, 5rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.tagline {
+  max-width: 36rem;
+  margin: 16px auto 28px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.field {
+  display: grid;
+  gap: 10px;
+  max-width: 360px;
+  margin: 0 auto 24px;
+  text-align: left;
+}
+
+select,
+button {
+  font: inherit;
+}
+
+select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(122, 177, 255, 0.55);
+  border-radius: 14px;
+  color: var(--text);
+  background: rgba(24, 18, 78, 0.85);
+}
+
+.button-primary {
+  min-width: 160px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 999px;
+  color: #081228;
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.button-primary:hover {
+  filter: brightness(1.05);
+}
+
+.hud-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.hud-card,
+.debug-panel,
+.stats-card {
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  background: rgba(10, 11, 42, 0.56);
+}
+
+.hud-card {
+  min-width: 220px;
+  padding: 12px 16px;
+}
+
+.hud-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.hud-card strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.1rem;
+}
+
+.phaser-root {
+  width: min(100%, 900px);
+  min-height: 560px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(17, 10, 61, 0.8), rgba(55, 18, 126, 0.9));
+}
+
+.phaser-root canvas {
+  display: block;
+}
+
+.debug-panel {
+  width: min(100%, 900px);
+  min-height: 64px;
+  margin: 16px auto 0;
+  padding: 12px 16px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.stats-grid {
+  display: grid;
+  gap: 18px;
+  margin: 28px 0;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.stats-card {
+  padding: 18px;
+  text-align: left;
+}
+
+.stats-card h3 {
+  margin-top: 0;
+}
+
+.stats-list {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px 12px;
+  margin: 0;
+}
+
+.stats-list dt {
+  color: var(--muted);
+}
+
+.stats-list dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .app-shell {
+    padding: 16px;
+  }
+
+  .panel {
+    padding: 24px 18px;
+  }
+
+  .phaser-root {
+    min-height: 420px;
+  }
+}
