@@ -1,0 +1,27 @@
+{
+  "name": "cse110-sp26-group21",
+  "version": "1.0.0",
+  "description": "[Team Page](/admin/team.md)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cse110-sp26-group21/cse110-sp26-group21.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cse110-sp26-group21/cse110-sp26-group21/issues"
+  },
+  "homepage": "https://github.com/cse110-sp26-group21/cse110-sp26-group21#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.0",
+    "globals": "^17.6.0"
+  }
+}
