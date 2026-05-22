@@ -13,5 +13,10 @@ export default defineConfig([
         ...globals.node
       }
     }
+  },
+  {
+  "ignorePatterns": ["docs/", "node_modules/"]
   }
 ]);
+
+
