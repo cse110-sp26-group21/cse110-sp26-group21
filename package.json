@@ -8,7 +8,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint .",
-    "docs": "jsdoc source -r -d docs"
+    "docs": "jsdoc scripts -r -d docs"
   },
   "repository": {
     "type": "git",
