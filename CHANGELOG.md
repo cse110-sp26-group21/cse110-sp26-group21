@@ -11,4 +11,15 @@ All notable changes to this project will be documented here.
 - PR and issue templates
 
 ### Changed
-- Templates in admi
+- Templates in admim 
+
+## [1.1.0] - 2026-05-21
+
+### Added
+- index.html
+- style.css
+- scripts
+- assets
+
+### Changed
+- Skeleton of site is added
