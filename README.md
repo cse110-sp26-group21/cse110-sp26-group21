@@ -19,6 +19,14 @@ Astro-Type is a web-based typing game designed to help beginner programmers prac
 2. `cd cse110-sp26-group21`
 3. Open index.html with Live Server
 
+### Contributing 
+1. Make new branch
+2. Stage and commit changes
+3. git push -u origin branch-name (set up tracking for your branch)
+4. Open Pull Request following [PR template](/.github/pull_request_template.md)
+5. Request review from teammate
+6. Merge if passes all checks
+
 ### Gameplay
 // images will go here
 
