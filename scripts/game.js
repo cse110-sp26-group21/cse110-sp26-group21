@@ -30,6 +30,8 @@ const gameState = {
 
   streak: 0,
 
+  longestStreak : 0, 
+
   asteroidsDestroyed: 0
 
 };
@@ -45,6 +47,9 @@ const finalScoreElement =
 
 const destroyedCountElement =
   document.querySelector('#destroyed-count');
+
+const longestStreakElement =
+  document.querySelector('#longest-streak');
 
 const gameScreen =
   document.querySelector('#game-screen');
@@ -96,7 +101,7 @@ function gameLoop(timestamp) {
 
   // asteroid spawning
   if (
-    timestamp - lastSpawnTime > 4000 &&
+    timestamp - lastSpawnTime > 10000 &&
     asteroids.length < 3 &&
     asteroidsSpawned < TOTAL_ASTEROIDS
   ) {
@@ -216,6 +221,12 @@ function updateScore(asteroid) {
 
   gameState.streak++;
 
+  // update longest streak 
+  if ( gameState.streak > gameState.longestStreak) {
+    gameState.longestStreak = gameState.streak;
+  }
+
+
   if (
     gameState.streak >= 3 &&
     gameState.streak <= 4
@@ -252,17 +263,20 @@ function updateScore(asteroid) {
  * Updates HUD and results screen
  */
 function updateUI() {
+    
+    scoreElement.textContent =
+        gameState.score;
 
-  scoreElement.textContent =
-    gameState.score;
+    streakElement.textContent =
+        gameState.streak;
 
-  streakElement.textContent =
-    gameState.streak;
+    longestStreakElement.textContent =
+        gameState.longestStreak;
+    
+    finalScoreElement.textContent =
+        gameState.score;
 
-  finalScoreElement.textContent =
-    gameState.score;
-
-  destroyedCountElement.textContent =
-    gameState.asteroidsDestroyed;
+    destroyedCountElement.textContent =
+        gameState.asteroidsDestroyed;
 
 }
