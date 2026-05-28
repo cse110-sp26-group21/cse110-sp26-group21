@@ -1,11 +1,123 @@
 // asteroids.js
 
-// creates asteroids
+/**
+ * creates asteroids
+ * moves asteroids across screen
+ * removes destroyed asteroids
+ * manages asteroid positions/speed
+ * handles asteroid rendering
+ */
 
-// moves asteroids across screen
+const gameArea = document.querySelector('#game-area');
 
-// removes destroyed asteroids
+export const asteroids = [];
 
-// manages asteroid positions/speed
+/* maximum asteroids allowed */
+const MAX_ASTEROIDS = 10;
 
-// handles asteroid rendering
+
+/**
+ * Creates a new asteroid
+ * @param {string} snippet Snippet text
+ */
+export function spawnAsteroid(snippet) {
+
+  /* prevent too many asteroids */
+  if (asteroids.length >= MAX_ASTEROIDS) {
+    return null;
+  }
+
+  const asteroidElement = document.createElement('div');
+
+  asteroidElement.classList.add('asteroid');
+
+  asteroidElement.innerHTML = `
+    <img
+      src="./assets/images/asteroid.png"
+      alt="asteroid"
+    >
+
+    <p class="snippet">
+      ${snippet}
+    </p>
+  `;
+
+
+  gameArea.appendChild(asteroidElement);
+
+  const maxX = window.innerWidth - 250;
+
+  const randomX = Math.random() * maxX;
+
+  const asteroid = {
+
+    snippet,
+
+    x: randomX,
+
+    /* start above screen */
+    y: -150,
+
+    /* slow downward movement */
+    speed: 0.35,
+
+    element: asteroidElement
+  };
+
+  asteroid.element.style.left = `${asteroid.x}px`;
+
+  asteroid.element.style.top = `${asteroid.y}px`;
+
+  asteroids.push(asteroid);
+
+  return asteroid;
+
+}
+
+
+/**
+ * Moves asteroids downward
+ * @param {Function} onMiss Callback
+ * when asteroid leaves screen
+ */
+export function moveAsteroids(onMiss) {
+
+  for ( let i = asteroids.length - 1; i >= 0; i--) {
+    const asteroid = asteroids[i];
+
+    /* move downward */
+    asteroid.y += asteroid.speed;
+
+    asteroid.element.style.top = `${asteroid.y}px`;
+
+
+    /* asteroid missed */
+    if (asteroid.y > window.innerHeight) {
+
+      asteroid.element.remove();
+
+      asteroids.splice(i, 1);
+
+      /* notify game.js */
+      onMiss();
+    }
+
+  }
+
+}
+
+/**
+ * Removes destroyed asteroid
+ * @param {Object} asteroid Asteroid object
+ */
+export function destroyAsteroid(asteroid) {
+
+  asteroid.element.remove();
+
+  const index = asteroids.indexOf(asteroid);
+
+  if (index !== -1) {
+    asteroids.splice(index, 1);
+  }
+
+}
