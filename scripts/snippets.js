@@ -15,54 +15,28 @@ let snippets = [];
  * @param {string} gameMode Current selected language/game mode
  */
 export async function loadSnippets(gameMode) {
-
-  let filePath = '';
+  let filePath;
 
   switch (gameMode) {
 
     case 'javascript':
-
-      filePath =
-        './assets/snippets/javascript.json';
-
+      filePath = './assets/snippets/javascript.json';
       break;
-
     case 'html':
-
-      filePath =
-        './assets/snippets/html.json';
-
+      filePath = './assets/snippets/html.json';
       break;
-
     case 'css':
-
-      filePath =
-        './assets/snippets/css.json';
-
+      filePath = './assets/snippets/css.json';
       break;
-
     default:
-
-      filePath =
-        './assets/snippets/javascript.json';
-
+      filePath = './assets/snippets/javascript.json';
   }
 
   try {
-    const response =
-      await fetch(filePath);
-
-    snippets =
-      await response.json();
-
-  }
-
-  catch (error) {
-    console.error(
-      'Error loading snippets:',
-      error
-    );
-
+    const response = await fetch(filePath);
+    snippets = await response.json();
+  } catch (error) {
+    console.error('Error loading snippets:', error);
   }
 
 }
