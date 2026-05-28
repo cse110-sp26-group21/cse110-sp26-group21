@@ -101,7 +101,7 @@ function gameLoop(timestamp) {
 
   // asteroid spawning
   if (
-    timestamp - lastSpawnTime > 10000 &&
+    timestamp - lastSpawnTime > 7000 &&
     asteroids.length < 3 &&
     asteroidsSpawned < TOTAL_ASTEROIDS
   ) {
