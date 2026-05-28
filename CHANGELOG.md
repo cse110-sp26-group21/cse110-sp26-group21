@@ -2,16 +2,22 @@
 
 All notable changes to this project will be documented here.
 
-## [1.0.0] - 2026-05-19
+## [1.2.0] - 2026-05-27
 
 ### Added
-- Initial project setup
-- ESLint configuration
-- GitHub Actions CI pipeline
-- PR and issue templates
+- Frontend game loop implementation with requestAnimationFrame
+- Asteroid spawning, movement, and collision logic
+- Code snippet loading from JSON data by language
+- Typing input detection and snippet matching
+- Score calculation with location-based bonuses
+- Streak tracking and streak-based score multipliers
+- Game over screen with final statistics
+- Longest streak tracking across game session
+- Accuracy calculation for end-game stats
 
 ### Changed
-- Templates in admim 
+- Game flow now fully operational with smooth animations
+- Improved typing input handling for snippet completion
 
 ## [1.1.0] - 2026-05-21
 
@@ -23,3 +29,14 @@ All notable changes to this project will be documented here.
 
 ### Changed
 - Skeleton of site is added
+
+## [1.0.0] - 2026-05-19
+
+### Added
+- Initial project setup
+- ESLint configuration
+- GitHub Actions CI pipeline
+- PR and issue templates
+
+### Changed
+- Templates in admim 
