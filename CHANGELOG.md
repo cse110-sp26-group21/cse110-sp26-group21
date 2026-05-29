@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented here.
 
+## [1.2.1] - 2026-05-29
+
+### Added
+- HTML and CSS code snippets for the corresponding game modes
+
+### Fixed
+- Rendered HTML code snippets as literal text in asteroids instead of parsing them as HTML
+
 ## [1.2.0] - 2026-05-27
 
 ### Added
