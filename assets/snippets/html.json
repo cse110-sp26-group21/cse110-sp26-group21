@@ -1,0 +1,61 @@
+[
+    {
+        "snippet": "<h1>Hello World</h1>"
+    },
+
+    {
+        "snippet": "<p>This is a paragraph.</p>"
+    },
+
+    {
+        "snippet": "<button>Start Game</button>"
+    },
+
+    {
+        "snippet": "<div class='container'></div>"
+    },
+
+    {
+        "snippet": "<img src='asteroid.png' alt='Asteroid'>"
+    },
+
+    {
+        "snippet": "<a href='https://example.com'>Visit Site</a>"
+    },
+
+    {
+        "snippet": "<input type='text' placeholder='Enter Name'>"
+    },
+
+    {
+        "snippet": "<ul><li>Item 1</li><li>Item 2</li></ul>"
+    },
+
+    {
+        "snippet": "<section id='game-area'></section>"
+    },
+
+    {
+        "snippet": "<form><input type='email'><button type='submit'>Submit</button></form>"
+    },
+
+    {
+        "snippet": "<nav><a href='#home'>Home</a></nav>"
+    },
+
+    {
+        "snippet": "<footer>Game Over</footer>"
+    },
+
+    {
+        "snippet": "<canvas id='gameCanvas'></canvas>"
+    },
+
+    {
+        "snippet": "<span class='score'>100</span>"
+    },
+
+    {
+        "snippet": "<header><h2>Astro-Type</h2></header>"
+    }
+]
