@@ -1,102 +1,110 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <title>Astro-Type</title>
 
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Google Font -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
 </head>
 
 <body>
 
-  <!-- HOME SCREEN -->
-  <section id="home-screen" class="screen hidden">
+  <!-- =========================
+       HOME SCREEN
+  ========================== -->
 
-    <div class="stars"></div>
+  <section id="home-screen" class="screen">
 
     <div class="home-content">
 
-      <h1 class="title">ASTRO-TYPE</h1>
+      <h1 class="title">
+        ASTRO-TYPE
+      </h1>
 
+      <!-- Game mode selection -->
       <select id="language-select">
-        <option>HTML</option>
-        <option>CSS</option>
-        <option>JavaScript</option>
+
+        <option value="javascript">
+          JavaScript
+        </option>
+
+        <option value="html">
+          HTML
+        </option>
+
+        <option value="css">
+          CSS
+        </option>
+
       </select>
 
-      <button id="start-btn">Start</button>
+      <!-- Start game button -->
+      <button id="start-btn">
+        Start Game
+      </button>
 
     </div>
 
   </section>
 
+  <!-- =========================
+       GAME SCREEN
+  ========================== -->
 
+  <section id="game-screen" class="screen hidden">
 
-  <!-- GAME SCREEN -->
-  <section id="game-screen" class="screen">
-
+    <!-- HUD -->
     <div class="hud">
 
       <div class="score">
-        SCORE: <span id="score">00000</span>
+        SCORE:
+        <span id="score">
+          0
+        </span>
       </div>
 
       <div class="streak">
-        🔥 <span id="streak">0</span>
+        🔥
+        <span id="streak">
+          0
+        </span>
       </div>
 
     </div>
 
+    <!-- Asteroids spawn here -->
+    <div id="game-area"></div>
 
-
-    <!-- ASTEROID CONTAINER, WILL CHANGE -->
-    <div id="game-area">
-
-      <!-- EXAMPLE ASTEROIDS-->
-      <div class="asteroid asteroid-1">
-        <img src="assets/images/asteroid.png" alt="asteroid">
-
-        <p class="snippet">
-          const score = 0;
-        </p>
-      </div>
-
-      <div class="asteroid asteroid-2">
-        <img src="assets/images/asteroid.png" alt="asteroid">
-
-        <p class="snippet">
-          let health = 100;
-        </p>
-      </div>
-
-      <div class="asteroid asteroid-3">
-        <img src="assets/images/asteroid.png" alt="asteroid">
-
-        <p class="snippet">
-          console.log("hello");
-        </p>
-      </div>
-
-    </div>
-
-
-
-    <!-- TYPING INPUT -->
+    <!-- Typing input -->
     <div class="typing-container">
 
       <input
         type="text"
         id="typing-input"
-        placeholder="Type here..."
+        placeholder="Type code here..."
         autocomplete="off"
       />
 
@@ -105,23 +113,34 @@
   </section>
 
 
+  <!-- =========================
+       RESULTS SCREEN
+  ========================== -->
 
-  <!-- RESULTS SCREEN -->
   <section id="results-screen" class="screen hidden">
 
     <div class="results-card">
 
-      <h2>GAME OVER</h2>
+      <h2>
+        GAME OVER
+      </h2>
 
       <div class="stats">
 
-        <p>FINAL SCORE: <span id="final-score">0</span></p>
+        <p>
+          FINAL SCORE: <br>
+          <span id="final-score">0</span>
+        </p>
 
-        <p>ACCURACY: <span id="accuracy">100%</span></p>
+        <p>
+          ASTEROIDS DESTROYED: <br>
+          <span id="destroyed-count">0</span>
+        </p>
 
-        <p>LONGEST STREAK: <span id="longest-streak">0</span></p>
-
-        <p>ASTEROIDS DESTROYED: <span id="destroyed">0</span></p>
+        <p>
+          LONGEST STREAK: <br>
+          <span id="longest-streak">0</span>
+        </p>
 
       </div>
 
@@ -134,8 +153,11 @@
   </section>
 
 
-
-  <script type="module" src="main.js"></script>
+  <!-- Main script -->
+  <script
+    type="module"
+    src="./scripts/main.js"
+  ></script>
 
 </body>
 </html>
