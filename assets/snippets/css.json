@@ -1,0 +1,56 @@
+[
+    {
+        "snippet": "body { background-color: black; }"
+    },
+
+    {
+        "snippet": ".container { display: flex; }"
+    },
+
+    {
+        "snippet": "#gameCanvas { width: 100%; height: 100vh; }"
+    },
+
+    {
+        "snippet": "h1 { color: white; font-size: 48px; }"
+    },
+
+    {
+        "snippet": ".asteroid { position: absolute; top: 0; }"
+    },
+
+    {
+        "snippet": "button:hover { background-color: blue; }"
+    },
+
+    {
+        "snippet": ".score { font-weight: bold; }"
+    },
+
+    {
+        "snippet": "p { margin: 10px; padding: 5px; }"
+    },
+
+    {
+        "snippet": ".hidden { display: none; }"
+    },
+
+    {
+        "snippet": "img { max-width: 100%; }"
+    },
+
+    {
+        "snippet": ".game-over { color: red; text-align: center; }"
+    },
+
+    {
+        "snippet": "nav a { text-decoration: none; }"
+    },
+
+    {
+        "snippet": ".player { animation: float 2s infinite; }"
+    },
+    {
+        "snippet": ".menu { border-radius: 10px; }"
+    }
+]
