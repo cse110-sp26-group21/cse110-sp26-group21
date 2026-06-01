@@ -1,60 +1,252 @@
 {
     "easy": [
         {
-            "snippet": "let score = 0;"
+            "snippet": "let {{variableName}} = {{value}};",
+            "blanks": [
+                {
+                    "name": "variableName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "value",
+                    "type": "number",
+                    "min": 0,
+                    "max": 100,
+                    "precision": 1
+                }
+            ]
         },
         {
-            "snippet": "const score = 0;"
+            "snippet": "const {{variableName}} = {{value}};",
+            "blanks": [
+                {
+                    "name": "variableName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "value",
+                    "type": "number",
+                    "min": 0,
+                    "max": 250,
+                    "precision": 1
+                }
+            ]
         },
         {
-            "snippet": "let health = 100;"
+            "snippet": "let {{variableName}} = {{value}};",
+            "blanks": [
+                {
+                    "name": "variableName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "value",
+                    "type": "number",
+                    "min": 1,
+                    "max": 100,
+                    "precision": 1
+                }
+            ]
         }
     ],
     "easy-medium": [
         {
-            "snippet": "console.log('Game Start');"
+            "snippet": "console.log('{{message}}');",
+            "blanks": [
+                {
+                    "name": "message",
+                    "type": "string"
+                }
+            ]
         },
         {
-            "snippet": "console.log('hello world');"
+            "snippet": "console.log('{{message}}');",
+            "blanks": [
+                {
+                    "name": "message",
+                    "type": "string"
+                }
+            ]
         },
         {
-            "snippet": "player.score += 1000;"
+            "snippet": "{{objectName}}.{{propertyName}} += {{value}};",
+            "blanks": [
+                {
+                    "name": "objectName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "propertyName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "value",
+                    "type": "number",
+                    "min": 1,
+                    "max": 5000,
+                    "precision": 1
+                }
+            ]
         }
     ],
     "medium": [
         {
-            "snippet": "document.querySelector('#game');"
+            "snippet": "document.querySelector('{{selector}}');",
+            "blanks": [
+                {
+                    "name": "selector",
+                    "type": "string"
+                }
+            ]
         },
         {
-            "snippet": "const asteroidSpeed = 5;"
+            "snippet": "const {{variableName}} = {{value}};",
+            "blanks": [
+                {
+                    "name": "variableName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "value",
+                    "type": "number",
+                    "min": 1,
+                    "max": 20,
+                    "precision": 1
+                }
+            ]
         },
         {
-            "snippet": "Math.floor(Math.random() * 10);"
+            "snippet": "Math.floor(Math.random() * {{limit}});",
+            "blanks": [
+                {
+                    "name": "limit",
+                    "type": "number",
+                    "min": 2,
+                    "max": 100,
+                    "precision": 1
+                }
+            ]
         }
     ],
     "medium-hard": [
         {
-            "snippet": "function add(a, b) { return a + b; }"
+            "snippet": "function {{functionName}}({{firstArg}}, {{secondArg}}) { return {{firstArg}} + {{secondArg}}; }",
+            "blanks": [
+                {
+                    "name": "functionName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "firstArg",
+                    "type": "identifier"
+                },
+                {
+                    "name": "secondArg",
+                    "type": "identifier"
+                }
+            ]
         },
         {
-            "snippet": "if (isGameOver) { endGame(); }"
+            "snippet": "if ({{condition}}) { {{functionName}}(); }",
+            "blanks": [
+                {
+                    "name": "condition",
+                    "type": "identifier"
+                },
+                {
+                    "name": "functionName",
+                    "type": "identifier"
+                }
+            ]
         },
         {
-            "snippet": "for (let i = 0; i < 10; i++) { }"
+            "snippet": "for (let {{indexName}} = 0; {{indexName}} < {{limit}}; {{indexName}}++) { }",
+            "blanks": [
+                {
+                    "name": "indexName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "limit",
+                    "type": "number",
+                    "min": 1,
+                    "max": 25,
+                    "precision": 1
+                }
+            ]
         },
         {
-            "snippet": "function addPoints(points) { score += points; }"
+            "snippet": "function {{functionName}}({{paramName}}) { {{targetName}} += {{paramName}}; }",
+            "blanks": [
+                {
+                    "name": "functionName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "paramName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "targetName",
+                    "type": "identifier"
+                }
+            ]
         },
         {
-            "snippet": "const player = { name: 'Astro', health: 10 };"
+            "snippet": "const {{objectName}} = { {{firstKey}}: '{{firstValue}}', {{secondKey}}: {{secondValue}} };",
+            "blanks": [
+                {
+                    "name": "objectName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "firstKey",
+                    "type": "identifier"
+                },
+                {
+                    "name": "firstValue",
+                    "type": "string"
+                },
+                {
+                    "name": "secondKey",
+                    "type": "identifier"
+                },
+                {
+                    "name": "secondValue",
+                    "type": "number",
+                    "min": 1,
+                    "max": 100,
+                    "precision": 1
+                }
+            ]
         }
     ],
     "hard": [
         {
-            "snippet": "for (let i = 0; i < asteroids.length; i++) { console.log(asteroids[i]); }"
+            "snippet": "for (let {{indexName}} = 0; {{indexName}} < {{collectionName}}.length; {{indexName}}++) { console.log({{collectionName}}[{{indexName}}]); }",
+            "blanks": [
+                {
+                    "name": "indexName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "collectionName",
+                    "type": "identifier"
+                }
+            ]
         },
         {
-            "snippet": "document.querySelector('.start-btn;').addEventListener('click', function() { });"
+            "snippet": "document.querySelector('{{selector}}').addEventListener('{{eventName}}', function() { });",
+            "blanks": [
+                {
+                    "name": "selector",
+                    "type": "string"
+                },
+                {
+                    "name": "eventName",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }
