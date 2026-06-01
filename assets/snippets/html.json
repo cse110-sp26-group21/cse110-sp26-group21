@@ -4,7 +4,15 @@
     },
 
     {
+        "snippet": "<h1>Astro Type</h1>"
+    },
+
+    {
         "snippet": "<p>This is a paragraph.</p>"
+    },
+
+    {
+        "snippet": "<p>Press start to begin.</p>"
     },
 
     {
@@ -12,11 +20,23 @@
     },
 
     {
+        "snippet": "<button class=\"start-btn\">Start Game</button>"
+    },
+
+    {
         "snippet": "<div class='container'></div>"
     },
 
     {
+        "snippet": "<div id=\"game\"></div>"
+    },
+
+    {
         "snippet": "<img src='asteroid.png' alt='Asteroid'>"
+    },
+
+    {
+        "snippet": "<img src=\"assets/images/asteroid.png\" alt=\"Asteroid\">"
     },
 
     {
@@ -28,7 +48,15 @@
     },
 
     {
+        "snippet": "<input type=\"text\" placeholder=\"Type here\">"
+    },
+
+    {
         "snippet": "<ul><li>Item 1</li><li>Item 2</li></ul>"
+    },
+
+    {
+        "snippet": "<ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>"
     },
 
     {
@@ -36,7 +64,23 @@
     },
 
     {
+        "snippet": "<section class=\"scoreboard\"></section>"
+    },
+
+    {
+        "snippet": "<span class=\"score\">0</span>"
+    },
+
+    {
+        "snippet": "<label for=\"username\">Username</label>"
+    },
+
+    {
         "snippet": "<form><input type='email'><button type='submit'>Submit</button></form>"
+    },
+
+    {
+        "snippet": "<form><input type=\"email\"><button type=\"submit\">Join</button></form>"
     },
 
     {
@@ -44,11 +88,27 @@
     },
 
     {
+        "snippet": "<nav><a href=\"#home\">Home</a></nav>"
+    },
+
+    {
+        "snippet": "<main><article>Mission briefing</article></main>"
+    },
+
+    {
         "snippet": "<footer>Game Over</footer>"
     },
 
     {
+        "snippet": "<div class=\"health-bar\" aria-label=\"Player health\"></div>"
+    },
+
+    {
         "snippet": "<canvas id='gameCanvas'></canvas>"
+    },
+
+    {
+        "snippet": "<canvas id=\"battlefield\"></canvas>"
     },
 
     {

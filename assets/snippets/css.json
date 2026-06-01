@@ -4,7 +4,15 @@
     },
 
     {
+        "snippet": "body { margin: 0; }"
+    },
+
+    {
         "snippet": ".container { display: flex; }"
+    },
+
+    {
+        "snippet": ".start-btn { background-color: orange; }"
     },
 
     {
@@ -12,7 +20,15 @@
     },
 
     {
+        "snippet": "#game { width: 800px; height: 600px; }"
+    },
+
+    {
         "snippet": "h1 { color: white; font-size: 48px; }"
+    },
+
+    {
+        "snippet": ".score { font-size: 2rem; }"
     },
 
     {
@@ -36,6 +52,34 @@
     },
 
     {
+        "snippet": ".player { color: white; }"
+    },
+
+    {
+        "snippet": ".asteroid { border-radius: 50%; }"
+    },
+
+    {
+        "snippet": ".menu { display: flex; gap: 1rem; }"
+    },
+
+    {
+        "snippet": "input:focus { outline: 2px solid cyan; }"
+    },
+
+    {
+        "snippet": ".health-bar { height: 20px; background: limegreen; }"
+    },
+
+    {
+        "snippet": ".panel { padding: 16px; border: 1px solid #ccc; }"
+    },
+
+    {
+        "snippet": ".center { text-align: center; }"
+    },
+
+    {
         "snippet": "img { max-width: 100%; }"
     },
 
@@ -50,7 +94,20 @@
     {
         "snippet": ".player { animation: float 2s infinite; }"
     },
+
     {
         "snippet": ".menu { border-radius: 10px; }"
+    },
+
+    {
+        "snippet": "button:hover { transform: scale(1.05); }"
+    },
+
+    {
+        "snippet": ".title { letter-spacing: 0.08em; }"
+    },
+
+    {
+        "snippet": "@media (max-width: 600px) { .menu { flex-direction: column; } }"
     }
 ]
