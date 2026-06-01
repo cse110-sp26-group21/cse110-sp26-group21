@@ -6,6 +6,9 @@
 --- 
 
 # ASTRO-TYPE 
+## Play Here! 
+https://cse110-sp26-group21.github.io/cse110-sp26-group21/
+
 ### Description 
 Astro-Type is a web-based typing game designed to help beginner programmers practice coding in JavaScript, HTML, and CSS. Players must type out falling code snippets attached to incoming asteroids before they reach the bottom of the screen. The game combines fast-paced gameplay with coding practice to make learning programming syntax more engaging and interactive!
 
