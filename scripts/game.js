@@ -42,9 +42,11 @@ const scoreElement =
 const streakElement =
   document.querySelector('#streak');
 
+// displays how many asteroids have spawned
 const asteroidCountElement =
   document.querySelector('#asteroid-count');
 
+// displays total asteroids for the level
 const asteroidTotalElement =
   document.querySelector('#asteroid-total');
 
@@ -89,7 +91,8 @@ export function startGame() {
   }
 
   gameRunning = true;
-
+  
+  // initialize asteroid counter when game starts
   asteroidCountElement.textContent = asteroidsSpawned;
   asteroidTotalElement.textContent = TOTAL_ASTEROIDS;
 
