@@ -1,65 +1,60 @@
-[
-    {
-        "snippet": "let score = 0;"
-    },
-
-    {
-       "snippet": "console.log('Game Start');"
-    },
-
-    {
-       "snippet": "document.querySelector('.start-btn;').addEventListener('click', function() { });"
-    },
-
-    {
-       "snippet": "for (let i = 0; i < asteroids.length; i++) { console.log(asteroids[i]); }"
-    },
-
-    {
-       "snippet": "function addPoints(points) { score += points; }"
-    },
-
-    {
-       "snippet": "const player = { name: 'Astro', health: 10 };"
-    },
-
-    {
-        "snippet": "const score = 0;"
-    },
-
-    {
-        "snippet": "let health = 100;"
-    },
-
-    {
-        "snippet": "console.log('hello world');"
-    },
-
-    {
-        "snippet": "function add(a, b) { return a + b; }"
-    },
-
-    {
-        "snippet": "if (isGameOver) { endGame(); }"
-    },
-
-    {
-        "snippet": "for (let i = 0; i < 10; i++) { }"
-    },
-
-    {
-        "snippet": "document.querySelector('#game');"
-    },
-
-    {
-        "snippet": "const asteroidSpeed = 5;"
-    },
-
-    {
-        "snippet": "player.score += 1000;"
-    },
-
-    {
-        "snippet": "Math.floor(Math.random() * 10);"
-    }
-]
+{
+    "easy": [
+        {
+            "snippet": "let score = 0;"
+        },
+        {
+            "snippet": "const score = 0;"
+        },
+        {
+            "snippet": "let health = 100;"
+        }
+    ],
+    "easy-medium": [
+        {
+            "snippet": "console.log('Game Start');"
+        },
+        {
+            "snippet": "console.log('hello world');"
+        },
+        {
+            "snippet": "player.score += 1000;"
+        }
+    ],
+    "medium": [
+        {
+            "snippet": "document.querySelector('#game');"
+        },
+        {
+            "snippet": "const asteroidSpeed = 5;"
+        },
+        {
+            "snippet": "Math.floor(Math.random() * 10);"
+        }
+    ],
+    "medium-hard": [
+        {
+            "snippet": "function add(a, b) { return a + b; }"
+        },
+        {
+            "snippet": "if (isGameOver) { endGame(); }"
+        },
+        {
+            "snippet": "for (let i = 0; i < 10; i++) { }"
+        },
+        {
+            "snippet": "function addPoints(points) { score += points; }"
+        },
+        {
+            "snippet": "const player = { name: 'Astro', health: 10 };"
+        }
+    ],
+    "hard": [
+        {
+            "snippet": "for (let i = 0; i < asteroids.length; i++) { console.log(asteroids[i]); }"
+        },
+        {
+            "snippet": "document.querySelector('.start-btn;').addEventListener('click', function() { });"
+        }
+    ]
+}
