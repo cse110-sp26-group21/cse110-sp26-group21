@@ -122,6 +122,7 @@ function gameLoop(timestamp) {
 
     spawnAsteroid(snippetObject.snippet);
 
+    // update asteroid counter after a new asteroid appears
     asteroidsSpawned++;
 
     asteroidCountElement.textContent = asteroidsSpawned;
