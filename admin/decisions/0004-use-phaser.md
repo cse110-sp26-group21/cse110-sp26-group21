@@ -1,7 +1,7 @@
 # ADR: Use Phaser.js for the Core Game Loop
 
 ## Status
-Accepted
+Rejected
 
 ## Context
 We need a reliable way to manage the core game loop, including rendering, player input, game state updates, timing, animations, and interactions between game objects.
