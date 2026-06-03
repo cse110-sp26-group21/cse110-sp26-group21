@@ -37,11 +37,11 @@ export function spawnAsteroid(snippet) {
       alt="asteroid"
     >
 
-    <p class="snippet">
-      ${snippet}
-    </p>
+    <p class="snippet"></p>
   `;
 
+  const snippetElement = asteroidElement.querySelector('.snippet');
+  snippetElement.textContent = snippet;
 
   gameArea.appendChild(asteroidElement);
 

@@ -61,6 +61,36 @@
 
       </select>
 
+      <div class="difficulty-selector">
+
+        <label
+          class="difficulty-label"
+          for="difficulty-slider"
+        >
+          Difficulty:
+          <span id="difficulty-value">
+            Easy
+          </span>
+        </label>
+
+        <div class="difficulty-scale" aria-hidden="true">
+          <span>Easy</span>
+          <span>Medium</span>
+          <span>Hard</span>
+        </div>
+
+        <input
+          type="range"
+          id="difficulty-slider"
+          min="0"
+          max="2"
+          step="1"
+          value="0"
+          aria-label="Difficulty slider"
+        />
+
+      </div>
+
       <!-- Start game button -->
       <button id="start-btn">
         Start Game
@@ -85,6 +115,11 @@
           0
         </span>
       </div>
+      
+      <!-- Shows how many asteroids have appeared in this level -->
+      <div class="asteroid-counter">
+  ASTEROIDS: <span id="asteroid-count">0</span>/<span id="asteroid-total">10</span>
+      </div> 
 
       <div class="streak">
         🔥

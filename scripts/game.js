@@ -30,7 +30,7 @@ const gameState = {
 
   streak: 0,
 
-  longestStreak : 0, 
+  longestStreak : 0,
 
   asteroidsDestroyed: 0
 
@@ -41,6 +41,14 @@ const scoreElement =
 
 const streakElement =
   document.querySelector('#streak');
+
+// displays how many asteroids have spawned
+const asteroidCountElement =
+  document.querySelector('#asteroid-count');
+
+// displays total asteroids for the level
+const asteroidTotalElement =
+  document.querySelector('#asteroid-total');
 
 const finalScoreElement =
   document.querySelector('#final-score');
@@ -62,13 +70,13 @@ const resultsScreen =
 // total asteroids in full game
 const TOTAL_ASTEROIDS = 10;
 
-// current spawned asteroid count 
+// current spawned asteroid count
 let asteroidsSpawned = 0;
 
-// controls asteroid spawn timing 
+// controls asteroid spawn timing
 let lastSpawnTime = 0;
 
-// prevents duplicate game loops 
+// prevents duplicate game loops
 let gameRunning = false;
 
 
@@ -83,6 +91,10 @@ export function startGame() {
   }
 
   gameRunning = true;
+  
+  // initialize asteroid counter when game starts
+  asteroidCountElement.textContent = asteroidsSpawned;
+  asteroidTotalElement.textContent = TOTAL_ASTEROIDS;
 
   initializeTyping(handleAsteroidDestroyed);
 
@@ -110,7 +122,11 @@ function gameLoop(timestamp) {
 
     spawnAsteroid(snippetObject.snippet);
 
+    // update asteroid counter after a new asteroid appears
     asteroidsSpawned++;
+
+    asteroidCountElement.textContent = asteroidsSpawned;
+
     lastSpawnTime = timestamp;
 
   }
@@ -221,8 +237,8 @@ function updateScore(asteroid) {
 
   gameState.streak++;
 
-  // update longest streak 
-  if ( gameState.streak > gameState.longestStreak) {
+  // update longest streak
+  if (gameState.streak > gameState.longestStreak) {
     gameState.longestStreak = gameState.streak;
   }
 
@@ -263,20 +279,20 @@ function updateScore(asteroid) {
  * Updates HUD and results screen
  */
 function updateUI() {
-    
-    scoreElement.textContent =
-        gameState.score;
 
-    streakElement.textContent =
-        gameState.streak;
+  scoreElement.textContent =
+    gameState.score;
 
-    longestStreakElement.textContent =
-        gameState.longestStreak;
-    
-    finalScoreElement.textContent =
-        gameState.score;
+  streakElement.textContent =
+    gameState.streak;
 
-    destroyedCountElement.textContent =
-        gameState.asteroidsDestroyed;
+  longestStreakElement.textContent =
+    gameState.longestStreak;
+
+  finalScoreElement.textContent =
+    gameState.score;
+
+  destroyedCountElement.textContent =
+    gameState.asteroidsDestroyed;
 
 }
