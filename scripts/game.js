@@ -80,6 +80,14 @@ let lastSpawnTime = 0;
 let gameRunning = false;
 
 
+/**
+ * Checks if the device is mobile to handle asteroid spawning
+ * @returns {boolean} True if mobile device
+ */
+function isMobileDevice() {
+  return window.innerWidth <= 768;
+}
+
 
 /**
  * Starts the game loop
@@ -112,9 +120,10 @@ function gameLoop(timestamp) {
   moveAsteroids(handleMissedAsteroid);
 
   // asteroid spawning
+  const maxAsteroids = isMobileDevice() ? 1 : 3;
   if (
     timestamp - lastSpawnTime > 7000 &&
-    asteroids.length < 3 &&
+    asteroids.length < maxAsteroids &&
     asteroidsSpawned < TOTAL_ASTEROIDS
   ) {
 
