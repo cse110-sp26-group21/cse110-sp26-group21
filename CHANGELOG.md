@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented here.
 
+## [1.4.0] - 2026-06-03
+
+### Added
+- Session high score tracking that persists across games within the same browser session
+- High score display in the game HUD (highlighted in gold)
+- Session best stat on the results screen
+
 ## [1.3.1] - 2026-06-03
 
 ### Added

@@ -42,6 +42,12 @@ const scoreElement =
 const streakElement =
   document.querySelector('#streak');
 
+const highScoreElement =
+  document.querySelector('#high-score');
+
+const sessionBestElement =
+  document.querySelector('#session-best');
+
 // displays how many asteroids have spawned
 const asteroidCountElement =
   document.querySelector('#asteroid-count');
@@ -58,6 +64,9 @@ const destroyedCountElement =
 
 const longestStreakElement =
   document.querySelector('#longest-streak');
+
+let sessionHighScore =
+  Number(sessionStorage.getItem('highScore')) || 0;
 
 const gameScreen =
   document.querySelector('#game-screen');
@@ -99,10 +108,11 @@ export function startGame() {
   }
 
   gameRunning = true;
-  
+
   // initialize asteroid counter when game starts
   asteroidCountElement.textContent = asteroidsSpawned;
   asteroidTotalElement.textContent = TOTAL_ASTEROIDS;
+  highScoreElement.textContent = sessionHighScore;
 
   initializeTyping(handleAsteroidDestroyed);
 
@@ -280,6 +290,11 @@ function updateScore(asteroid) {
 
   gameState.score += points;
   gameState.asteroidsDestroyed++;
+
+  if (gameState.score > sessionHighScore) {
+    sessionHighScore = gameState.score;
+    sessionStorage.setItem('highScore', sessionHighScore);
+  }
 }
 
 
@@ -295,11 +310,17 @@ function updateUI() {
   streakElement.textContent =
     gameState.streak;
 
+  highScoreElement.textContent =
+    sessionHighScore;
+
   longestStreakElement.textContent =
     gameState.longestStreak;
 
   finalScoreElement.textContent =
     gameState.score;
+
+  sessionBestElement.textContent =
+    sessionHighScore;
 
   destroyedCountElement.textContent =
     gameState.asteroidsDestroyed;

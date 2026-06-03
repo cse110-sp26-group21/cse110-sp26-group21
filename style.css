@@ -178,6 +178,10 @@ button:hover {
   background: rgba(0, 0, 0, 0.4);
 }
 
+.high-score span {
+  color: #ffd700;
+}
+
 #game-area {
   position: relative;
 
