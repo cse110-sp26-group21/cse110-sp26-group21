@@ -10,6 +10,7 @@
 
 import { startGame } from './game.js';
 import { loadSnippets, setCurrentDifficulty } from './snippets.js';
+import { startTutorial } from './tutorial.js';
 
 const DIFFICULTY_OPTIONS = [
   'easy',
@@ -40,6 +41,12 @@ const gameScreen =
 
 const resultsScreen =
   document.querySelector('#results-screen');
+
+const tutorialScreen =
+  document.querySelector('#tutorial-screen');
+
+const tutorialBtn =
+  document.querySelector('#tutorial-btn');
 
 
 function getSelectedDifficulty() {
@@ -99,6 +106,21 @@ function handlePlayAgain() {
 
 }
 
+/**
+ * Starts the tutorial
+ */
+function handleTutorial() {
+
+  homeScreen.classList.add('hidden');
+
+  resultsScreen.classList.add('hidden');
+
+  tutorialScreen.classList.remove('hidden');
+
+  startTutorial();
+
+}
+
 
 updateDifficultyLabel();
 
@@ -117,3 +139,10 @@ playAgainBtn.addEventListener(
   'click',
   handlePlayAgain
 );
+
+if (tutorialBtn) {
+  tutorialBtn.addEventListener(
+    'click',
+    handleTutorial
+  );
+}
