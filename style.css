@@ -145,6 +145,28 @@ button:hover {
   transform: scale(1.05);
 }
 
+.tutorial-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+
+  padding: 0.5rem 0.7rem;
+
+  border: none;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+
+  cursor: pointer;
+
+  background: #4a35d6;
+
+  color: white;
+
+  transition: 0.2s;
+}
+
 
 
 /* =========================
@@ -234,7 +256,8 @@ button:hover {
   background: rgba(0, 0, 0, 0.4);
 }
 
-#typing-input {
+#typing-input, 
+#tutorial-typing-input {
   width: 500px;
 
   padding: 1rem;
@@ -282,6 +305,77 @@ button:hover {
 }
 
 
+/* =========================
+   TUTORIAL INSTRUCTION OVERLAY
+========================= */
+
+.tutorial-instruction-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  z-index: 10;
+}
+
+.tutorial-instruction-card {
+  background: rgba(20, 20, 70, 0.95);
+  border: 3px solid #7df9ff;
+  border-radius: 15px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  box-shadow:
+    0 0 20px rgba(125, 249, 255, 0.5);
+}
+
+.tutorial-instruction-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tutorial-instruction-card p {
+  font-size: 1rem;
+  margin: 15px; 
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tutorial-continue-btn {
+  margin-top: 15px;
+  padding: 0.8rem 2rem;
+
+  background: #7df9ff;
+  color: #1a0f4e;
+
+  border: none;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.tutorial-continue-btn:hover {
+  background: #00ffff;
+
+  transform: scale(1.05);
+}
+
+
 
 /* =========================
    MOBILE
@@ -298,7 +392,8 @@ button:hover {
     height: 150px;
   }
 
-  #typing-input {
+  #typing-input,
+  #tutorial-typing-input {
     width: 90%;
   }
 

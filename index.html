@@ -96,6 +96,11 @@
         Start Game
       </button>
 
+      <!-- Tutorial button -->
+      <button id="tutorial-btn" class="tutorial-btn">
+        TUTORIAL
+      </button>
+
     </div>
 
   </section>
@@ -147,6 +152,52 @@
 
   </section>
 
+  <!-- =========================
+       TUTORIAL SCREEN
+  ========================== -->
+
+  <section id="tutorial-screen" class="screen hidden">
+
+    <!-- HUD -->
+    <div class="hud">
+
+      <div class="score">
+        SCORE:
+        <span id="tutorial-score">
+          0
+        </span>
+      </div>
+      
+      <!-- Shows how many asteroids have appeared in this level -->
+      <div class="asteroid-counter">
+  ASTEROIDS: <span id="tutorial-asteroid-count">0</span>/<span id="tutorial-asteroid-total">1</span>
+      </div> 
+
+      <div class="streak">
+        🔥
+        <span id="tutorial-streak">
+          0
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Asteroids spawn here -->
+    <div id="tutorial-game-area"></div>
+
+    <!-- Typing input -->
+    <div class="typing-container">
+
+      <input
+        type="text"
+        id="tutorial-typing-input"
+        placeholder="Type code here..."
+        autocomplete="off"
+      />
+
+    </div>
+
+  </section>
 
   <!-- =========================
        RESULTS SCREEN
