@@ -1,113 +1,517 @@
-[
-    {
-        "snippet": "body { background-color: black; }"
-    },
-
-    {
-        "snippet": "body { margin: 0; }"
-    },
-
-    {
-        "snippet": ".container { display: flex; }"
-    },
-
-    {
-        "snippet": ".start-btn { background-color: orange; }"
-    },
-
-    {
-        "snippet": "#gameCanvas { width: 100%; height: 100vh; }"
-    },
-
-    {
-        "snippet": "#game { width: 800px; height: 600px; }"
-    },
-
-    {
-        "snippet": "h1 { color: white; font-size: 48px; }"
-    },
-
-    {
-        "snippet": ".score { font-size: 2rem; }"
-    },
-
-    {
-        "snippet": ".asteroid { position: absolute; top: 0; }"
-    },
-
-    {
-        "snippet": "button:hover { background-color: blue; }"
-    },
-
-    {
-        "snippet": ".score { font-weight: bold; }"
-    },
-
-    {
-        "snippet": "p { margin: 10px; padding: 5px; }"
-    },
-
-    {
-        "snippet": ".hidden { display: none; }"
-    },
-
-    {
-        "snippet": ".player { color: white; }"
-    },
-
-    {
-        "snippet": ".asteroid { border-radius: 50%; }"
-    },
-
-    {
-        "snippet": ".menu { display: flex; gap: 1rem; }"
-    },
-
-    {
-        "snippet": "input:focus { outline: 2px solid cyan; }"
-    },
-
-    {
-        "snippet": ".health-bar { height: 20px; background: limegreen; }"
-    },
-
-    {
-        "snippet": ".panel { padding: 16px; border: 1px solid #ccc; }"
-    },
-
-    {
-        "snippet": ".center { text-align: center; }"
-    },
-
-    {
-        "snippet": "img { max-width: 100%; }"
-    },
-
-    {
-        "snippet": ".game-over { color: red; text-align: center; }"
-    },
-
-    {
-        "snippet": "nav a { text-decoration: none; }"
-    },
-
-    {
-        "snippet": ".player { animation: float 2s infinite; }"
-    },
-
-    {
-        "snippet": ".menu { border-radius: 10px; }"
-    },
-
-    {
-        "snippet": "button:hover { transform: scale(1.05); }"
-    },
-
-    {
-        "snippet": ".title { letter-spacing: 0.08em; }"
-    },
-
-    {
-        "snippet": "@media (max-width: 600px) { .menu { flex-direction: column; } }"
-    }
-]
+{
+    "easy": [
+        {
+            "snippet": "{{selector}} { margin: {{value}}; }",
+            "blanks": [
+                {
+                    "name": "selector",
+                    "type": "options",
+                    "values": ["body", ".panel", ".menu", ".score"]
+                },
+                {
+                    "name": "value",
+                    "type": "number",
+                    "min": 0,
+                    "max": 50,
+                    "precision": 1
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { display: {{displayValue}}; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "displayValue",
+                    "type": "options",
+                    "values": ["none", "block", "inline-block", "flex"]
+                }
+            ]
+        },
+        {
+            "snippet": "{{selector}} { max-width: {{value}}%; }",
+            "blanks": [
+                {
+                    "name": "selector",
+                    "type": "options",
+                    "values": ["img", ".avatar", ".card img"]
+                },
+                {
+                    "name": "value",
+                    "type": "number",
+                    "min": 50,
+                    "max": 100,
+                    "precision": 1
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { text-align: {{alignValue}}; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "alignValue",
+                    "type": "options",
+                    "values": ["left", "center", "right", "justify"]
+                }
+            ]
+        }
+    ],
+    "easy-medium": [
+        {
+            "snippet": "{{selector}} { background-color: {{colorValue}}; }",
+            "blanks": [
+                {
+                    "name": "selector",
+                    "type": "options",
+                    "values": ["body", ".menu", ".panel", ".button"]
+                },
+                {
+                    "name": "colorValue",
+                    "type": "color"
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { display: {{displayValue}}; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "displayValue",
+                    "type": "options",
+                    "values": ["flex", "grid", "block"]
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { background-color: {{colorValue}}; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "colorValue",
+                    "type": "color"
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { font-size: {{size}}rem; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "size",
+                    "type": "number",
+                    "min": 1,
+                    "max": 5,
+                    "precision": 1
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { font-weight: {{weight}}; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "weight",
+                    "type": "options",
+                    "values": ["normal", "bold", "lighter", "600", "700"]
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { color: {{colorValue}}; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "colorValue",
+                    "type": "color"
+                }
+            ]
+        }
+    ],
+    "medium": [
+        {
+            "snippet": "#{{idName}} { width: {{width}}%; height: {{height}}vh; }",
+            "blanks": [
+                {
+                    "name": "idName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "width",
+                    "type": "number",
+                    "min": 25,
+                    "max": 100,
+                    "precision": 1
+                },
+                {
+                    "name": "height",
+                    "type": "number",
+                    "min": 25,
+                    "max": 100,
+                    "precision": 1
+                }
+            ]
+        },
+        {
+            "snippet": "#{{idName}} { width: {{width}}px; height: {{height}}px; }",
+            "blanks": [
+                {
+                    "name": "idName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "width",
+                    "type": "number",
+                    "min": 100,
+                    "max": 1200,
+                    "precision": 1
+                },
+                {
+                    "name": "height",
+                    "type": "number",
+                    "min": 100,
+                    "max": 900,
+                    "precision": 1
+                }
+            ]
+        },
+        {
+            "snippet": "{{selector}} { color: {{colorValue}}; font-size: {{size}}px; }",
+            "blanks": [
+                {
+                    "name": "selector",
+                    "type": "options",
+                    "values": ["h1", "h2", ".title", ".subtitle"]
+                },
+                {
+                    "name": "colorValue",
+                    "type": "color"
+                },
+                {
+                    "name": "size",
+                    "type": "number",
+                    "min": 12,
+                    "max": 72,
+                    "precision": 1
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { position: {{positionValue}}; top: {{topValue}}px; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "positionValue",
+                    "type": "options",
+                    "values": ["absolute", "relative", "fixed"]
+                },
+                {
+                    "name": "topValue",
+                    "type": "number",
+                    "min": 0,
+                    "max": 300,
+                    "precision": 1
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { border-radius: {{radius}}%; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "radius",
+                    "type": "number",
+                    "min": 0,
+                    "max": 50,
+                    "precision": 1
+                }
+            ]
+        },
+        {
+            "snippet": "{{selector}} { text-decoration: {{decoration}}; }",
+            "blanks": [
+                {
+                    "name": "selector",
+                    "type": "options",
+                    "values": ["nav a", ".menu a", "a"]
+                },
+                {
+                    "name": "decoration",
+                    "type": "options",
+                    "values": ["none", "underline", "line-through"]
+                }
+            ]
+        }
+    ],
+    "medium-hard": [
+        {
+            "snippet": "{{selector}}:hover { background-color: {{colorValue}}; }",
+            "blanks": [
+                {
+                    "name": "selector",
+                    "type": "options",
+                    "values": ["button", ".start-btn", ".menu button"]
+                },
+                {
+                    "name": "colorValue",
+                    "type": "color"
+                }
+            ]
+        },
+        {
+            "snippet": "{{selector}} { margin: {{marginValue}}px; padding: {{paddingValue}}px; }",
+            "blanks": [
+                {
+                    "name": "selector",
+                    "type": "options",
+                    "values": ["p", ".panel", ".menu"]
+                },
+                {
+                    "name": "marginValue",
+                    "type": "number",
+                    "min": 0,
+                    "max": 40,
+                    "precision": 1
+                },
+                {
+                    "name": "paddingValue",
+                    "type": "number",
+                    "min": 0,
+                    "max": 40,
+                    "precision": 1
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { display: {{displayValue}}; gap: {{gapValue}}rem; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "displayValue",
+                    "type": "options",
+                    "values": ["flex", "grid"]
+                },
+                {
+                    "name": "gapValue",
+                    "type": "number",
+                    "min": 0,
+                    "max": 5,
+                    "precision": 1
+                }
+            ]
+        },
+        {
+            "snippet": "{{selector}}:focus { outline: {{width}}px solid {{colorValue}}; }",
+            "blanks": [
+                {
+                    "name": "selector",
+                    "type": "options",
+                    "values": ["input", "textarea", ".search-box"]
+                },
+                {
+                    "name": "width",
+                    "type": "number",
+                    "min": 1,
+                    "max": 8,
+                    "precision": 1
+                },
+                {
+                    "name": "colorValue",
+                    "type": "color"
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { padding: {{paddingValue}}px; border: {{borderWidth}}px solid {{borderColor}}; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "paddingValue",
+                    "type": "number",
+                    "min": 4,
+                    "max": 32,
+                    "precision": 1
+                },
+                {
+                    "name": "borderWidth",
+                    "type": "number",
+                    "min": 1,
+                    "max": 6,
+                    "precision": 1
+                },
+                {
+                    "name": "borderColor",
+                    "type": "color"
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { border-radius: {{radius}}px; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "radius",
+                    "type": "number",
+                    "min": 0,
+                    "max": 32,
+                    "precision": 1
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { letter-spacing: {{spacing}}em; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "spacing",
+                    "type": "number",
+                    "min": 0,
+                    "max": 2,
+                    "precision": 2
+                }
+            ]
+        }
+    ],
+    "hard": [
+        {
+            "snippet": ".{{className}} { height: {{height}}px; background: {{colorValue}}; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "height",
+                    "type": "number",
+                    "min": 4,
+                    "max": 80,
+                    "precision": 1
+                },
+                {
+                    "name": "colorValue",
+                    "type": "color"
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { color: {{colorValue}}; text-align: {{alignValue}}; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "colorValue",
+                    "type": "color"
+                },
+                {
+                    "name": "alignValue",
+                    "type": "options",
+                    "values": ["left", "center", "right", "justify"]
+                }
+            ]
+        },
+        {
+            "snippet": ".{{className}} { animation: {{animationName}} {{duration}}s {{repeatMode}}; }",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "animationName",
+                    "type": "identifier"
+                },
+                {
+                    "name": "duration",
+                    "type": "number",
+                    "min": 1,
+                    "max": 100,
+                    "precision": 1
+                },
+                {
+                    "name": "repeatMode",
+                    "type": "options",
+                    "values": ["infinite", "linear", "ease-in-out"]
+                }
+            ]
+        },
+        {
+            "snippet": "{{selector}}:hover { transform: scale({{scaleValue}}); }",
+            "blanks": [
+                {
+                    "name": "selector",
+                    "type": "options",
+                    "values": ["button", ".start-btn", ".card"]
+                },
+                {
+                    "name": "scaleValue",
+                    "type": "number",
+                    "min": 1,
+                    "max": 2,
+                    "precision": 2
+                }
+            ]
+        },
+        {
+            "snippet": "@media (max-width: {{breakpoint}}px) { .{{className}} { flex-direction: {{direction}}; } }",
+            "blanks": [
+                {
+                    "name": "breakpoint",
+                    "type": "number",
+                    "min": 320,
+                    "max": 1200,
+                    "precision": 1
+                },
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "direction",
+                    "type": "options",
+                    "values": ["column", "row", "column-reverse", "row-reverse"]
+                }
+            ]
+        }
+    ]
+}

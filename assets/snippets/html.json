@@ -1,121 +1,382 @@
-[
-    {
-        "snippet": "<h1>Hello World</h1>"
-    },
-
-    {
-        "snippet": "<h1>Astro Type</h1>"
-    },
-
-    {
-        "snippet": "<p>This is a paragraph.</p>"
-    },
-
-    {
-        "snippet": "<p>Press start to begin.</p>"
-    },
-
-    {
-        "snippet": "<button>Start Game</button>"
-    },
-
-    {
-        "snippet": "<button class=\"start-btn\">Start Game</button>"
-    },
-
-    {
-        "snippet": "<div class='container'></div>"
-    },
-
-    {
-        "snippet": "<div id=\"game\"></div>"
-    },
-
-    {
-        "snippet": "<img src='asteroid.png' alt='Asteroid'>"
-    },
-
-    {
-        "snippet": "<img src=\"assets/images/asteroid.png\" alt=\"Asteroid\">"
-    },
-
-    {
-        "snippet": "<a href='https://example.com'>Visit Site</a>"
-    },
-
-    {
-        "snippet": "<input type='text' placeholder='Enter Name'>"
-    },
-
-    {
-        "snippet": "<input type=\"text\" placeholder=\"Type here\">"
-    },
-
-    {
-        "snippet": "<ul><li>Item 1</li><li>Item 2</li></ul>"
-    },
-
-    {
-        "snippet": "<ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>"
-    },
-
-    {
-        "snippet": "<section id='game-area'></section>"
-    },
-
-    {
-        "snippet": "<section class=\"scoreboard\"></section>"
-    },
-
-    {
-        "snippet": "<span class=\"score\">0</span>"
-    },
-
-    {
-        "snippet": "<label for=\"username\">Username</label>"
-    },
-
-    {
-        "snippet": "<form><input type='email'><button type='submit'>Submit</button></form>"
-    },
-
-    {
-        "snippet": "<form><input type=\"email\"><button type=\"submit\">Join</button></form>"
-    },
-
-    {
-        "snippet": "<nav><a href='#home'>Home</a></nav>"
-    },
-
-    {
-        "snippet": "<nav><a href=\"#home\">Home</a></nav>"
-    },
-
-    {
-        "snippet": "<main><article>Mission briefing</article></main>"
-    },
-
-    {
-        "snippet": "<footer>Game Over</footer>"
-    },
-
-    {
-        "snippet": "<div class=\"health-bar\" aria-label=\"Player health\"></div>"
-    },
-
-    {
-        "snippet": "<canvas id='gameCanvas'></canvas>"
-    },
-
-    {
-        "snippet": "<canvas id=\"battlefield\"></canvas>"
-    },
-
-    {
-        "snippet": "<span class='score'>100</span>"
-    },
-
-    {
-        "snippet": "<header><h2>Astro-Type</h2></header>"
-    }
-]
+{
+    "easy": [
+        {
+            "snippet": "<{{tagName}}>{{content}}</{{tagName}}>",
+            "blanks": [
+                {
+                    "name": "tagName",
+                    "type": "options",
+                    "values": ["h1", "h2", "p", "span"]
+                },
+                {
+                    "name": "content",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<{{tagName}}>{{content}}</{{tagName}}>",
+            "blanks": [
+                {
+                    "name": "tagName",
+                    "type": "options",
+                    "values": ["h1", "h2", "p"]
+                },
+                {
+                    "name": "content",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<p>{{content}}</p>",
+            "blanks": [
+                {
+                    "name": "content",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<p>{{content}}</p>",
+            "blanks": [
+                {
+                    "name": "content",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<button>{{label}}</button>",
+            "blanks": [
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<footer>{{content}}</footer>",
+            "blanks": [
+                {
+                    "name": "content",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "easy-medium": [
+        {
+            "snippet": "<div class=\"{{className}}\"></div>",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                }
+            ]
+        },
+        {
+            "snippet": "<div id=\"{{idName}}\"></div>",
+            "blanks": [
+                {
+                    "name": "idName",
+                    "type": "identifier"
+                }
+            ]
+        },
+        {
+            "snippet": "<span class=\"{{className}}\">{{content}}</span>",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "content",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<span class=\"{{className}}\">{{value}}</span>",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "value",
+                    "type": "number",
+                    "min": 0,
+                    "max": 500,
+                    "precision": 1
+                }
+            ]
+        },
+        {
+            "snippet": "<canvas id=\"{{idName}}\"></canvas>",
+            "blanks": [
+                {
+                    "name": "idName",
+                    "type": "identifier"
+                }
+            ]
+        },
+        {
+            "snippet": "<canvas id=\"{{idName}}\"></canvas>",
+            "blanks": [
+                {
+                    "name": "idName",
+                    "type": "identifier"
+                }
+            ]
+        }
+    ],
+    "medium": [
+        {
+            "snippet": "<button class=\"{{className}}\">{{label}}</button>",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<section id=\"{{idName}}\"></section>",
+            "blanks": [
+                {
+                    "name": "idName",
+                    "type": "identifier"
+                }
+            ]
+        },
+        {
+            "snippet": "<section class=\"{{className}}\"></section>",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                }
+            ]
+        },
+        {
+            "snippet": "<label for=\"{{targetId}}\">{{label}}</label>",
+            "blanks": [
+                {
+                    "name": "targetId",
+                    "type": "identifier"
+                },
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<header><{{tagName}}>{{content}}</{{tagName}}></header>",
+            "blanks": [
+                {
+                    "name": "tagName",
+                    "type": "options",
+                    "values": ["h1", "h2", "h3"]
+                },
+                {
+                    "name": "content",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "medium-hard": [
+        {
+            "snippet": "<a href=\"{{url}}\">{{label}}</a>",
+            "blanks": [
+                {
+                    "name": "url",
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<input type=\"{{inputType}}\" placeholder=\"{{placeholder}}\">",
+            "blanks": [
+                {
+                    "name": "inputType",
+                    "type": "options",
+                    "values": ["text", "email", "password", "number"]
+                },
+                {
+                    "name": "placeholder",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<input type=\"{{inputType}}\" placeholder=\"{{placeholder}}\">",
+            "blanks": [
+                {
+                    "name": "inputType",
+                    "type": "options",
+                    "values": ["text", "search", "email"]
+                },
+                {
+                    "name": "placeholder",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<nav><a href=\"#{{anchor}}\">{{label}}</a></nav>",
+            "blanks": [
+                {
+                    "name": "anchor",
+                    "type": "identifier"
+                },
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<nav><a href=\"#{{anchor}}\">{{label}}</a></nav>",
+            "blanks": [
+                {
+                    "name": "anchor",
+                    "type": "identifier"
+                },
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<img src=\"{{source}}\" alt=\"{{description}}\">",
+            "blanks": [
+                {
+                    "name": "source",
+                    "type": "string"
+                },
+                {
+                    "name": "description",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "hard": [
+        {
+            "snippet": "<img src=\"{{source}}\" alt=\"{{description}}\">",
+            "blanks": [
+                {
+                    "name": "source",
+                    "type": "string"
+                },
+                {
+                    "name": "description",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<ul><li>{{firstItem}}</li><li>{{secondItem}}</li></ul>",
+            "blanks": [
+                {
+                    "name": "firstItem",
+                    "type": "string"
+                },
+                {
+                    "name": "secondItem",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<ul><li>{{firstItem}}</li><li>{{secondItem}}</li><li>{{thirdItem}}</li></ul>",
+            "blanks": [
+                {
+                    "name": "firstItem",
+                    "type": "string"
+                },
+                {
+                    "name": "secondItem",
+                    "type": "string"
+                },
+                {
+                    "name": "thirdItem",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<form><input type=\"{{inputType}}\"><button type=\"{{buttonType}}\">{{label}}</button></form>",
+            "blanks": [
+                {
+                    "name": "inputType",
+                    "type": "options",
+                    "values": ["email", "text", "password"]
+                },
+                {
+                    "name": "buttonType",
+                    "type": "options",
+                    "values": ["submit", "button", "reset"]
+                },
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<form><input type=\"{{inputType}}\"><button type=\"{{buttonType}}\">{{label}}</button></form>",
+            "blanks": [
+                {
+                    "name": "inputType",
+                    "type": "options",
+                    "values": ["email", "text", "number"]
+                },
+                {
+                    "name": "buttonType",
+                    "type": "options",
+                    "values": ["submit", "button"]
+                },
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<main><article>{{content}}</article></main>",
+            "blanks": [
+                {
+                    "name": "content",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "snippet": "<div class=\"{{className}}\" aria-label=\"{{label}}\"></div>",
+            "blanks": [
+                {
+                    "name": "className",
+                    "type": "identifier"
+                },
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}
