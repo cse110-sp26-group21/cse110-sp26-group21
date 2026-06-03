@@ -9,7 +9,13 @@
  */
 
 import { startGame } from './game.js';
-import { loadSnippets } from './snippets.js';
+import { loadSnippets, setCurrentDifficulty } from './snippets.js';
+
+const DIFFICULTY_OPTIONS = [
+  'easy',
+  'medium',
+  'hard'
+];
 
 const startBtn =
   document.querySelector('#start-btn');
@@ -19,6 +25,12 @@ const playAgainBtn =
 
 const languageSelect =
   document.querySelector('#language-select');
+
+const difficultySlider =
+  document.querySelector('#difficulty-slider');
+
+const difficultyValue =
+  document.querySelector('#difficulty-value');
 
 const homeScreen =
   document.querySelector('#home-screen');
@@ -30,6 +42,27 @@ const resultsScreen =
   document.querySelector('#results-screen');
 
 
+function getSelectedDifficulty() {
+
+  return DIFFICULTY_OPTIONS[
+    Number(difficultySlider.value)
+  ] ?? DIFFICULTY_OPTIONS[0];
+
+}
+
+
+function updateDifficultyLabel() {
+
+  const difficulty =
+    getSelectedDifficulty();
+
+  difficultyValue.textContent =
+    difficulty.charAt(0).toUpperCase() +
+    difficulty.slice(1);
+
+}
+
+
 
 /**
  * Starts the game after loading snippets
@@ -39,6 +72,10 @@ async function handleStartGame() {
 
   const gameMode =
     languageSelect.value;
+
+  setCurrentDifficulty(
+    getSelectedDifficulty()
+  );
 
   await loadSnippets(gameMode);
 
@@ -61,6 +98,14 @@ function handlePlayAgain() {
   window.location.reload();
 
 }
+
+
+updateDifficultyLabel();
+
+difficultySlider.addEventListener(
+  'input',
+  updateDifficultyLabel
+);
 
 
 startBtn.addEventListener(

@@ -55,6 +55,38 @@ body {
   gap: 1.5rem;
 }
 
+.difficulty-selector {
+  width: 260px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.6rem;
+}
+
+.difficulty-label,
+.difficulty-scale {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.difficulty-label {
+  font-size: 1rem;
+}
+
+.difficulty-label span {
+  color: #7df9ff;
+}
+
+.difficulty-scale {
+  font-size: 0.85rem;
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .title {
   font-size: 6rem;
 
@@ -81,6 +113,14 @@ select {
   background: rgba(20, 20, 70, 0.8);
 
   color: white;
+}
+
+#difficulty-slider {
+  width: 100%;
+
+  accent-color: #7df9ff;
+
+  cursor: pointer;
 }
 
 button {

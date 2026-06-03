@@ -20,7 +20,6 @@ let snippets = [];
 
 /**
  * Stores the active difficulty used when selecting snippets.
- * TODO: Replace this temporary default with a frontend-driven selection.
  * @param {string} difficulty Difficulty bucket to use for snippet selection
  * @returns {string} Active difficulty after validation
  */
@@ -41,7 +40,6 @@ export function setCurrentDifficulty(difficulty = 'easy') {
 
 /**
  * Returns the difficulty currently used by the snippet loader.
- * TODO: Wire this up to the frontend once users can choose a difficulty.
  * @returns {string} Active difficulty bucket
  */
 export function getCurrentDifficulty() {
@@ -277,8 +275,6 @@ function normalizeSnippets(snippetData) {
  */
 export async function loadSnippets(gameMode) {
   let filePath;
-
-  setCurrentDifficulty();
 
   switch (gameMode) {
 
