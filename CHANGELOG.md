@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented here.
 
+## [1.3.0] - 2026-06-03
+
+### Added
+- Difficulty level selection UI for customizing gameplay
+- Ability to select difficulty before starting game
+- New question schema for increased variety
+- Question updates based on new format structure
+
+### Changed
+- Question bank now supports multiple difficulty levels
+
 ## [1.2.1] - 2026-05-29
 
 ### Added
