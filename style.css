@@ -152,19 +152,9 @@ button:hover {
 
   padding: 0.5rem 0.7rem;
 
-  border: none;
   border-radius: 10px;
 
-  font-family: inherit;
   font-size: 0.95rem;
-
-  cursor: pointer;
-
-  background: #4a35d6;
-
-  color: white;
-
-  transition: 0.2s;
 }
 
 
