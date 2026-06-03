@@ -4,8 +4,17 @@ All notable changes to this project will be documented here.
 
 ## [1.3.1] - 2026-06-03
 
+### Added
+- Tutorial screen to teach new players typing mechanics
+- Single asteroid that pauses at top with instruction overlay
+- Continue button to unpause asteroid during tutorial
+- Completion overlay that displays when asteroid is destroyed or falls off screen
+- Tutorial asteroid counter (1/1) to track progress
+- Dedicated tutorial button (?) on home screen
+- Tutorial input field with same styling as main game
+
 ### Changed
-- Mobile gameplay now displays only one asteroid at a time for improved playability on smaller screens
+- Tutorial reuses instruction card styling for consistency with main game
 
 ## [1.3.0] - 2026-06-03
 
