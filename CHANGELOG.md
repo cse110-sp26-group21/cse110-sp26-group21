@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented here.
 
+## [1.3.2] - 2026-06-04
+
+### Added
+- A current session high score feature
+
+### Changed
+- modified game state to include session high score variable
+- modified result screen to display session high score
+
 ## [1.3.1] - 2026-06-03
 
 ### Added
