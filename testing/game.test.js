@@ -1,7 +1,7 @@
 /**
  * @file game.test.js
  * Unit tests for game.js
- * Tests: updateScore logic (points, streak bonuses, location bonuses)
+ * Tests: updateScore logic (points, streak bonuses, location bonuses, high score)
  *
  * NOTE: game.js uses DOM at module load time, so we expose the pure
  * scoring logic via a helper here. If your team later extracts
@@ -9,7 +9,6 @@
  */
 
 import { describe, it, expect } from 'vitest';
-
 // ─── Pure scoring logic (mirrors game.js) ────────────────────────────────────
 // We replicate the scoring algorithm here so it can be tested without a DOM.
 // Keep this in sync with game.js updateScore().
@@ -127,5 +126,38 @@ describe('calculatePoints — streak bonus', () => {
   it('increments the streak counter correctly', () => {
     const { newStreak } = calculatePoints(TOP_Y, SCREEN_H, 4);
     expect(newStreak).toBe(5);
+  });
+});
+
+// ─── replicated storage and load functions ───────────────────────────────────────────────────────
+const SESSION_HIGH_SCORE_KEY = 'sessionHighScore';
+/**
+ * Load session high score from sessionStorage
+ * @returns session high score
+ */
+function loadHighScore() {
+  return Number(sessionStorage.getItem(SESSION_HIGH_SCORE_KEY) || 0);
+}
+
+/**
+ * Save new session high score
+ */
+function saveHighScore(highScore) {
+  sessionStorage.setItem(SESSION_HIGH_SCORE_KEY, highScore.toString());
+}
+
+// ─── session high score tests ───────────────────────────────────────────────────────
+
+describe('high score storage', () => {  
+  sessionStorage.clear();
+
+  it('returns 0 when no high score exists', () => {
+    expect(loadHighScore()).toBe(0);
+  });
+
+  sessionStorage.clear();
+  it('saves and loads a high score', () => {
+    saveHighScore(3200);
+    expect(loadHighScore()).toBe(3200);
   });
 });
