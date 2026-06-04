@@ -310,8 +310,8 @@ function loadHighScore() {
 /**
  * Save new session high score
  */
-function saveHighScore() {
-  sessionStorage.setItem(SESSION_HIGH_SCORE_KEY, gameState.sessionHighScore.toString());
+function saveHighScore(highScore= gameState.sessionHighScore) {
+  sessionStorage.setItem(SESSION_HIGH_SCORE_KEY, highScore.toString());
 }
 
 /**
