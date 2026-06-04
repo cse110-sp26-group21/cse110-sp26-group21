@@ -1,7 +1,7 @@
 /**
  * @file game.test.js
  * Unit tests for game.js
- * Tests: updateScore logic (points, streak bonuses, location bonuses)
+ * Tests: updateScore logic (points, streak bonuses, location bonuses, high score)
  *
  * NOTE: game.js uses DOM at module load time, so we expose the pure
  * scoring logic via a helper here. If your team later extracts
@@ -9,6 +9,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
+import { loadHighScore, saveHighScore, endGame } from '../scripts/highScore.js';
 
 // ─── Pure scoring logic (mirrors game.js) ────────────────────────────────────
 // We replicate the scoring algorithm here so it can be tested without a DOM.
@@ -127,5 +128,22 @@ describe('calculatePoints — streak bonus', () => {
   it('increments the streak counter correctly', () => {
     const { newStreak } = calculatePoints(TOP_Y, SCREEN_H, 4);
     expect(newStreak).toBe(5);
+  });
+});
+
+// ─── session high score tests ───────────────────────────────────────────────────────
+
+beforeEach(() => {
+  sessionStorage.clear();
+});
+
+describe('high score storage', () => {
+  it('returns 0 when no high score exists', () => {
+    expect(loadHighScore()).toBe(0);
+  });
+
+  it('saves and loads a high score', () => {
+    saveHighScore(3200);
+    expect(loadHighScore()).toBe(3200);
   });
 });
