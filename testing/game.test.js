@@ -9,7 +9,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { loadHighScore, saveHighScore, endGame } from '../scripts/highScore.js';
+import { loadHighScore, saveHighScore } from '../scripts/game.js';
 
 // ─── Pure scoring logic (mirrors game.js) ────────────────────────────────────
 // We replicate the scoring algorithm here so it can be tested without a DOM.
@@ -133,14 +133,14 @@ describe('calculatePoints — streak bonus', () => {
 
 // ─── session high score tests ───────────────────────────────────────────────────────
 
-beforeEach(() => {
-  sessionStorage.clear();
-});
-
 describe('high score storage', () => {
+  sessionStorage.clear();
+
   it('returns 0 when no high score exists', () => {
     expect(loadHighScore()).toBe(0);
   });
+
+  sessionStorage.clear();
 
   it('saves and loads a high score', () => {
     saveHighScore(3200);
