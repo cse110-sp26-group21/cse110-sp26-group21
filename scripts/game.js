@@ -32,12 +32,17 @@ const gameState = {
 
   longestStreak : 0,
 
-  asteroidsDestroyed: 0
+  asteroidsDestroyed: 0,
+
+  sessionHighScore: 0
 
 };
 
 const scoreElement =
   document.querySelector('#score');
+
+const sessionHighScoreElement = 
+  document.querySelector('#session-high-score');
 
 const streakElement =
   document.querySelector('#streak');
@@ -65,7 +70,8 @@ const gameScreen =
 const resultsScreen =
   document.querySelector('#results-screen');
 
-
+// session high score key
+const SESSION_HIGH_SCORE_KEY = 'sessionHighScore';
 
 // total asteroids in full game
 const TOTAL_ASTEROIDS = 10;
@@ -107,6 +113,9 @@ export function startGame() {
   initializeTyping(handleAsteroidDestroyed);
 
   requestAnimationFrame(gameLoop);
+
+  // initialize session high score
+  gameState.sessionHighScore = loadHighScore();
 
 }
 
@@ -189,6 +198,14 @@ function handleMissedAsteroid() {
  * Ends the game and shows results screen
  */
 function endGame() {
+
+  if (gameState.score > gameState.sessionHighScore) {
+    gameState.sessionHighScore = gameState.score;
+    saveHighScore();
+
+    // update high score
+    updateUI();
+  }
 
   gameRunning = false;
 
@@ -282,7 +299,20 @@ function updateScore(asteroid) {
   gameState.asteroidsDestroyed++;
 }
 
+/**
+ * Load session high score from sessionStorage
+ * @returns session high score
+ */
+function loadHighScore() {
+  return Number(sessionStorage.getItem(SESSION_HIGH_SCORE_KEY) || 0);
+}
 
+/**
+ * Save new session high score
+ */
+function saveHighScore() {
+  sessionStorage.setItem(SESSION_HIGH_SCORE_KEY, gameState.sessionHighScore.toString());
+}
 
 /**
  * Updates HUD and results screen
@@ -300,6 +330,9 @@ function updateUI() {
 
   finalScoreElement.textContent =
     gameState.score;
+
+  sessionHighScoreElement.textContent = 
+    gameState.sessionHighScore;
 
   destroyedCountElement.textContent =
     gameState.asteroidsDestroyed;
