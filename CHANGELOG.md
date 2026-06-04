@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented here.
 
-## [1.3.2] - 2026-06-04
+## [1.4.0] - 2026-06-04
 
 ### Added
 - A current session high score feature
