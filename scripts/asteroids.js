@@ -112,6 +112,8 @@ export function moveAsteroids(onMiss) {
  */
 export function destroyAsteroid(asteroid) {
 
+  showExplosion(asteroid);
+
   asteroid.element.remove();
 
   const index = asteroids.indexOf(asteroid);
@@ -120,4 +122,28 @@ export function destroyAsteroid(asteroid) {
     asteroids.splice(index, 1);
   }
 
+}
+
+/**
+ * Show explosion animation when asteroid is destroyed
+ * @param {Object} asteroid Asteroid object
+ */
+function showExplosion(asteroid) {
+  const explosion = document.createElement('div');
+  explosion.classList.add('explosion');
+  
+  const explosionSize = 220;
+
+  const centerX = asteroid.x + (asteroid.element.offsetWidth / 2) - (explosionSize / 2);
+  const centerY = asteroid.y + (asteroid.element.offsetHeight / 2) - (explosionSize / 2);
+
+  explosion.style.left = `${centerX}px`;
+  explosion.style.top = `${centerY}px`;
+
+  gameArea.appendChild(explosion);
+
+  const removeExplosion = () => explosion.remove();
+
+  explosion.addEventListener('animationend', removeExplosion, { once: true });
+  setTimeout(removeExplosion, 1000);
 }
