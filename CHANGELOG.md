@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented here.
 
+## [1.6.1] - 2026-06-05
+
+### Added
+- Seconded instructional card in tutorial that reminds user's to type code snippet
+
+### Changed
+- User's cannot return home from tutorial without completing the tutorial
+
+## [1.6.0] - 2026-06-05
+
+### Added
+- Added total asteroid slider that ranges from 3-12
+
+### Changed
+- Users can now customize how many asteroids fall across the screen in a single level
+
 ## [1.5.0] - 2026-06-04
 
 ### Added
