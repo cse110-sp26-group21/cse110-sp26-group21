@@ -33,6 +33,12 @@ const difficultySlider =
 const difficultyValue =
   document.querySelector('#difficulty-value');
 
+const asteroidSlider =
+  document.querySelector('#asteroid-slider');
+
+const asteroidValue =
+  document.querySelector('#asteroid-value');
+
 const homeScreen =
   document.querySelector('#home-screen');
 
@@ -57,7 +63,6 @@ function getSelectedDifficulty() {
 
 }
 
-
 function updateDifficultyLabel() {
 
   const difficulty =
@@ -69,6 +74,12 @@ function updateDifficultyLabel() {
 
 }
 
+function updateAsteroidLabel() {
+
+  asteroidValue.textContent =
+    asteroidSlider.value;
+
+}
 
 
 /**
@@ -92,7 +103,10 @@ async function handleStartGame() {
 
   gameScreen.classList.remove('hidden');
 
-  startGame();
+  const asteroidCount =
+    Number(asteroidSlider.value);
+
+  startGame(asteroidCount);
 
 }
 
@@ -129,6 +143,12 @@ difficultySlider.addEventListener(
   updateDifficultyLabel
 );
 
+updateAsteroidLabel();
+
+asteroidSlider.addEventListener(
+  'input',
+  updateAsteroidLabel
+);
 
 startBtn.addEventListener(
   'click',

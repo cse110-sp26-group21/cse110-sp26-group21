@@ -74,7 +74,7 @@ const resultsScreen =
 const SESSION_HIGH_SCORE_KEY = 'sessionHighScore';
 
 // total asteroids in full game
-const TOTAL_ASTEROIDS = 10;
+let totalAsteroids = 10;
 
 // current spawned asteroid count
 let asteroidsSpawned = 0;
@@ -98,17 +98,18 @@ function isMobileDevice() {
 /**
  * Starts the game loop
  */
-export function startGame() {
+export function startGame(asteroidCount) {
 
   if (gameRunning) {
     return;
   }
+  totalAsteroids = asteroidCount;
 
   gameRunning = true;
   
   // initialize asteroid counter when game starts
   asteroidCountElement.textContent = asteroidsSpawned;
-  asteroidTotalElement.textContent = TOTAL_ASTEROIDS;
+  asteroidTotalElement.textContent = totalAsteroids;
 
   initializeTyping(handleAsteroidDestroyed);
 
@@ -133,7 +134,7 @@ function gameLoop(timestamp) {
   if (
     timestamp - lastSpawnTime > 7000 &&
     asteroids.length < maxAsteroids &&
-    asteroidsSpawned < TOTAL_ASTEROIDS
+    asteroidsSpawned < totalAsteroids
   ) {
 
     const snippetObject = getRandomSnippet();
@@ -152,7 +153,7 @@ function gameLoop(timestamp) {
 
   // game over check
   if (
-    asteroidsSpawned >= TOTAL_ASTEROIDS &&
+    asteroidsSpawned >= totalAsteroids &&
     asteroids.length === 0
   ) {
 

@@ -90,6 +90,29 @@
         />
 
       </div>
+      <!-- Asteroid slider button -->
+      <div class="asteroid-slider">
+        <label
+          class="asteroid-label"
+          for="asteroid-slider"
+        >
+          Asteroids:
+          <span id="asteroid-value">
+            10
+          </span>
+        </label>
+      <div class="asteroid-scale" aria-hidden="true">
+        <span>3 - 12</span>
+      <input 
+        type="range"
+        id="asteroid-slider"
+        min="3"
+        max="12"
+        step="1"
+        value="10"
+      aria-label="Asteroid slider"
+      />
+      </div>
 
       <!-- Start game button -->
       <button id="start-btn">
