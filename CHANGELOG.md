@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented here.
 
+## [1.5.0] - 2026-06-04
+
+### Added
+- Explosion effect when an asteroid gets destroyed
+
+### Changed
+- Added a function to asteroids.js that displays effect when called from destroyAsteroid
+- Added appropriate styling for the effct
+
 ## [1.4.0] - 2026-06-04
 
 ### Added
