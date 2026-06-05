@@ -202,6 +202,15 @@ button:hover {
   width: 100%;
 }
 
+.explosion {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: url("./assets/images/explosion.gif") center / contain no-repeat;
+  animation-iteration-count: 1;
+  z-index: 1;
+}
+
 .snippet {
   position: absolute;
 
