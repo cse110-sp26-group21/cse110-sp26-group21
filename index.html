@@ -164,12 +164,20 @@
     <!-- Typing input -->
     <div class="typing-container">
 
-      <input
-        type="text"
-        id="typing-input"
-        placeholder="Type code here..."
-        autocomplete="off"
-      />
+      <div class="typing-field">
+        <div
+          id="typing-display"
+          class="typing-display"
+          aria-hidden="true"
+        ></div>
+
+        <input
+          type="text"
+          id="typing-input"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
 
     </div>
 

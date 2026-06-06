@@ -16,7 +16,8 @@ import {
 } from './asteroids.js';
 
 import {
-  initializeTyping
+  initializeTyping,
+  refreshTypingState
 } from './typing.js';
 
 import {
@@ -128,6 +129,7 @@ export function startGame(asteroidCount) {
 function gameLoop(timestamp) {
 
   moveAsteroids(handleMissedAsteroid);
+  refreshTypingState();
 
   // asteroid spawning
   const maxAsteroids = isMobileDevice() ? 1 : 3;
@@ -140,6 +142,7 @@ function gameLoop(timestamp) {
     const snippetObject = getRandomSnippet();
 
     spawnAsteroid(snippetObject.snippet);
+    refreshTypingState();
 
     // update asteroid counter after a new asteroid appears
     asteroidsSpawned++;
@@ -174,6 +177,7 @@ function gameLoop(timestamp) {
 function handleAsteroidDestroyed(asteroid) {
 
   destroyAsteroid(asteroid);
+  refreshTypingState();
 
   updateScore(asteroid);
 
@@ -189,6 +193,7 @@ function handleAsteroidDestroyed(asteroid) {
 function handleMissedAsteroid() {
 
   gameState.streak = 0;
+  refreshTypingState();
 
   updateUI();
 
