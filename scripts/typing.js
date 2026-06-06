@@ -19,6 +19,21 @@ let committedText = '';
 let incorrectCharacter = '';
 
 /**
+ * Focuses the live typing input without scrolling the page.
+ */
+export function focusTypingInput() {
+  if (!typingInput) {
+    return;
+  }
+
+  if (document.activeElement === typingInput) {
+    return;
+  }
+
+  typingInput.focus({ preventScroll: true });
+}
+
+/**
  * Returns asteroids whose snippet starts with the current prefix.
  * @param {string} prefix Typed prefix to test
  * @param {Object[]} asteroidList Active asteroid list

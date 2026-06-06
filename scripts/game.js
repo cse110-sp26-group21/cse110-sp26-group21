@@ -17,7 +17,8 @@ import {
 
 import {
   initializeTyping,
-  refreshTypingState
+  refreshTypingState,
+  focusTypingInput
 } from './typing.js';
 
 import {
@@ -88,6 +89,18 @@ let gameRunning = false;
 
 
 /**
+ * Keeps the typing input focused during desktop play.
+ */
+function focusTypingBar() {
+  if (isMobileDevice()) {
+    return;
+  }
+
+  focusTypingInput();
+}
+
+
+/**
  * Checks if the device is mobile to handle asteroid spawning
  * @returns {boolean} True if mobile device
  */
@@ -113,6 +126,7 @@ export function startGame(asteroidCount) {
   asteroidTotalElement.textContent = totalAsteroids;
 
   initializeTyping(handleAsteroidDestroyed);
+  focusTypingBar();
 
   requestAnimationFrame(gameLoop);
 
@@ -143,6 +157,7 @@ function gameLoop(timestamp) {
 
     spawnAsteroid(snippetObject.snippet);
     refreshTypingState();
+    focusTypingBar();
 
     // update asteroid counter after a new asteroid appears
     asteroidsSpawned++;
@@ -178,6 +193,7 @@ function handleAsteroidDestroyed(asteroid) {
 
   destroyAsteroid(asteroid);
   refreshTypingState();
+  focusTypingBar();
 
   updateScore(asteroid);
 
@@ -194,6 +210,7 @@ function handleMissedAsteroid() {
 
   gameState.streak = 0;
   refreshTypingState();
+  focusTypingBar();
 
   updateUI();
 
@@ -220,6 +237,12 @@ function endGame() {
   resultsScreen.classList.remove('hidden');
 
 }
+
+
+gameScreen.addEventListener(
+  'pointerdown',
+  focusTypingBar
+);
 
 
 /**
