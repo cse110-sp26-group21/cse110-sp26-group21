@@ -322,10 +322,19 @@ button:hover {
 }
 
 #tutorial-typing-input {
-  background: rgba(20, 20, 70, 0.8);
+  position: relative;
+
+  width: 100%;
+
+  background: transparent;
+
+  color: transparent;
+
+  caret-color: white;
 }
 
-#typing-input::selection {
+#typing-input::selection,
+#tutorial-typing-input::selection {
   background: rgba(125, 249, 255, 0.35);
 }
 

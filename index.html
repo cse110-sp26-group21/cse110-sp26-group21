@@ -219,12 +219,20 @@
     <!-- Typing input -->
     <div class="typing-container">
 
-      <input
-        type="text"
-        id="tutorial-typing-input"
-        placeholder="Type code here..."
-        autocomplete="off"
-      />
+      <div class="typing-field">
+        <div
+          id="tutorial-typing-display"
+          class="typing-display"
+          aria-hidden="true"
+        ></div>
+
+        <input
+          type="text"
+          id="tutorial-typing-input"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
 
     </div>
 
