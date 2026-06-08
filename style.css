@@ -309,19 +309,8 @@ button:hover {
   z-index: 1;
 }
 
-#typing-input {
-  position: relative;
-
-  width: 100%;
-
-  background: transparent;
-
-  color: transparent;
-
-  caret-color: white;
-}
-
-#tutorial-typing-input {
+#typing-input,
+#tutorial-typing-input  {
   position: relative;
 
   width: 100%;
