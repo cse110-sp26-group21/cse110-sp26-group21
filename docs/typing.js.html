@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: typing.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: typing.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// typing.js
+
+/**
+ * handles controlled typing input
+ * only accepts valid next characters
+ * hides incorrect characters from the bar
+ * resolves shared prefixes across asteroids
+ */
+
+import {
+  asteroids
+} from './asteroids.js';
+
+let typingInput = null;
+let typingDisplay = null;
+let activeDestroyCallback = null;
+
+let committedText = '';
+let incorrectCharacter = '';
+
+/**
+ * Focuses the live typing input without scrolling the page.
+ */
+export function focusTypingInput() {
+  if (!typingInput) {
+    return;
+  }
+
+  if (document.activeElement === typingInput) {
+    return;
+  }
+
+  typingInput.focus({ preventScroll: true });
+}
+
+/**
+ * Returns asteroids whose snippet starts with the current prefix.
+ * @param {string} prefix Typed prefix to test
+ * @param {Object[]} asteroidList Active asteroid list
+ * @returns {Object[]} Matching asteroids
+ */
+export function getPrefixMatches(prefix, asteroidList = asteroids) {
+  return asteroidList.filter((asteroid) => asteroid.snippet.startsWith(prefix));
+}
+
+/**
+ * Returns the valid next characters for the current prefix.
+ * @param {string} prefix Typed prefix to test
+ * @param {Object[]} asteroidList Active asteroid list
+ * @returns {string[]} Allowed next characters
+ */
+export function getValidNextCharacters(prefix, asteroidList = asteroids) {
+  const nextCharacters = new Set();
+
+  getPrefixMatches(prefix, asteroidList).forEach((asteroid) => {
+    const nextCharacter = asteroid.snippet.charAt(prefix.length);
+
+    if (nextCharacter) {
+      nextCharacters.add(nextCharacter);
+    }
+  });
+
+  return Array.from(nextCharacters);
+}
+
+/**
+ * Returns the first asteroid exactly matching the committed text.
+ * @param {string} text Fully typed text
+ * @param {Object[]} asteroidList Active asteroid list
+ * @returns {Object|null} Matching asteroid or null
+ */
+export function getCompletedAsteroid(text, asteroidList = asteroids) {
+  return asteroidList.find((asteroid) => asteroid.snippet === text) || null;
+}
+
+/**
+ * Resets the controlled typing state.
+ */
+export function resetTypingState() {
+  committedText = '';
+  incorrectCharacter = '';
+  syncTypingUI();
+}
+
+/**
+ * Trims the committed text back to a prefix that still matches
+ * at least one live asteroid after the asteroid set changes.
+ */
+export function refreshTypingState() {
+  while (
+    committedText &amp;&amp;
+    getPrefixMatches(committedText).length === 0
+  ) {
+    committedText = committedText.slice(0, -1);
+  }
+
+  incorrectCharacter = '';
+  syncTypingUI();
+}
+
+/**
+ * Returns the visible typing state for rendering/tests.
+ * @returns {{ committedText: string, incorrectCharacter: string }}
+ */
+export function getTypingState() {
+  return {
+    committedText,
+    incorrectCharacter
+  };
+}
+
+/**
+ * Initializes typing listener
+ * @param {Function} onDestroy Callback function
+ * when asteroid is destroyed
+ */
+export function initializeTyping(onDestroy) {
+  const nextTypingInput = document.querySelector('#typing-input');
+  const nextTypingDisplay = document.querySelector('#typing-display');
+  activeDestroyCallback = onDestroy;
+
+  if (typingInput &amp;&amp; typingInput !== nextTypingInput) {
+    typingInput.removeEventListener('keydown', handleKeydown);
+    typingInput.removeEventListener('paste', handlePaste);
+  }
+
+  typingInput = nextTypingInput;
+  typingDisplay = nextTypingDisplay;
+
+  if (!typingInput) {
+    return;
+  }
+
+  if (!typingInput.dataset.typingInitialized) {
+    typingInput.addEventListener('keydown', handleKeydown);
+    typingInput.addEventListener('paste', handlePaste);
+    typingInput.dataset.typingInitialized = 'true';
+  }
+
+  resetTypingState();
+}
+
+/**
+ * Handles paste by replaying each pasted character through the
+ * same validation path as keyboard typing.
+ * @param {ClipboardEvent} event Paste event
+ */
+function handlePaste(event) {
+  event.preventDefault();
+
+  const pastedText = event.clipboardData?.getData('text') || '';
+
+  Array.from(pastedText).forEach((character) => {
+    processCharacter(character);
+  });
+}
+
+/**
+ * Handles a key press for the controlled typing input.
+ * @param {KeyboardEvent} event Keyboard event
+ */
+function handleKeydown(event) {
+  if (!typingInput) {
+    return;
+  }
+
+  if (event.ctrlKey || event.metaKey || event.altKey) {
+    return;
+  }
+
+  if (event.key === 'Backspace') {
+    event.preventDefault();
+    handleBackspace();
+    return;
+  }
+
+  if (event.key.length !== 1) {
+    return;
+  }
+
+  event.preventDefault();
+  processCharacter(event.key);
+}
+
+/**
+ * Removes the current incorrect character or the last committed one.
+ */
+function handleBackspace() {
+  if (incorrectCharacter) {
+    incorrectCharacter = '';
+  } else {
+    committedText = committedText.slice(0, -1);
+  }
+
+  syncTypingUI();
+}
+
+/**
+ * Applies a newly typed character against the active asteroid set.
+ * @param {string} character User-entered character
+ */
+function processCharacter(character) {
+  if (incorrectCharacter) {
+    if (isValidNextCharacter(character)) {
+      committedText += character;
+      incorrectCharacter = '';
+    } else {
+      incorrectCharacter = character;
+    }
+  } else if (isValidNextCharacter(character)) {
+    committedText += character;
+  } else {
+    incorrectCharacter = character;
+  }
+
+  syncTypingUI();
+  handleCompletedMatch();
+}
+
+/**
+ * Checks whether a character is valid for the current prefix.
+ * @param {string} character User-entered character
+ * @returns {boolean} True if the next character is allowed
+ */
+function isValidNextCharacter(character) {
+  return getValidNextCharacters(committedText).includes(character);
+}
+
+/**
+ * Destroys a completed asteroid and clears the typing state.
+ */
+function handleCompletedMatch() {
+  if (incorrectCharacter || !activeDestroyCallback) {
+    return;
+  }
+
+  const completedAsteroid = getCompletedAsteroid(committedText);
+
+  if (!completedAsteroid) {
+    return;
+  }
+
+  activeDestroyCallback(completedAsteroid);
+  resetTypingState();
+}
+
+/**
+ * Renders only the committed typing state into the input and overlay.
+ */
+function syncTypingUI() {
+  if (typingInput) {
+    typingInput.value = committedText;
+  }
+
+  if (!typingDisplay) {
+    return;
+  }
+
+  typingDisplay.innerHTML = '';
+
+  if (committedText) {
+    const correctText = document.createElement('span');
+    correctText.className = 'typing-correct';
+    correctText.textContent = committedText;
+    typingDisplay.appendChild(correctText);
+  }
+
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#DIFFICULTY_LEVELS">DIFFICULTY_LEVELS</a></li><li><a href="global.html#completeTutorialTyping">completeTutorialTyping</a></li><li><a href="global.html#destroyAsteroid">destroyAsteroid</a></li><li><a href="global.html#endGame">endGame</a></li><li><a href="global.html#endTutorial">endTutorial</a></li><li><a href="global.html#focusTutorialTypingInput">focusTutorialTypingInput</a></li><li><a href="global.html#focusTypingBar">focusTypingBar</a></li><li><a href="global.html#focusTypingInput">focusTypingInput</a></li><li><a href="global.html#gameArea">gameArea</a></li><li><a href="global.html#gameLoop">gameLoop</a></li><li><a href="global.html#generateBlankValue">generateBlankValue</a></li><li><a href="global.html#getCompletedAsteroid">getCompletedAsteroid</a></li><li><a href="global.html#getCurrentDifficulty">getCurrentDifficulty</a></li><li><a href="global.html#getPrefixMatches">getPrefixMatches</a></li><li><a href="global.html#getRandomItem">getRandomItem</a></li><li><a href="global.html#getRandomSnippet">getRandomSnippet</a></li><li><a href="global.html#getTypingState">getTypingState</a></li><li><a href="global.html#getValidNextCharacters">getValidNextCharacters</a></li><li><a href="global.html#handleAsteroidDestroyed">handleAsteroidDestroyed</a></li><li><a href="global.html#handleBackspace">handleBackspace</a></li><li><a href="global.html#handleCompletedMatch">handleCompletedMatch</a></li><li><a href="global.html#handleKeydown">handleKeydown</a></li><li><a href="global.html#handleMissedAsteroid">handleMissedAsteroid</a></li><li><a href="global.html#handlePaste">handlePaste</a></li><li><a href="global.html#handlePlayAgain">handlePlayAgain</a></li><li><a href="global.html#handleStartGame">handleStartGame</a></li><li><a href="global.html#handleTutorial">handleTutorial</a></li><li><a href="global.html#handleTutorialBackspace">handleTutorialBackspace</a></li><li><a href="global.html#handleTutorialKeydown">handleTutorialKeydown</a></li><li><a href="global.html#handleTutorialPaste">handleTutorialPaste</a></li><li><a href="global.html#hideCompletionOverlay">hideCompletionOverlay</a></li><li><a href="global.html#hideInstructionOverlay">hideInstructionOverlay</a></li><li><a href="global.html#initializeTyping">initializeTyping</a></li><li><a href="global.html#isMobileDevice">isMobileDevice</a></li><li><a href="global.html#isValidNextCharacter">isValidNextCharacter</a></li><li><a href="global.html#isValidTutorialCharacter">isValidTutorialCharacter</a></li><li><a href="global.html#loadHighScore">loadHighScore</a></li><li><a href="global.html#loadSnippets">loadSnippets</a></li><li><a href="global.html#moveAsteroids">moveAsteroids</a></li><li><a href="global.html#moveTutorialAsteroid">moveTutorialAsteroid</a></li><li><a href="global.html#normalizeSnippets">normalizeSnippets</a></li><li><a href="global.html#processCharacter">processCharacter</a></li><li><a href="global.html#processTutorialCharacter">processTutorialCharacter</a></li><li><a href="global.html#randomColor">randomColor</a></li><li><a href="global.html#randomIdentifier">randomIdentifier</a></li><li><a href="global.html#randomInt">randomInt</a></li><li><a href="global.html#randomNumber">randomNumber</a></li><li><a href="global.html#randomString">randomString</a></li><li><a href="global.html#refreshTypingState">refreshTypingState</a></li><li><a href="global.html#renderSnippet">renderSnippet</a></li><li><a href="global.html#resetTutorialTypingState">resetTutorialTypingState</a></li><li><a href="global.html#resetTypingState">resetTypingState</a></li><li><a href="global.html#returnToHome">returnToHome</a></li><li><a href="global.html#saveHighScore">saveHighScore</a></li><li><a href="global.html#setCurrentDifficulty">setCurrentDifficulty</a></li><li><a href="global.html#showCompletionOverlay">showCompletionOverlay</a></li><li><a href="global.html#showExplosion">showExplosion</a></li><li><a href="global.html#showInstructionOverlay">showInstructionOverlay</a></li><li><a href="global.html#spawnAsteroid">spawnAsteroid</a></li><li><a href="global.html#spawnTutorialAsteroid">spawnTutorialAsteroid</a></li><li><a href="global.html#startGame">startGame</a></li><li><a href="global.html#startTutorial">startTutorial</a></li><li><a href="global.html#syncTutorialTypingUI">syncTutorialTypingUI</a></li><li><a href="global.html#syncTypingUI">syncTypingUI</a></li><li><a href="global.html#tutorialGameLoop">tutorialGameLoop</a></li><li><a href="global.html#tutorialScreen">tutorialScreen</a></li><li><a href="global.html#updateScore">updateScore</a></li><li><a href="global.html#updateUI">updateUI</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Sun Jun 07 2026 18:05:41 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
