@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented here.
 
+## [1.7.0] - 2026-06-07
+
+### Added
+- focusTypingInput() helper for safely focusing the live typing input without scrolling, and kept the existing controlled typing state logic intact.onded instructional card in tutorial that reminds user's to type code snippet
+
+### Changed
+- The typing input is now focused when the game starts, after spawn/destroy/miss events, and when the user clicks on the game screen, so desktop players can type immediately without manually selecting the input.
+
 ## [1.6.1] - 2026-06-05
 
 ### Added
