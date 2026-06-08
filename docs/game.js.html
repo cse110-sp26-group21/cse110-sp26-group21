@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: game.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: game.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// game.js
+
+/**
+ * controls overall game flow
+ * stores game state
+ * updates score/streak
+ * starts and stops game loop
+ * handles game over
+ */
+
+import {
+  spawnAsteroid,
+  moveAsteroids,
+  asteroids,
+  destroyAsteroid
+} from './asteroids.js';
+
+import {
+  initializeTyping,
+  refreshTypingState,
+  focusTypingInput
+} from './typing.js';
+
+import {
+  getRandomSnippet
+} from './snippets.js';
+
+
+const gameState = {
+
+  score: 0,
+
+  streak: 0,
+
+  longestStreak : 0,
+
+  asteroidsDestroyed: 0,
+
+  sessionHighScore: 0
+
+};
+
+const scoreElement =
+  document.querySelector('#score');
+
+const sessionHighScoreElement = 
+  document.querySelector('#session-high-score');
+
+const streakElement =
+  document.querySelector('#streak');
+
+// displays how many asteroids have spawned
+const asteroidCountElement =
+  document.querySelector('#asteroid-count');
+
+// displays total asteroids for the level
+const asteroidTotalElement =
+  document.querySelector('#asteroid-total');
+
+const finalScoreElement =
+  document.querySelector('#final-score');
+
+const destroyedCountElement =
+  document.querySelector('#destroyed-count');
+
+const longestStreakElement =
+  document.querySelector('#longest-streak');
+
+const gameScreen =
+  document.querySelector('#game-screen');
+
+const resultsScreen =
+  document.querySelector('#results-screen');
+
+// session high score key
+const SESSION_HIGH_SCORE_KEY = 'sessionHighScore';
+
+// total asteroids in full game
+let totalAsteroids = 10;
+
+// current spawned asteroid count
+let asteroidsSpawned = 0;
+
+// controls asteroid spawn timing
+let lastSpawnTime = 0;
+
+// prevents duplicate game loops
+let gameRunning = false;
+
+
+/**
+ * Keeps the typing input focused during desktop play.
+ */
+function focusTypingBar() {
+  if (isMobileDevice()) {
+    return;
+  }
+
+  focusTypingInput();
+}
+
+
+/**
+ * Checks if the device is mobile to handle asteroid spawning
+ * @returns {boolean} True if mobile device
+ */
+function isMobileDevice() {
+  return window.innerWidth &lt;= 768;
+}
+
+
+/**
+ * Starts the game loop
+ */
+export function startGame(asteroidCount) {
+
+  if (gameRunning) {
+    return;
+  }
+  totalAsteroids = asteroidCount;
+
+  gameRunning = true;
+  
+  // initialize asteroid counter when game starts
+  asteroidCountElement.textContent = asteroidsSpawned;
+  asteroidTotalElement.textContent = totalAsteroids;
+
+  initializeTyping(handleAsteroidDestroyed);
+  focusTypingBar();
+
+  requestAnimationFrame(gameLoop);
+
+  // initialize session high score
+  gameState.sessionHighScore = loadHighScore();
+
+}
+
+
+/**
+ * Main game loop
+ * @param {number} timestamp Current frame timestamp
+ */
+function gameLoop(timestamp) {
+
+  moveAsteroids(handleMissedAsteroid);
+  refreshTypingState();
+
+  // asteroid spawning
+  const maxAsteroids = isMobileDevice() ? 1 : 3;
+  if (
+    timestamp - lastSpawnTime > 7000 &amp;&amp;
+    asteroids.length &lt; maxAsteroids &amp;&amp;
+    asteroidsSpawned &lt; totalAsteroids
+  ) {
+
+    const snippetObject = getRandomSnippet();
+
+    spawnAsteroid(snippetObject.snippet);
+    refreshTypingState();
+    focusTypingBar();
+
+    // update asteroid counter after a new asteroid appears
+    asteroidsSpawned++;
+
+    asteroidCountElement.textContent = asteroidsSpawned;
+
+    lastSpawnTime = timestamp;
+
+  }
+
+
+  // game over check
+  if (
+    asteroidsSpawned >= totalAsteroids &amp;&amp;
+    asteroids.length === 0
+  ) {
+
+    endGame();
+
+    return;
+  }
+
+  requestAnimationFrame(gameLoop);
+
+}
+
+
+/**
+ * Handles asteroid destruction
+ * @param {Object} asteroid Destroyed asteroid
+ */
+function handleAsteroidDestroyed(asteroid) {
+
+  destroyAsteroid(asteroid);
+  refreshTypingState();
+  focusTypingBar();
+
+  updateScore(asteroid);
+
+  updateUI();
+
+}
+
+
+/**
+ * Resets streak when asteroid
+ * leaves screen without being destroyed
+ */
+function handleMissedAsteroid() {
+
+  gameState.streak = 0;
+  refreshTypingState();
+  focusTypingBar();
+
+  updateUI();
+
+}
+
+
+/**
+ * Ends the game and shows results screen
+ */
+function endGame() {
+
+  if (gameState.score > gameState.sessionHighScore) {
+    gameState.sessionHighScore = gameState.score;
+    saveHighScore();
+
+    // update high score
+    updateUI();
+  }
+
+  gameRunning = false;
+
+  gameScreen.classList.add('hidden');
+
+  resultsScreen.classList.remove('hidden');
+
+}
+
+
+gameScreen.addEventListener(
+  'pointerdown',
+  focusTypingBar
+);
+
+
+/**
+ * Updates score based on:
+ * - asteroid destruction
+ * - asteroid position
+ * - streak bonuses
+ * @param {Object} asteroid Destroyed asteroid
+ */
+function updateScore(asteroid) {
+
+  let points = 1000;
+
+  // location bonus
+
+  const screenHeight =
+    window.innerHeight;
+
+  const asteroidY =
+    asteroid.y;
+
+  /* top */
+  if (asteroidY &lt; screenHeight / 2) {
+
+    points += 500;
+
+  }
+
+  /* middle */
+  else if (
+    asteroidY &lt; screenHeight * 0.75
+  ) {
+
+    points += 300;
+
+  }
+
+  /* bottom */
+  else {
+
+    points += 150;
+
+  }
+
+
+  // streak bonus
+
+  gameState.streak++;
+
+  // update longest streak
+  if (gameState.streak > gameState.longestStreak) {
+    gameState.longestStreak = gameState.streak;
+  }
+
+
+  if (
+    gameState.streak >= 3 &amp;&amp;
+    gameState.streak &lt;= 4
+  ) {
+
+    points += 10;
+
+  }
+
+  else if (
+    gameState.streak >= 5 &amp;&amp;
+    gameState.streak &lt;= 9
+  ) {
+
+    points += 25;
+
+  }
+
+  else if (
+    gameState.streak >= 10
+  ) {
+
+    points += 50;
+
+  }
+
+  gameState.score += points;
+  gameState.asteroidsDestroyed++;
+}
+
+/**
+ * Load session high score from sessionStorage
+ * @returns session high score
+ */
+function loadHighScore() {
+  return Number(sessionStorage.getItem(SESSION_HIGH_SCORE_KEY) || 0);
+}
+
+/**
+ * Save new session high score
+ */
+function saveHighScore(highScore= gameState.sessionHighScore) {
+  sessionStorage.setItem(SESSION_HIGH_SCORE_KEY, highScore.toString());
+}
+
+/**
+ * Updates HUD and results screen
+ */
+function updateUI() {
+
+  scoreElement.textContent =
+    gameState.score;
+
+  streakElement.textContent =
+    gameState.streak;
+
+  longestStreakElement.textContent =
+    gameState.longestStreak;
+
+  finalScoreElement.textContent =
+    gameState.score;
+
+  sessionHighScoreElement.textContent = 
+    gameState.sessionHighScore;
+
+  destroyedCountElement.textContent =
+    gameState.asteroidsDestroyed;
+
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#DIFFICULTY_LEVELS">DIFFICULTY_LEVELS</a></li><li><a href="global.html#completeTutorialTyping">completeTutorialTyping</a></li><li><a href="global.html#destroyAsteroid">destroyAsteroid</a></li><li><a href="global.html#endGame">endGame</a></li><li><a href="global.html#endTutorial">endTutorial</a></li><li><a href="global.html#focusTutorialTypingInput">focusTutorialTypingInput</a></li><li><a href="global.html#focusTypingBar">focusTypingBar</a></li><li><a href="global.html#focusTypingInput">focusTypingInput</a></li><li><a href="global.html#gameArea">gameArea</a></li><li><a href="global.html#gameLoop">gameLoop</a></li><li><a href="global.html#generateBlankValue">generateBlankValue</a></li><li><a href="global.html#getCompletedAsteroid">getCompletedAsteroid</a></li><li><a href="global.html#getCurrentDifficulty">getCurrentDifficulty</a></li><li><a href="global.html#getPrefixMatches">getPrefixMatches</a></li><li><a href="global.html#getRandomItem">getRandomItem</a></li><li><a href="global.html#getRandomSnippet">getRandomSnippet</a></li><li><a href="global.html#getTypingState">getTypingState</a></li><li><a href="global.html#getValidNextCharacters">getValidNextCharacters</a></li><li><a href="global.html#handleAsteroidDestroyed">handleAsteroidDestroyed</a></li><li><a href="global.html#handleBackspace">handleBackspace</a></li><li><a href="global.html#handleCompletedMatch">handleCompletedMatch</a></li><li><a href="global.html#handleKeydown">handleKeydown</a></li><li><a href="global.html#handleMissedAsteroid">handleMissedAsteroid</a></li><li><a href="global.html#handlePaste">handlePaste</a></li><li><a href="global.html#handlePlayAgain">handlePlayAgain</a></li><li><a href="global.html#handleStartGame">handleStartGame</a></li><li><a href="global.html#handleTutorial">handleTutorial</a></li><li><a href="global.html#handleTutorialBackspace">handleTutorialBackspace</a></li><li><a href="global.html#handleTutorialKeydown">handleTutorialKeydown</a></li><li><a href="global.html#handleTutorialPaste">handleTutorialPaste</a></li><li><a href="global.html#hideCompletionOverlay">hideCompletionOverlay</a></li><li><a href="global.html#hideInstructionOverlay">hideInstructionOverlay</a></li><li><a href="global.html#initializeTyping">initializeTyping</a></li><li><a href="global.html#isMobileDevice">isMobileDevice</a></li><li><a href="global.html#isValidNextCharacter">isValidNextCharacter</a></li><li><a href="global.html#isValidTutorialCharacter">isValidTutorialCharacter</a></li><li><a href="global.html#loadHighScore">loadHighScore</a></li><li><a href="global.html#loadSnippets">loadSnippets</a></li><li><a href="global.html#moveAsteroids">moveAsteroids</a></li><li><a href="global.html#moveTutorialAsteroid">moveTutorialAsteroid</a></li><li><a href="global.html#normalizeSnippets">normalizeSnippets</a></li><li><a href="global.html#processCharacter">processCharacter</a></li><li><a href="global.html#processTutorialCharacter">processTutorialCharacter</a></li><li><a href="global.html#randomColor">randomColor</a></li><li><a href="global.html#randomIdentifier">randomIdentifier</a></li><li><a href="global.html#randomInt">randomInt</a></li><li><a href="global.html#randomNumber">randomNumber</a></li><li><a href="global.html#randomString">randomString</a></li><li><a href="global.html#refreshTypingState">refreshTypingState</a></li><li><a href="global.html#renderSnippet">renderSnippet</a></li><li><a href="global.html#resetTutorialTypingState">resetTutorialTypingState</a></li><li><a href="global.html#resetTypingState">resetTypingState</a></li><li><a href="global.html#returnToHome">returnToHome</a></li><li><a href="global.html#saveHighScore">saveHighScore</a></li><li><a href="global.html#setCurrentDifficulty">setCurrentDifficulty</a></li><li><a href="global.html#showCompletionOverlay">showCompletionOverlay</a></li><li><a href="global.html#showExplosion">showExplosion</a></li><li><a href="global.html#showInstructionOverlay">showInstructionOverlay</a></li><li><a href="global.html#spawnAsteroid">spawnAsteroid</a></li><li><a href="global.html#spawnTutorialAsteroid">spawnTutorialAsteroid</a></li><li><a href="global.html#startGame">startGame</a></li><li><a href="global.html#startTutorial">startTutorial</a></li><li><a href="global.html#syncTutorialTypingUI">syncTutorialTypingUI</a></li><li><a href="global.html#syncTypingUI">syncTypingUI</a></li><li><a href="global.html#tutorialGameLoop">tutorialGameLoop</a></li><li><a href="global.html#tutorialScreen">tutorialScreen</a></li><li><a href="global.html#updateScore">updateScore</a></li><li><a href="global.html#updateUI">updateUI</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Sun Jun 07 2026 18:05:41 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
