@@ -11,6 +11,7 @@
 const tutorialScreen = document.querySelector('#tutorial-screen');
 const homeScreen = document.querySelector('#home-screen');
 const tutorialTypingInput = document.querySelector('#tutorial-typing-input');
+const tutorialTypingDisplay = document.querySelector('#tutorial-typing-display');
 const tutorialScoreDisplay = document.querySelector('#tutorial-score');
 const tutorialStreakDisplay = document.querySelector('#tutorial-streak');
 const tutorialAsteroidCountDisplay = document.querySelector('#tutorial-asteroid-count');
@@ -24,6 +25,9 @@ let completionOverlay = null;
 
 let firstInstructionShown = false;
 let secondInstructionShown = false;
+let tutorialCommittedText = '';
+let tutorialIncorrectCharacter = '';
+let tutorialTypingInitialized = false;
 
 const CORRECT_CODE = 'let asteroid = 21;';
 const FIRST_STOP_Y = -50;
@@ -34,6 +38,181 @@ const tutorialState = {
   asteroidPaused: false,
   codeTyped: false
 };
+
+/**
+ * Focuses the tutorial typing input without scrolling.
+ */
+function focusTutorialTypingInput() {
+  if (window.innerWidth <= 768) {
+    return;
+  }
+
+  if (document.activeElement === tutorialTypingInput) {
+    return;
+  }
+
+  tutorialTypingInput.focus({ preventScroll: true });
+}
+
+/**
+ * Resets the tutorial typing state.
+ */
+function resetTutorialTypingState() {
+  tutorialCommittedText = '';
+  tutorialIncorrectCharacter = '';
+  syncTutorialTypingUI();
+}
+
+/**
+ * Renders only the confirmed tutorial text.
+ */
+function syncTutorialTypingUI() {
+  tutorialTypingInput.value = tutorialCommittedText;
+
+  if (!tutorialTypingDisplay) {
+    return;
+  }
+
+  tutorialTypingDisplay.innerHTML = '';
+
+  if (!tutorialCommittedText) {
+    return;
+  }
+
+  const correctText = document.createElement('span');
+  correctText.className = 'typing-correct';
+  correctText.textContent = tutorialCommittedText;
+  tutorialTypingDisplay.appendChild(correctText);
+}
+
+/**
+ * Returns whether the next tutorial character is valid.
+ * @param {string} character User-entered character
+ * @returns {boolean} True when the next character matches the tutorial code
+ */
+function isValidTutorialCharacter(character) {
+  return CORRECT_CODE.charAt(tutorialCommittedText.length) === character;
+}
+
+/**
+ * Completes the tutorial after the full snippet is typed.
+ */
+function completeTutorialTyping() {
+  tutorialState.codeTyped = true;
+
+  tutorialState.score += 1000;
+  tutorialState.streak += 1;
+
+  tutorialScoreDisplay.textContent =
+    tutorialState.score;
+  tutorialStreakDisplay.textContent =
+    tutorialState.streak;
+  tutorialAsteroidCountDisplay.textContent = '1';
+
+  if (
+    tutorialAsteroid &&
+    tutorialAsteroid.element
+  ) {
+    tutorialAsteroid.element.remove();
+  }
+
+  hideInstructionOverlay();
+
+  tutorialTypingInput.disabled = true;
+
+  showCompletionOverlay();
+}
+
+/**
+ * Applies a typed character to the tutorial state.
+ * @param {string} character User-entered character
+ */
+function processTutorialCharacter(character) {
+  if (tutorialIncorrectCharacter) {
+    if (isValidTutorialCharacter(character)) {
+      tutorialCommittedText += character;
+      tutorialIncorrectCharacter = '';
+    } else {
+      tutorialIncorrectCharacter = character;
+    }
+  } else if (isValidTutorialCharacter(character)) {
+    tutorialCommittedText += character;
+  } else {
+    tutorialIncorrectCharacter = character;
+  }
+
+  syncTutorialTypingUI();
+
+  if (
+    !tutorialIncorrectCharacter &&
+    tutorialCommittedText === CORRECT_CODE &&
+    !tutorialState.codeTyped
+  ) {
+    completeTutorialTyping();
+  }
+}
+
+/**
+ * Handles tutorial backspace input.
+ */
+function handleTutorialBackspace() {
+  if (tutorialIncorrectCharacter) {
+    tutorialIncorrectCharacter = '';
+  } else {
+    tutorialCommittedText =
+      tutorialCommittedText.slice(0, -1);
+  }
+
+  syncTutorialTypingUI();
+}
+
+/**
+ * Handles tutorial keyboard input using the same gated typing behavior
+ * as the main game.
+ * @param {KeyboardEvent} event Keyboard event
+ */
+function handleTutorialKeydown(event) {
+  if (tutorialTypingInput.disabled) {
+    return;
+  }
+
+  if (event.ctrlKey || event.metaKey || event.altKey) {
+    return;
+  }
+
+  if (event.key === 'Backspace') {
+    event.preventDefault();
+    handleTutorialBackspace();
+    return;
+  }
+
+  if (event.key.length !== 1) {
+    return;
+  }
+
+  event.preventDefault();
+  processTutorialCharacter(event.key);
+}
+
+/**
+ * Handles tutorial paste using the same gated typing behavior
+ * as the main game.
+ * @param {ClipboardEvent} event Paste event
+ */
+function handleTutorialPaste(event) {
+  if (tutorialTypingInput.disabled) {
+    return;
+  }
+
+  event.preventDefault();
+
+  const pastedText =
+    event.clipboardData?.getData('text') || '';
+
+  Array.from(pastedText).forEach((character) => {
+    processTutorialCharacter(character);
+  });
+}
 
 /**
  * Spawns the tutorial asteroid
@@ -148,6 +327,7 @@ function showInstructionOverlay(message, finalPause = false) {
 
     if (!finalPause) {
       tutorialState.asteroidPaused = false;
+      focusTutorialTypingInput();
     }
   });
 }
@@ -205,42 +385,6 @@ function hideCompletionOverlay() {
   if (completionOverlay) {
     completionOverlay.remove();
     completionOverlay = null;
-  }
-}
-
-/**
- * Checks typed input against tutorial code
- */
-function checkTutorialTyping() {
-  const typedText = tutorialTypingInput.value;
-
-  if (
-    typedText === CORRECT_CODE &&
-    !tutorialState.codeTyped
-  ) {
-    tutorialState.codeTyped = true;
-
-    tutorialState.score += 1000;
-    tutorialState.streak += 1;
-
-    tutorialScoreDisplay.textContent =
-      tutorialState.score;
-    tutorialStreakDisplay.textContent =
-      tutorialState.streak;
-    tutorialAsteroidCountDisplay.textContent = '1';
-
-    if (
-      tutorialAsteroid &&
-      tutorialAsteroid.element
-    ) {
-      tutorialAsteroid.element.remove();
-    }
-
-    hideInstructionOverlay();
-
-    tutorialTypingInput.disabled = true;
-
-    showCompletionOverlay();
   }
 }
 
@@ -303,12 +447,8 @@ function endTutorial() {
 
   tutorialAsteroid = null;
 
-  tutorialTypingInput.value = '';
+  resetTutorialTypingState();
   tutorialTypingInput.disabled = false;
-  tutorialTypingInput.removeEventListener(
-    'input',
-    checkTutorialTyping
-  );
 
   tutorialState.score = 0;
   tutorialState.streak = 0;
@@ -340,8 +480,8 @@ export function startTutorial() {
   tutorialStreakDisplay.textContent = '0';
   tutorialAsteroidCountDisplay.textContent = '0';
 
-  tutorialTypingInput.value = '';
   tutorialTypingInput.disabled = false;
+  resetTutorialTypingState();
 
   tutorialGameArea.innerHTML = '';
 
@@ -350,15 +490,27 @@ export function startTutorial() {
   firstInstructionShown = false;
   secondInstructionShown = false;
 
-  tutorialTypingInput.addEventListener(
-    'input',
-    checkTutorialTyping
-  );
+  if (!tutorialTypingInitialized) {
+    tutorialTypingInput.addEventListener(
+      'keydown',
+      handleTutorialKeydown
+    );
+    tutorialTypingInput.addEventListener(
+      'paste',
+      handleTutorialPaste
+    );
+    tutorialTypingInitialized = true;
+  }
 
-  tutorialTypingInput.focus();
+  focusTutorialTypingInput();
 
   tutorialGameRunning = true;
   tutorialAnimationId = requestAnimationFrame(
     tutorialGameLoop
   );
 }
+
+tutorialScreen.addEventListener(
+  'pointerdown',
+  focusTutorialTypingInput
+);

@@ -249,13 +249,51 @@ button:hover {
 
   display: flex;
   justify-content: center;
+  align-items: center;
 
   padding: 20px;
 
   background: rgba(0, 0, 0, 0.4);
 }
 
-#typing-input, 
+.typing-field {
+  position: relative;
+
+  width: 500px;
+}
+
+.typing-display {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  min-height: 100%;
+
+  padding: 1rem;
+
+  border-radius: 10px;
+
+  background: rgba(20, 20, 70, 0.8);
+
+  font-size: 1rem;
+  font-family: monospace;
+
+  pointer-events: none;
+
+  white-space: pre-wrap;
+  word-break: break-word;
+
+  color: white;
+
+  z-index: 2;
+}
+
+.typing-correct {
+  color: #4da3ff;
+  text-shadow: 0 0 8px rgba(77, 163, 255, 0.4);
+}
+
+#typing-input,
 #tutorial-typing-input {
   width: 500px;
 
@@ -266,9 +304,27 @@ button:hover {
 
   font-size: 1rem;
 
-  background: rgba(20, 20, 70, 0.8);
+  font-family: monospace;
 
-  color: white;
+  z-index: 1;
+}
+
+#typing-input,
+#tutorial-typing-input  {
+  position: relative;
+
+  width: 100%;
+
+  background: transparent;
+
+  color: transparent;
+
+  caret-color: white;
+}
+
+#typing-input::selection,
+#tutorial-typing-input::selection {
+  background: rgba(125, 249, 255, 0.35);
 }
 
 
@@ -392,7 +448,8 @@ button:hover {
   }
 
   #typing-input,
-  #tutorial-typing-input {
+  #tutorial-typing-input,
+  .typing-field {
     width: 90%;
   }
 
