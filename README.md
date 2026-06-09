@@ -31,33 +31,108 @@ Astro-Type is a web-based typing game designed to help beginner programmers prac
 6. Merge if passes all checks
 
 ### Gameplay
-// images will go here
+![homes creen](./assets/images/home_screen.png)
+![play screen](./assets/images/play_screen.png)
+![stats screen](./assets/images/stats_screen.png)
 
 ### Repo-Structure
 ```
 └── 📁cse110-sp26-group21
     └── 📁.github
+        └── 📁ISSUE_TEMPLATE
+            ├── issue-template.md
+        └── 📁workflows
+            ├── main.yml
+        ├── pull_request_template.md
     └── 📁admin
         └── 📁branding
+            └── 📁files
+                ├── color-palette.png
+                ├── logo-badge.png
+                ├── logo-badge.svg
+                ├── logo-primary.png
+            └── 📁teamvid
+                ├── link
+            ├── branding.md
+            ├── team-21-deck.pptx
+        └── 📁decisions
+            ├── 0001-use-eslint.md
+            ├── 0002-use-jsdoc.md
+            ├── 0003-use-vitest.md
+            ├── 0004-use-phaser.md
+            ├── 005-use-SPA.md
+            ├── adr-template.md
         └── 📁feedback
+            ├── feedback-22.md
+            ├── feedback-23.md
         └── 📁meetings
+            ├── 041126-kickoff.md
+            ├── 041926-warmup2.md
+            ├── 050926-sprint1.md
+            ├── 051126-sprint2.md
+            ├── 051826-sprint3.md
+            ├── 052626-sprint4.md
+            ├── 060126-sprint5.md
+            ├── 060526-sprint6.md
+            ├── meetings.md
+            ├── reflection1.md
+            ├── reflection2.md
         └── 📁misc
         └── 📁planning
+            ├── journey-mapping.md
+            ├── MVP.md
+            ├── research.md
+            ├── user-stories.md
         └── 📁standups
+            ├── 050726-standup.md
+            ├── 051026-standup.md
+            ├── 051726-standup.md
+            ├── 052626-standup.md
+            ├── 060126-standup.md
         └── 📁videos
+            ├── link.md
+            ├── statusvideo1.mp4
+            ├── team-intro.mp4
         ├── team.md
     └── 📁assets
         └── 📁images
+            ├── asteroid.png
+            ├── explosion.gif
+            ├── space-background.png
         └── 📁snippets
+            ├── css.json
+            ├── html.json
+            ├── javascript.json
     └── 📁docs
     └── 📁prototype
+        └── 📁src
+            └── 📁asteroids
+            └── 📁phaser
+            └── 📁questions
+            └── 📁scoring
+            └── 📁screens
+            └── 📁stats
+            └── 📁typing
+            └── 📁utils
+            ├── appState.js
+            ├── config.js
+            ├── main.js
+        └── 📁styles
+        └── 📁tests
+        ├── index.html
     └── 📁scripts
         ├── asteroids.js
         ├── game.js
         ├── main.js
         ├── snippets.js
+        ├── tutorial.js
         ├── typing.js
-    └── 📁specs
+    └── 📁testing
+        ├── asteroids.test.js
+        ├── e2e.test.js
+        ├── game.test.js
+        ├── snippets.test.js
+        ├── typing.test.js
     ├── .gitignore
     ├── CHANGELOG.md
     ├── eslint.config.mjs
