@@ -3,6 +3,8 @@
 
 [Status Video 1](https://youtu.be/RvWl4o17yyw)
 
+[Final Project Video (Private)](https://youtu.be/MHX47ivT7MY)
+
 --- 
 
 # ASTRO-TYPE 
