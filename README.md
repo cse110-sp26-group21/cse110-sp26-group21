@@ -5,6 +5,7 @@
 
 [Final Project Video (Private)](https://youtu.be/MHX47ivT7MY)
 
+[Final Project Video (Public)](https://www.youtube.com/watch?v=e6TZ7nOyToE)
 --- 
 
 # ASTRO-TYPE 
